@@ -1,0 +1,36 @@
+# Alias -> canonical field. Matching is done after normalizing case and separators
+# (camelCase, kebab-case, spaces and dots all become snake_case), so `deviceId`,
+# `device-id` and `Device ID` all hit the `device_id` alias.
+# RFC 8343 (ietf-interfaces) counter names are included so real switch telemetry maps cleanly.
+
+identity:
+  device_id: [device_id, deviceid, device, host, hostname, node, node_id, switch, switch_id, name, if_name, sysname]
+  timestamp: [timestamp, ts, time, datetime, date_time, event_time, collected_at, observed_at]
+  status: [status, state, device_status, health, oper_status, operstatus, admin_status]
+  schema_version: [schema_version, schemaversion, version, schema, format_version]
+
+metrics:
+  latency_ms: [latency_ms, latency, lat, rtt, rtt_ms, delay, delay_ms, ping_ms, round_trip_ms, avg_rtt]
+  jitter_ms: [jitter_ms, jitter, ipdv, ipdv_ms, delay_variation]
+  packet_loss_pct: [packet_loss_pct, packet_loss, loss, loss_pct, pkt_loss, pkt_loss_pct, packetloss, loss_rate, drop_rate]
+  throughput_mbps: [throughput_mbps, throughput, goodput, goodput_mbps, rate_mbps]
+  bandwidth_mbps: [bandwidth_mbps, bandwidth, capacity, capacity_mbps, link_speed, speed, speed_mbps]
+  link_utilization_pct: [link_utilization_pct, link_utilization, util, utilization, link_util, bw_util, link_util_pct, utilization_pct, if_util]
+  retransmission_pct: [retransmission_pct, retransmissions, retries, retry_rate, retry_pct, tx_retries_pct, retrans_pct]
+  wifi_rssi_dbm: [wifi_rssi_dbm, rssi, rssi_dbm, signal, signal_dbm, signal_strength, wifi_rssi]
+  wifi_snr_db: [wifi_snr_db, snr, snr_db, wifi_snr]
+  cpu_utilization_pct: [cpu_utilization_pct, cpu, cpu_pct, cpu_load, cpu_util, cpu_usage, cpu_utilization]
+  memory_utilization_pct: [memory_utilization_pct, memory, mem, mem_pct, memory_pct, mem_util, memory_usage, ram_pct]
+  queue_drops: [queue_drops, drops, egress_drops, queue_drop_count, out_discards, outdiscards, tail_drops, output_drops]
+  interface_errors: [interface_errors, if_errors, crc_errors, crc, in_errors, inerrors, input_errors, errors, rx_errors]
+  interface_flaps: [interface_flaps, flaps, link_flaps, link_flap_count, carrier_transitions]
+  uptime_s: [uptime_s, uptime, sys_uptime, uptime_seconds]
+  dns_success_pct: [dns_success_pct, dns_success, dns_success_rate, dns_ok_pct, resolution_success]
+  dns_latency_ms: [dns_latency_ms, dns_latency, dns_rtt, dns_time, resolve_ms]
+  dhcp_success_pct: [dhcp_success_pct, dhcp_success, dhcp_success_rate, lease_success, lease_success_pct]
+  dhcp_ack_ms: [dhcp_ack_ms, dhcp_ack, dhcp_ack_time, offer_ack_ms, dora_ms]
+  dhcp_pool_utilization_pct: [dhcp_pool_utilization_pct, pool_utilization, dhcp_pool_util, pool_usage, scope_utilization]
+  apipa_clients: [apipa_clients, apipa, self_assigned_clients, link_local_clients]
+
+# Containers that may hold metrics (organizer uses `metrics`; others nest differently).
+metric_containers: [metrics, data, values, measurements, stats, counters, telemetry]

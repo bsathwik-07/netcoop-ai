@@ -1,0 +1,13 @@
+{
+  "timestamp": "yesterday at noon",
+  "device_id": "SW_CAMPUS_4",
+  "metrics": {
+    "cpu_utilization_pct": 99.9,
+    "link_utilization_pct": 100.0,
+    "packet_loss_pct": 28.51,
+    "latency_ms": 926.46,
+    "queue_drops": 13416,
+    "interface_errors": 382
+  },
+  "status": "Critical"
+}

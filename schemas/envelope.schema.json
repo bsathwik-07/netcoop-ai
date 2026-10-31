@@ -1,0 +1,101 @@
+{
+  "$defs": {
+    "MessageType": {
+      "enum": [
+        "TASK_ASSIGNMENT",
+        "TELEMETRY_RAW",
+        "TELEMETRY_NORMALIZED",
+        "FINDING",
+        "QUERY",
+        "RESPONSE",
+        "DIAGNOSIS",
+        "REPORT",
+        "ERROR",
+        "ACK",
+        "HEARTBEAT",
+        "CAPABILITY_ANNOUNCE",
+        "REMEDIATION_PROPOSAL",
+        "APPROVAL_REQUEST",
+        "APPROVAL_DECISION"
+      ],
+      "title": "MessageType",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "protocol": {
+      "default": "netcoop/2.0",
+      "description": "family/major.minor",
+      "pattern": "^netcoop/\\d+\\.\\d+$",
+      "title": "Protocol",
+      "type": "string"
+    },
+    "msg_id": {
+      "description": "UUID4, unique per message",
+      "title": "Msg Id",
+      "type": "string"
+    },
+    "correlation_id": {
+      "description": "Incident id; ties all messages of one incident together",
+      "title": "Correlation Id",
+      "type": "string"
+    },
+    "causation_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "msg_id of the message that caused this one",
+      "title": "Causation Id"
+    },
+    "from_agent": {
+      "title": "From Agent",
+      "type": "string"
+    },
+    "to_agent": {
+      "default": "broadcast",
+      "description": "Agent name, or 'broadcast'",
+      "title": "To Agent",
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/$defs/MessageType"
+    },
+    "timestamp": {
+      "description": "ISO-8601 UTC",
+      "format": "date-time",
+      "title": "Timestamp",
+      "type": "string"
+    },
+    "ttl_s": {
+      "default": 300,
+      "description": "Seconds after `timestamp` the message stays deliverable",
+      "minimum": 1,
+      "title": "Ttl S",
+      "type": "integer"
+    },
+    "payload_schema": {
+      "description": "Payload schema name/version, e.g. 'finding/1.0'",
+      "title": "Payload Schema",
+      "type": "string"
+    },
+    "payload": {
+      "title": "Payload"
+    }
+  },
+  "required": [
+    "correlation_id",
+    "from_agent",
+    "type",
+    "payload_schema",
+    "payload"
+  ],
+  "title": "NetCoop envelope",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

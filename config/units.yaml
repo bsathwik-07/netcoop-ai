@@ -1,0 +1,75 @@
+# Unit conversions into canonical units. A value's unit is detected, in order, from:
+#   1. an explicit unit (`{"value": 0.2, "unit": "s"}` or a sibling field `<name>_unit`)
+#   2. a suffix in the original field name (`latency_s`, `util_frac`, `throughput_kbps`)
+#   3. plausibility heuristics (below), which are recorded as method=heuristic.
+# Every conversion is recorded in the ingestion report.
+
+conversions:
+  ms:
+    ms: 1
+    s: 1000
+    sec: 1000
+    seconds: 1000
+    us: 0.001
+    usec: 0.001
+    microseconds: 0.001
+  "%":
+    "%": 1
+    pct: 1
+    percent: 1
+    fraction: 100
+    frac: 100
+    ratio: 100
+    permille: 0.1
+  Mbps:
+    mbps: 1
+    mbit/s: 1
+    kbps: 0.001
+    kbit/s: 0.001
+    gbps: 1000
+    gbit/s: 1000
+    bps: 0.000001
+    "MB/s": 8
+    "mbyte/s": 8
+    "kB/s": 0.008
+    "Bps": 0.000008
+  count: {count: 1, "{count}": 1, "1": 1}
+  dBm: {dbm: 1, "db[mw]": 1}
+  dB: {db: 1}
+  s:
+    s: 1
+    ms: 0.001
+    min: 60
+    h: 3600
+
+# Field-name suffixes that reveal a unit (after the base name is stripped).
+suffixes:
+  _s: s
+  _sec: s
+  _seconds: s
+  _ms: ms
+  _us: us
+  _frac: fraction
+  _fraction: fraction
+  _ratio: ratio
+  _pct: "%"
+  _percent: "%"
+  _kbps: kbps
+  _gbps: gbps
+  _mbps: mbps
+  _bps: bps
+
+# Plausibility heuristics (applied only when no explicit unit was found).
+heuristics:
+  # A percent metric whose every value in the batch lies in [0, 1] and at least one is
+  # strictly between 0 and 1 is treated as a fraction.
+  percent_as_fraction: true
+  # ...but only for metrics where sub-1 % values are implausible. packet_loss_pct and
+  # retransmission_pct are excluded on purpose: 0.45 % loss is real and must not become 45 %.
+  fraction_candidates: [link_utilization_pct, cpu_utilization_pct, memory_utilization_pct,
+                        dns_success_pct, dhcp_success_pct, dhcp_pool_utilization_pct]
+  # RSSI given as a positive number (e.g. 72) is a magnitude: convert to -72 dBm.
+  positive_rssi_is_magnitude: true
+  # Latency below this value with a non-ms suffix-free name and other latencies in the batch
+  # in ms is NOT guessed; we only convert when a unit is explicit, to avoid silent errors.
+  epoch_ms_threshold: 100000000000   # epoch numbers above this are milliseconds

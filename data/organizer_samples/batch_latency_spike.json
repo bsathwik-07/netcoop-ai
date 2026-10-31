@@ -1,0 +1,132 @@
+[
+  {
+    "timestamp": "2026-10-31T07:28:38.128491Z",
+    "device_id": "SW_CAMPUS_6",
+    "metrics": {
+      "cpu_utilization_pct": 68.44,
+      "link_utilization_pct": 69.87,
+      "packet_loss_pct": 0.17,
+      "latency_ms": 355.32,
+      "jitter_ms": 34.71,
+      "queue_drops": 37
+    },
+    "status": "Warning"
+  },
+  {
+    "timestamp": "2026-10-31T07:28:38.128491Z",
+    "device_id": "SW_CAMPUS_1",
+    "metrics": {
+      "cpu_utilization_pct": 67.29,
+      "link_utilization_pct": 65.37,
+      "packet_loss_pct": 0.22,
+      "latency_ms": 254.54,
+      "jitter_ms": 42.03,
+      "queue_drops": 35
+    },
+    "status": "Warning"
+  },
+  {
+    "timestamp": "2026-10-31T07:28:38.128491Z",
+    "device_id": "SW_CAMPUS_7",
+    "metrics": {
+      "cpu_utilization_pct": 41.77,
+      "link_utilization_pct": 74.14,
+      "packet_loss_pct": 1.43,
+      "latency_ms": 307.66,
+      "jitter_ms": 59.15,
+      "queue_drops": 3
+    },
+    "status": "Warning"
+  },
+  {
+    "timestamp": "2026-10-31T07:28:38.128491Z",
+    "device_id": "SW_CAMPUS_10",
+    "metrics": {
+      "cpu_utilization_pct": 57.57,
+      "link_utilization_pct": 61.24,
+      "packet_loss_pct": 0.41,
+      "latency_ms": 289.17,
+      "jitter_ms": 36.66,
+      "queue_drops": 26
+    },
+    "status": "Warning"
+  },
+  {
+    "timestamp": "2026-10-31T07:28:38.128491Z",
+    "device_id": "SW_CAMPUS_3",
+    "metrics": {
+      "cpu_utilization_pct": 56.22,
+      "link_utilization_pct": 74.27,
+      "packet_loss_pct": 0.88,
+      "latency_ms": 320.5,
+      "jitter_ms": 35.15,
+      "queue_drops": 36
+    },
+    "status": "Warning"
+  },
+  {
+    "timestamp": "2026-10-31T07:28:38.128491Z",
+    "device_id": "SW_CAMPUS_4",
+    "metrics": {
+      "cpu_utilization_pct": 51.17,
+      "link_utilization_pct": 73.69,
+      "packet_loss_pct": 0.19,
+      "latency_ms": 164.9,
+      "jitter_ms": 40.3,
+      "queue_drops": 43
+    },
+    "status": "Warning"
+  },
+  {
+    "timestamp": "2026-10-31T07:28:38.128491Z",
+    "device_id": "SW_CAMPUS_9",
+    "metrics": {
+      "cpu_utilization_pct": 52.83,
+      "link_utilization_pct": 67.85,
+      "packet_loss_pct": 0.92,
+      "latency_ms": 263.3,
+      "jitter_ms": 44.99,
+      "queue_drops": 50
+    },
+    "status": "Warning"
+  },
+  {
+    "timestamp": "2026-10-31T07:28:38.128491Z",
+    "device_id": "SW_CAMPUS_3",
+    "metrics": {
+      "cpu_utilization_pct": 60.97,
+      "link_utilization_pct": 66.1,
+      "packet_loss_pct": 0.9,
+      "latency_ms": 281.3,
+      "jitter_ms": 73.76,
+      "queue_drops": 46
+    },
+    "status": "Warning"
+  },
+  {
+    "timestamp": "2026-10-31T07:28:38.128491Z",
+    "device_id": "SW_CAMPUS_8",
+    "metrics": {
+      "cpu_utilization_pct": 48.64,
+      "link_utilization_pct": 84.5,
+      "packet_loss_pct": 0.27,
+      "latency_ms": 254.53,
+      "jitter_ms": 67.86,
+      "queue_drops": 9
+    },
+    "status": "Warning"
+  },
+  {
+    "timestamp": "2026-10-31T07:28:38.128491Z",
+    "device_id": "SW_CAMPUS_8",
+    "metrics": {
+      "cpu_utilization_pct": 52.65,
+      "link_utilization_pct": 84.05,
+      "packet_loss_pct": 0.21,
+      "latency_ms": 289.52,
+      "jitter_ms": 69.45,
+      "queue_drops": 20
+    },
+    "status": "Warning"
+  }
+]

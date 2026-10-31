@@ -1,0 +1,19 @@
+{
+  "scenario": "hardware_failure",
+  "seed": 42,
+  "description": "Exact organizer hardware_failure pattern on one switch (CPU 99.9, link 100 %, 15-30 % loss, huge queue drops, 100-500 interface errors, no jitter metric).",
+  "expected_status": "diagnosed",
+  "root_cause": "hardware_failure",
+  "acceptable_root_causes": [
+    "hardware_failure",
+    "interface_fault"
+  ],
+  "abstain_ok": false,
+  "root_device": "SW_CAMPUS_4",
+  "affected_devices": [
+    "SW_CAMPUS_4"
+  ],
+  "symptomatic_devices": [],
+  "secondary_root_causes": [],
+  "mutations": []
+}

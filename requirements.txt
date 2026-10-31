@@ -1,0 +1,3 @@
+# Used by Streamlit Community Cloud (and any host that installs from requirements.txt).
+# Installs NetCoop AI itself, with all its dependencies, from pyproject.toml.
+-e .

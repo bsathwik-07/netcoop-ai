@@ -1,0 +1,18 @@
+{
+  "scenario": "dhcp_failure",
+  "seed": 42,
+  "description": "DHCP pool exhausted: lease failures, slow DORA and clients falling back to APIPA.",
+  "expected_status": "diagnosed",
+  "root_cause": "dhcp_failure",
+  "acceptable_root_causes": [
+    "dhcp_failure"
+  ],
+  "abstain_ok": false,
+  "root_device": "DHCP_SRV_01",
+  "affected_devices": [
+    "DHCP_SRV_01"
+  ],
+  "symptomatic_devices": [],
+  "secondary_root_causes": [],
+  "mutations": []
+}

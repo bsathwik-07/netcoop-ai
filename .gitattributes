@@ -1,0 +1,4 @@
+# Normalise line endings so generated files (PROTOCOL.md, schemas) compare equal on every OS.
+* text=auto eol=lf
+*.png binary
+*.sqlite binary

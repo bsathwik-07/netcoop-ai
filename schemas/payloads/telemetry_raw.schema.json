@@ -1,0 +1,32 @@
+{
+  "properties": {
+    "source": {
+      "default": "inline",
+      "description": "File name, 'inline' or 'gateway'",
+      "title": "Source",
+      "type": "string"
+    },
+    "content_type": {
+      "default": "auto",
+      "enum": [
+        "auto",
+        "json",
+        "jsonl",
+        "csv"
+      ],
+      "title": "Content Type",
+      "type": "string"
+    },
+    "content": {
+      "description": "Raw text exactly as received",
+      "title": "Content",
+      "type": "string"
+    }
+  },
+  "required": [
+    "content"
+  ],
+  "title": "TELEMETRY_RAW payload (telemetry_raw/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

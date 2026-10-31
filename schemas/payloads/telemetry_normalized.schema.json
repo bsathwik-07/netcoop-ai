@@ -1,0 +1,549 @@
+{
+  "$defs": {
+    "ConversionNote": {
+      "properties": {
+        "record_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Record Index"
+        },
+        "device_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Device Id"
+        },
+        "original_field": {
+          "title": "Original Field",
+          "type": "string"
+        },
+        "canonical_field": {
+          "title": "Canonical Field",
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/$defs/MappingMethod"
+        },
+        "from_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "From Value"
+        },
+        "to_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "To Value"
+        },
+        "from_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "From Unit"
+        },
+        "to_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "To Unit"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "count": {
+          "default": 1,
+          "description": "Identical conversions are aggregated; this is how many",
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "original_field",
+        "canonical_field",
+        "method"
+      ],
+      "title": "ConversionNote",
+      "type": "object"
+    },
+    "DeviceStatus": {
+      "enum": [
+        "up",
+        "degraded",
+        "down",
+        "unknown"
+      ],
+      "title": "DeviceStatus",
+      "type": "string"
+    },
+    "ErrorCode": {
+      "enum": [
+        "E_SCHEMA_INVALID",
+        "E_UNIT_UNKNOWN",
+        "E_FIELD_UNMAPPED",
+        "E_MISSING_REQUIRED",
+        "E_OUT_OF_RANGE",
+        "E_STALE_DATA",
+        "E_AGENT_TIMEOUT",
+        "E_UNSUPPORTED_VERSION",
+        "E_UNKNOWN_DEVICE",
+        "E_INTERNAL"
+      ],
+      "title": "ErrorCode",
+      "type": "string"
+    },
+    "IngestionReport": {
+      "properties": {
+        "records_in": {
+          "default": 0,
+          "title": "Records In",
+          "type": "integer"
+        },
+        "records_accepted": {
+          "default": 0,
+          "title": "Records Accepted",
+          "type": "integer"
+        },
+        "records_rejected": {
+          "default": 0,
+          "title": "Records Rejected",
+          "type": "integer"
+        },
+        "formats_detected": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Formats Detected",
+          "type": "array"
+        },
+        "schema_versions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Schema Versions",
+          "type": "array"
+        },
+        "conversions": {
+          "items": {
+            "$ref": "#/$defs/ConversionNote"
+          },
+          "title": "Conversions",
+          "type": "array"
+        },
+        "rejections": {
+          "items": {
+            "$ref": "#/$defs/RejectionNote"
+          },
+          "title": "Rejections",
+          "type": "array"
+        },
+        "unmapped_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unmapped Fields",
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "quality_counts": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Quality Counts",
+          "type": "object"
+        },
+        "data_coverage": {
+          "default": 0.0,
+          "description": "Share of usable metric values among those expected",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Data Coverage",
+          "type": "number"
+        },
+        "fatal": {
+          "default": false,
+          "description": "True if no usable record survived ingestion",
+          "title": "Fatal",
+          "type": "boolean"
+        }
+      },
+      "title": "IngestionReport",
+      "type": "object"
+    },
+    "MappingMethod": {
+      "enum": [
+        "direct",
+        "alias",
+        "fuzzy",
+        "llm_suggested",
+        "unit_conversion",
+        "heuristic",
+        "migration",
+        "imputed"
+      ],
+      "title": "MappingMethod",
+      "type": "string"
+    },
+    "MetricValue": {
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Canonical value; null when missing or rejected",
+          "title": "Value"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit",
+          "description": "Canonical unit (see vocabulary)"
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality",
+          "default": "ok"
+        },
+        "provenance": {
+          "items": {
+            "$ref": "#/$defs/Provenance"
+          },
+          "title": "Provenance",
+          "type": "array"
+        }
+      },
+      "required": [
+        "unit"
+      ],
+      "title": "MetricValue",
+      "type": "object"
+    },
+    "Provenance": {
+      "properties": {
+        "original_field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Field name as it appeared in the input",
+          "title": "Original Field"
+        },
+        "original_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Value as it appeared in the input",
+          "title": "Original Value"
+        },
+        "original_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Unit of the original value, if known",
+          "title": "Original Unit"
+        },
+        "method": {
+          "$ref": "#/$defs/MappingMethod",
+          "default": "direct",
+          "description": "How the canonical value was obtained"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Quality": {
+      "enum": [
+        "ok",
+        "converted",
+        "imputed",
+        "missing",
+        "stale",
+        "out_of_range",
+        "rejected"
+      ],
+      "title": "Quality",
+      "type": "string"
+    },
+    "RejectionNote": {
+      "properties": {
+        "record_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Record Index"
+        },
+        "device_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Device Id"
+        },
+        "field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Field"
+        },
+        "code": {
+          "$ref": "#/$defs/ErrorCode"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "record_rejected": {
+          "default": false,
+          "description": "True if the whole record was dropped",
+          "title": "Record Rejected",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "reason"
+      ],
+      "title": "RejectionNote",
+      "type": "object"
+    },
+    "TelemetryRecord": {
+      "properties": {
+        "device_id": {
+          "title": "Device Id",
+          "type": "string"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/DeviceStatus",
+          "default": "unknown"
+        },
+        "status_original": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Status string as supplied (e.g. 'Critical')",
+          "title": "Status Original"
+        },
+        "metrics": {
+          "additionalProperties": {
+            "$ref": "#/$defs/MetricValue"
+          },
+          "description": "Keyed by canonical metric name",
+          "title": "Metrics",
+          "type": "object"
+        },
+        "unmapped": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "description": "Fields we could not map",
+          "title": "Unmapped",
+          "type": "object"
+        },
+        "source_format": {
+          "default": "canonical_v2",
+          "description": "organizer_v1 | canonical_v2 | legacy_v1_1 | csv",
+          "title": "Source Format",
+          "type": "string"
+        },
+        "record_quality": {
+          "$ref": "#/$defs/Quality",
+          "default": "ok"
+        }
+      },
+      "required": [
+        "device_id",
+        "timestamp"
+      ],
+      "title": "TelemetryRecord",
+      "type": "object"
+    },
+    "Unit": {
+      "enum": [
+        "ms",
+        "%",
+        "count",
+        "dBm",
+        "dB",
+        "Mbps",
+        "s"
+      ],
+      "title": "Unit",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "records": {
+      "items": {
+        "$ref": "#/$defs/TelemetryRecord"
+      },
+      "title": "Records",
+      "type": "array"
+    },
+    "report": {
+      "$ref": "#/$defs/IngestionReport"
+    }
+  },
+  "required": [
+    "records",
+    "report"
+  ],
+  "title": "TELEMETRY_NORMALIZED payload (telemetry_normalized/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

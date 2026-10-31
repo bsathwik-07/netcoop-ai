@@ -1,0 +1,322 @@
+[
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:00:00Z",
+  "status": "up",
+  "metrics": {
+   "latency_ms": {
+    "value": 16.25,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.04,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:01:00Z",
+  "status": "up",
+  "metrics": {
+   "latency_ms": {
+    "value": 7.43,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.04,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:02:00Z",
+  "status": "up",
+  "metrics": {
+   "latency_ms": {
+    "value": 8.39,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.05,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:03:00Z",
+  "status": "up",
+  "metrics": {
+   "latency_ms": {
+    "value": 5.83,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.01,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:04:00Z",
+  "status": "up",
+  "metrics": {
+   "latency_ms": {
+    "value": 6.82,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.03,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:05:00Z",
+  "status": "up",
+  "metrics": {
+   "latency_ms": {
+    "value": 9.43,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.04,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:06:00Z",
+  "status": "up",
+  "metrics": {
+   "latency_ms": {
+    "value": 11.45,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.03,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:07:00Z",
+  "status": "up",
+  "metrics": {
+   "latency_ms": {
+    "value": 8.34,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.03,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:08:00Z",
+  "status": "up",
+  "metrics": {
+   "latency_ms": {
+    "value": 14.32,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.01,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:09:00Z",
+  "status": "up",
+  "metrics": {
+   "latency_ms": {
+    "value": 15.92,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.03,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:10:00Z",
+  "status": "unknown",
+  "metrics": {
+   "latency_ms": {
+    "value": 149.63,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.78,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:11:00Z",
+  "status": "unknown",
+  "metrics": {
+   "latency_ms": {
+    "value": 193.4,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.35,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:12:00Z",
+  "status": "unknown",
+  "metrics": {
+   "latency_ms": {
+    "value": 140.78,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.61,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:13:00Z",
+  "status": "unknown",
+  "metrics": {
+   "latency_ms": {
+    "value": 137.31,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.78,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:14:00Z",
+  "status": "unknown",
+  "metrics": {
+   "latency_ms": {
+    "value": 188.95,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.64,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:15:00Z",
+  "status": "unknown",
+  "metrics": {
+   "latency_ms": {
+    "value": 174.05,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.78,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:16:00Z",
+  "status": "unknown",
+  "metrics": {
+   "latency_ms": {
+    "value": 123.8,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.45,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:17:00Z",
+  "status": "unknown",
+  "metrics": {
+   "latency_ms": {
+    "value": 133.06,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.48,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:18:00Z",
+  "status": "unknown",
+  "metrics": {
+   "latency_ms": {
+    "value": 198.99,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.41,
+    "unit": "%"
+   }
+  }
+ },
+ {
+  "schema_version": "2.0",
+  "device_id": "SW_CAMPUS_3",
+  "timestamp": "2026-10-14T07:19:00Z",
+  "status": "unknown",
+  "metrics": {
+   "latency_ms": {
+    "value": 162.45,
+    "unit": "ms"
+   },
+   "packet_loss_pct": {
+    "value": 0.72,
+    "unit": "%"
+   }
+  }
+ }
+]

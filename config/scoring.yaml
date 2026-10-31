@@ -1,0 +1,111 @@
+# Scoring, normalization and decision parameters (README#confidence).
+
+# Multiplier applied to each evidence item by its quality tag.
+quality_factor:
+  ok: 1.0
+  converted: 0.8
+  imputed: 0.5
+  llm_suggested: 0.5
+  stale: 0.3
+  missing: 0.0
+  out_of_range: 0.0
+  rejected: 0.0
+
+# Severity of the categorical device_status signal.
+status_severity: {up: 0.0, degraded: 0.5, down: 1.0, unknown: 0.0}
+
+# Time series: per device and metric we summarize the most recent `recent_window` samples with
+# the median (robust to one noisy sample) and compare the earlier samples as a baseline (z-score).
+series:
+  recent_window: 5
+  min_baseline: 8
+  # Baseline deviation (NetMedic-style "abnormal relative to its own history"), robust z-score:
+  #   z = (recent value - median(baseline)) / max(1.4826 * MAD, 5 % of |median|, baseline_min_sd)
+  # Only used when the value is still below the fixed `warn` threshold; then
+  #   severity = baseline_severity_cap * min(1, (z - z_threshold + 1) / (z_full - z_threshold + 1))
+  # The cap keeps it a weak, supporting signal: it can block an "all clear" (early warning)
+  # but can never produce a diagnosis on its own (a threshold breach is required for that).
+  # z >= 4 rather than 3: one incident tests hundreds of device x metric pairs, so at z >= 3 a few
+  # chance "drifts" per incident are expected on perfectly healthy data (multiple comparisons).
+  z_threshold: 4.0
+  z_full: 7.0
+  baseline_severity_cap: 0.4
+  # Materiality: the value must also have moved at least this share of the way from its baseline
+  # median towards the warn threshold (5 -> 13 ms with warn 50 is statistically odd but irrelevant).
+  baseline_min_progress: 0.25
+  # Noise floors for the spread: bursty load metrics (utilization, CPU, memory) vary a lot by nature.
+  baseline_min_sd:
+    latency_ms: 2.0
+    jitter_ms: 1.0
+    packet_loss_pct: 0.02
+    link_utilization_pct: 8.0
+    cpu_utilization_pct: 6.0
+    memory_utilization_pct: 6.0
+    queue_drops: 5
+    interface_errors: 1
+    interface_flaps: 1
+    retransmission_pct: 1.0
+    wifi_rssi_dbm: 2.0
+    wifi_snr_db: 2.0
+    dns_success_pct: 0.2
+    dns_latency_ms: 5.0
+    dhcp_success_pct: 0.3
+    dhcp_ack_ms: 50
+    dhcp_pool_utilization_pct: 6.0
+    apipa_clients: 1
+  # uptime_reset fires only when uptime falls below half of the previous sample and by at least
+  # this many seconds (a real reboot restarts near zero; small decreases are collector jitter).
+  reboot_min_drop_s: 600
+  # If the newest N samples all breach `warn`, the condition is current: summarize with them
+  # instead of the window median ("N consecutive checks" alerting practice).
+  persistence_samples: 2
+
+# P(h) = softmax(S(h) / temperature) over all hypotheses including `normal`.
+# Tuned in Phase 7 by minimizing ECE (Guo et al., 2017).
+softmax_temperature: 0.1
+
+# S(normal) = 1 - worst quality-weighted severity on any device.
+normal:
+  worst_weight: 1.0
+
+decision:
+  decide_threshold: 0.55   # confidence below this -> insufficient_evidence
+  min_margin: 0.15         # P(top) - P(second) below this -> insufficient_evidence
+  conflict_margin: 0.25    # S(top) - S(second) below this, or agents disagree -> challenge round
+  normal_max_severity: 0.5 # never report "normal" while any usable signal is at least this severe
+  # When a required corroboration is missing (claim cannot be verified), the system abstains and
+  # multiplies the confidence by this factor so the reported number stays calibrated.
+  unverified_confidence_factor: 0.3
+
+confidence_categories:
+  high: 0.8
+  medium: 0.55
+
+# agreement_factor = weighted share of responding agents whose own top hypothesis matches the
+# final one. An agent whose dissent was answered by refuting evidence in the challenge round
+# counts with `resolved_dissent_credit`; agents with no opinion (top=None) are not counted.
+agreement:
+  resolved_dissent_credit: 0.75
+
+# An agent ranks (and votes on) a hypothesis only if it observes at least this share of the
+# hypothesis' positive abnormal weight. Stops e.g. the performance agent, which sees loss but
+# not interface counters, from voting for interface_fault.
+agent_min_share: 0.35
+# An agent names a fault as its top hypothesis only if its local score reaches this value;
+# otherwise it reports 'normal' (if its own signals are mostly healthy) or no opinion.
+agent_min_score: 0.5
+
+# A hypothesis that is a localization claim may only be diagnosed when at least one of these
+# signals was observed. upstream_issue without neighbour data is an inference from absence
+# (no local cause found), so the system abstains and asks for that data instead.
+corroboration_required:
+  upstream_issue: [shared_upstream_symptoms]
+
+# Challenge round: a RESPONSE that refutes a hypothesis subtracts this from its score S(h).
+refute_penalty: 0.15
+# Sherlock-style explain-away: upstream symptoms on a device are explained by a fault on one of
+# its ancestors when that ancestor's best fault score is at least this high.
+explain_away_min_score: 0.5
+# SCORE-style greedy set cover: a second root cause is reported when devices outside the primary
+# root's subtree have a fault score at least this high.
+secondary_min_score: 0.6

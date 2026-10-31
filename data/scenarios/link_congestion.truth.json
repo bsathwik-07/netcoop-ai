@@ -1,0 +1,35 @@
+{
+  "scenario": "link_congestion",
+  "seed": 42,
+  "description": "Hostel aggregation uplink saturated: high utilization, rising queue drops, latency up on the switch and on every device downstream of it.",
+  "expected_status": "diagnosed",
+  "root_cause": "link_congestion",
+  "acceptable_root_causes": [
+    "link_congestion"
+  ],
+  "abstain_ok": false,
+  "root_device": "HOSTEL_CORE_SW_01",
+  "affected_devices": [
+    "HOSTEL_A_AP_01",
+    "HOSTEL_A_AP_02",
+    "HOSTEL_B_AP_01",
+    "HOSTEL_B_AP_02",
+    "HOSTEL_CORE_SW_01",
+    "SW_CAMPUS_1",
+    "SW_CAMPUS_2",
+    "SW_CAMPUS_3",
+    "SW_CAMPUS_4"
+  ],
+  "symptomatic_devices": [
+    "HOSTEL_A_AP_01",
+    "HOSTEL_A_AP_02",
+    "HOSTEL_B_AP_01",
+    "HOSTEL_B_AP_02",
+    "SW_CAMPUS_1",
+    "SW_CAMPUS_2",
+    "SW_CAMPUS_3",
+    "SW_CAMPUS_4"
+  ],
+  "secondary_root_causes": [],
+  "mutations": []
+}

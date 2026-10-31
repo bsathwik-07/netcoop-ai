@@ -1,0 +1,30 @@
+{
+  "name": "IIT Bhubaneswar campus (synthetic)",
+  "description": "Synthetic campus topology for NetCoop AI. Not a map of the real campus network.",
+  "nodes": [
+    {"id": "CAMPUS_CORE_RTR_01", "type": "core_router", "zone": "core", "parent": null, "uplink_mbps": 10000},
+    {"id": "HOSTEL_DIST_SW_01", "type": "distribution_switch", "zone": "hostel_zone", "parent": "CAMPUS_CORE_RTR_01", "uplink_mbps": 10000},
+    {"id": "ACAD_DIST_SW_01", "type": "distribution_switch", "zone": "academic_zone", "parent": "CAMPUS_CORE_RTR_01", "uplink_mbps": 10000},
+    {"id": "DC_SW_01", "type": "distribution_switch", "zone": "datacenter_zone", "parent": "CAMPUS_CORE_RTR_01", "uplink_mbps": 10000},
+    {"id": "HOSTEL_CORE_SW_01", "type": "aggregation_switch", "zone": "hostel_zone", "parent": "HOSTEL_DIST_SW_01", "uplink_mbps": 10000},
+    {"id": "SW_CAMPUS_1", "type": "access_switch", "zone": "hostel_zone", "parent": "HOSTEL_CORE_SW_01", "uplink_mbps": 1000},
+    {"id": "SW_CAMPUS_2", "type": "access_switch", "zone": "hostel_zone", "parent": "HOSTEL_CORE_SW_01", "uplink_mbps": 1000},
+    {"id": "SW_CAMPUS_3", "type": "access_switch", "zone": "hostel_zone", "parent": "HOSTEL_CORE_SW_01", "uplink_mbps": 1000},
+    {"id": "SW_CAMPUS_4", "type": "access_switch", "zone": "hostel_zone", "parent": "HOSTEL_CORE_SW_01", "uplink_mbps": 1000},
+    {"id": "SW_CAMPUS_5", "type": "access_switch", "zone": "academic_zone", "parent": "ACAD_DIST_SW_01", "uplink_mbps": 1000},
+    {"id": "SW_CAMPUS_6", "type": "access_switch", "zone": "academic_zone", "parent": "ACAD_DIST_SW_01", "uplink_mbps": 1000},
+    {"id": "SW_CAMPUS_7", "type": "access_switch", "zone": "academic_zone", "parent": "ACAD_DIST_SW_01", "uplink_mbps": 1000},
+    {"id": "SW_CAMPUS_8", "type": "access_switch", "zone": "academic_zone", "parent": "ACAD_DIST_SW_01", "uplink_mbps": 1000},
+    {"id": "LH_SW_01", "type": "access_switch", "zone": "lecture_hall_zone", "parent": "ACAD_DIST_SW_01", "uplink_mbps": 1000},
+    {"id": "SW_CAMPUS_9", "type": "access_switch", "zone": "lecture_hall_zone", "parent": "LH_SW_01", "uplink_mbps": 1000},
+    {"id": "SW_CAMPUS_10", "type": "access_switch", "zone": "lecture_hall_zone", "parent": "LH_SW_01", "uplink_mbps": 1000},
+    {"id": "HOSTEL_A_AP_01", "type": "access_point", "zone": "hostel_zone", "parent": "SW_CAMPUS_1", "uplink_mbps": 1000},
+    {"id": "HOSTEL_A_AP_02", "type": "access_point", "zone": "hostel_zone", "parent": "SW_CAMPUS_1", "uplink_mbps": 1000},
+    {"id": "HOSTEL_B_AP_01", "type": "access_point", "zone": "hostel_zone", "parent": "SW_CAMPUS_2", "uplink_mbps": 1000},
+    {"id": "HOSTEL_B_AP_02", "type": "access_point", "zone": "hostel_zone", "parent": "SW_CAMPUS_2", "uplink_mbps": 1000},
+    {"id": "LH_AP_01", "type": "access_point", "zone": "lecture_hall_zone", "parent": "LH_SW_01", "uplink_mbps": 1000},
+    {"id": "LH_AP_02", "type": "access_point", "zone": "lecture_hall_zone", "parent": "LH_SW_01", "uplink_mbps": 1000},
+    {"id": "DNS_SRV_01", "type": "dns_server", "zone": "datacenter_zone", "parent": "DC_SW_01", "uplink_mbps": 10000},
+    {"id": "DHCP_SRV_01", "type": "dhcp_server", "zone": "datacenter_zone", "parent": "DC_SW_01", "uplink_mbps": 10000}
+  ]
+}

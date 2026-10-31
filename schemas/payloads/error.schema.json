@@ -1,0 +1,76 @@
+{
+  "$defs": {
+    "ErrorCode": {
+      "enum": [
+        "E_SCHEMA_INVALID",
+        "E_UNIT_UNKNOWN",
+        "E_FIELD_UNMAPPED",
+        "E_MISSING_REQUIRED",
+        "E_OUT_OF_RANGE",
+        "E_STALE_DATA",
+        "E_AGENT_TIMEOUT",
+        "E_UNSUPPORTED_VERSION",
+        "E_UNKNOWN_DEVICE",
+        "E_INTERNAL"
+      ],
+      "title": "ErrorCode",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "code": {
+      "$ref": "#/$defs/ErrorCode"
+    },
+    "message": {
+      "title": "Message",
+      "type": "string"
+    },
+    "detail": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "title": "Detail",
+      "type": "object"
+    },
+    "offending_msg_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Offending Msg Id"
+    },
+    "recoverable": {
+      "default": true,
+      "title": "Recoverable",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "code",
+    "message"
+  ],
+  "title": "ERROR payload (error/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

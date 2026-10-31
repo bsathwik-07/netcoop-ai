@@ -1,0 +1,9 @@
+{
+  "scenario": "batch_latency_spike",
+  "expected_status": "insufficient_evidence",
+  "acceptable_root_causes": [
+    "link_congestion",
+    "upstream_issue"
+  ],
+  "abstain_ok": true
+}

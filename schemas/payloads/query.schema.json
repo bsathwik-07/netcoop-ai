@@ -1,0 +1,88 @@
+{
+  "$defs": {
+    "Hypothesis": {
+      "enum": [
+        "normal",
+        "link_congestion",
+        "weak_wifi",
+        "interface_fault",
+        "hardware_failure",
+        "device_overload",
+        "dns_failure",
+        "dhcp_failure",
+        "upstream_issue"
+      ],
+      "title": "Hypothesis",
+      "type": "string"
+    },
+    "QueryPredicate": {
+      "enum": [
+        "metric_above_threshold",
+        "fault_localization",
+        "service_health",
+        "path_healthy",
+        "device_status"
+      ],
+      "title": "QueryPredicate",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "query_id": {
+      "title": "Query Id",
+      "type": "string"
+    },
+    "round": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Round",
+      "type": "integer"
+    },
+    "question": {
+      "description": "Human-readable form of the question",
+      "title": "Question",
+      "type": "string"
+    },
+    "predicate": {
+      "$ref": "#/$defs/QueryPredicate"
+    },
+    "params": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "title": "Params",
+      "type": "object"
+    },
+    "hypotheses_at_stake": {
+      "items": {
+        "$ref": "#/$defs/Hypothesis"
+      },
+      "title": "Hypotheses At Stake",
+      "type": "array"
+    }
+  },
+  "required": [
+    "query_id",
+    "question",
+    "predicate"
+  ],
+  "title": "QUERY payload (query/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

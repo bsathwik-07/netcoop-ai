@@ -1,0 +1,18 @@
+{
+  "scenario": "interface_fault",
+  "seed": 42,
+  "description": "Rising CRC/interface errors and link flaps on one academic access switch; utilization normal.",
+  "expected_status": "diagnosed",
+  "root_cause": "interface_fault",
+  "acceptable_root_causes": [
+    "interface_fault"
+  ],
+  "abstain_ok": false,
+  "root_device": "SW_CAMPUS_6",
+  "affected_devices": [
+    "SW_CAMPUS_6"
+  ],
+  "symptomatic_devices": [],
+  "secondary_root_causes": [],
+  "mutations": []
+}

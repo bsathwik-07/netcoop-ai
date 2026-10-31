@@ -1,0 +1,16 @@
+{
+  "scenario": "normal",
+  "seed": 42,
+  "description": "Every device within expected ranges.",
+  "expected_status": "normal",
+  "root_cause": "normal",
+  "acceptable_root_causes": [
+    "normal"
+  ],
+  "abstain_ok": false,
+  "root_device": null,
+  "affected_devices": [],
+  "symptomatic_devices": [],
+  "secondary_root_causes": [],
+  "mutations": []
+}

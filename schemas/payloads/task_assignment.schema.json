@@ -1,0 +1,288 @@
+{
+  "$defs": {
+    "DeviceStatus": {
+      "enum": [
+        "up",
+        "degraded",
+        "down",
+        "unknown"
+      ],
+      "title": "DeviceStatus",
+      "type": "string"
+    },
+    "MappingMethod": {
+      "enum": [
+        "direct",
+        "alias",
+        "fuzzy",
+        "llm_suggested",
+        "unit_conversion",
+        "heuristic",
+        "migration",
+        "imputed"
+      ],
+      "title": "MappingMethod",
+      "type": "string"
+    },
+    "MetricValue": {
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Canonical value; null when missing or rejected",
+          "title": "Value"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit",
+          "description": "Canonical unit (see vocabulary)"
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality",
+          "default": "ok"
+        },
+        "provenance": {
+          "items": {
+            "$ref": "#/$defs/Provenance"
+          },
+          "title": "Provenance",
+          "type": "array"
+        }
+      },
+      "required": [
+        "unit"
+      ],
+      "title": "MetricValue",
+      "type": "object"
+    },
+    "Provenance": {
+      "properties": {
+        "original_field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Field name as it appeared in the input",
+          "title": "Original Field"
+        },
+        "original_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Value as it appeared in the input",
+          "title": "Original Value"
+        },
+        "original_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Unit of the original value, if known",
+          "title": "Original Unit"
+        },
+        "method": {
+          "$ref": "#/$defs/MappingMethod",
+          "default": "direct",
+          "description": "How the canonical value was obtained"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Quality": {
+      "enum": [
+        "ok",
+        "converted",
+        "imputed",
+        "missing",
+        "stale",
+        "out_of_range",
+        "rejected"
+      ],
+      "title": "Quality",
+      "type": "string"
+    },
+    "TelemetryRecord": {
+      "properties": {
+        "device_id": {
+          "title": "Device Id",
+          "type": "string"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/DeviceStatus",
+          "default": "unknown"
+        },
+        "status_original": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Status string as supplied (e.g. 'Critical')",
+          "title": "Status Original"
+        },
+        "metrics": {
+          "additionalProperties": {
+            "$ref": "#/$defs/MetricValue"
+          },
+          "description": "Keyed by canonical metric name",
+          "title": "Metrics",
+          "type": "object"
+        },
+        "unmapped": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "description": "Fields we could not map",
+          "title": "Unmapped",
+          "type": "object"
+        },
+        "source_format": {
+          "default": "canonical_v2",
+          "description": "organizer_v1 | canonical_v2 | legacy_v1_1 | csv",
+          "title": "Source Format",
+          "type": "string"
+        },
+        "record_quality": {
+          "$ref": "#/$defs/Quality",
+          "default": "ok"
+        }
+      },
+      "required": [
+        "device_id",
+        "timestamp"
+      ],
+      "title": "TelemetryRecord",
+      "type": "object"
+    },
+    "Unit": {
+      "enum": [
+        "ms",
+        "%",
+        "count",
+        "dBm",
+        "dB",
+        "Mbps",
+        "s"
+      ],
+      "title": "Unit",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "task_id": {
+      "title": "Task Id",
+      "type": "string"
+    },
+    "kind": {
+      "default": "analyze_telemetry",
+      "enum": [
+        "analyze_telemetry",
+        "resume_incident"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "deadline_s": {
+      "description": "Seconds the agent has to reply with a FINDING",
+      "title": "Deadline S",
+      "type": "number"
+    },
+    "records": {
+      "description": "Only the metrics this agent declared it consumes",
+      "items": {
+        "$ref": "#/$defs/TelemetryRecord"
+      },
+      "title": "Records",
+      "type": "array"
+    },
+    "metrics_of_interest": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Metrics Of Interest",
+      "type": "array"
+    },
+    "context": {
+      "additionalProperties": true,
+      "title": "Context",
+      "type": "object"
+    }
+  },
+  "required": [
+    "task_id",
+    "deadline_s",
+    "records"
+  ],
+  "title": "TASK_ASSIGNMENT payload (task_assignment/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

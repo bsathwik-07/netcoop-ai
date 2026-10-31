@@ -1,0 +1,16 @@
+{
+  "scenario": "subtle_degradation",
+  "seed": 42,
+  "description": "Latency and jitter on one academic switch drift well above the device's own history but stay below every alert threshold. Expected: an early-warning abstention, never 'normal' and never a confident root cause.",
+  "expected_status": "insufficient_evidence",
+  "root_cause": null,
+  "acceptable_root_causes": [],
+  "abstain_ok": true,
+  "root_device": "SW_CAMPUS_8",
+  "affected_devices": [
+    "SW_CAMPUS_8"
+  ],
+  "symptomatic_devices": [],
+  "secondary_root_causes": [],
+  "mutations": []
+}

@@ -1,0 +1,164 @@
+{
+  "$defs": {
+    "Hypothesis": {
+      "enum": [
+        "normal",
+        "link_congestion",
+        "weak_wifi",
+        "interface_fault",
+        "hardware_failure",
+        "device_overload",
+        "dns_failure",
+        "dhcp_failure",
+        "upstream_issue"
+      ],
+      "title": "Hypothesis",
+      "type": "string"
+    },
+    "MessageType": {
+      "enum": [
+        "TASK_ASSIGNMENT",
+        "TELEMETRY_RAW",
+        "TELEMETRY_NORMALIZED",
+        "FINDING",
+        "QUERY",
+        "RESPONSE",
+        "DIAGNOSIS",
+        "REPORT",
+        "ERROR",
+        "ACK",
+        "HEARTBEAT",
+        "CAPABILITY_ANNOUNCE",
+        "REMEDIATION_PROPOSAL",
+        "APPROVAL_REQUEST",
+        "APPROVAL_DECISION"
+      ],
+      "title": "MessageType",
+      "type": "string"
+    },
+    "QueryPredicate": {
+      "enum": [
+        "metric_above_threshold",
+        "fault_localization",
+        "service_health",
+        "path_healthy",
+        "device_status"
+      ],
+      "title": "QueryPredicate",
+      "type": "string"
+    },
+    "Skill": {
+      "description": "A2A-style skill description, so each agent can be published as an Agent Card.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Skill",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "agent": {
+      "title": "Agent",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "title": "Description",
+      "type": "string"
+    },
+    "supported_protocols": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Supported Protocols",
+      "type": "array"
+    },
+    "consumes": {
+      "items": {
+        "$ref": "#/$defs/MessageType"
+      },
+      "title": "Consumes",
+      "type": "array"
+    },
+    "produces": {
+      "items": {
+        "$ref": "#/$defs/MessageType"
+      },
+      "title": "Produces",
+      "type": "array"
+    },
+    "inputs": {
+      "description": "Canonical metrics it needs in TASK_ASSIGNMENTs",
+      "items": {
+        "type": "string"
+      },
+      "title": "Inputs",
+      "type": "array"
+    },
+    "metrics": {
+      "description": "Metrics/signals it judges and answers QUERYs on",
+      "items": {
+        "type": "string"
+      },
+      "title": "Metrics",
+      "type": "array"
+    },
+    "hypotheses": {
+      "description": "Hypotheses it can score",
+      "items": {
+        "$ref": "#/$defs/Hypothesis"
+      },
+      "title": "Hypotheses",
+      "type": "array"
+    },
+    "query_predicates": {
+      "description": "QUERY types it answers",
+      "items": {
+        "$ref": "#/$defs/QueryPredicate"
+      },
+      "title": "Query Predicates",
+      "type": "array"
+    },
+    "skills": {
+      "items": {
+        "$ref": "#/$defs/Skill"
+      },
+      "title": "Skills",
+      "type": "array"
+    }
+  },
+  "required": [
+    "agent",
+    "version"
+  ],
+  "title": "CAPABILITY_ANNOUNCE payload (capability_announce/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,9 @@
+{
+  "scenario": "batch_hardware_failure",
+  "expected_status": "diagnosed",
+  "acceptable_root_causes": [
+    "hardware_failure",
+    "interface_fault"
+  ],
+  "abstain_ok": false
+}

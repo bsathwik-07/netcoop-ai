@@ -1,0 +1,39 @@
+{
+  "scenario": "interoperability_failure",
+  "seed": 42,
+  "description": "The link_congestion incident delivered by a legacy collector: renamed fields, latency in seconds, utilization as fractions, schema v1.1 flat records, some metrics missing.",
+  "expected_status": "diagnosed",
+  "root_cause": "link_congestion",
+  "acceptable_root_causes": [
+    "link_congestion"
+  ],
+  "abstain_ok": true,
+  "root_device": "HOSTEL_CORE_SW_01",
+  "affected_devices": [
+    "HOSTEL_A_AP_01",
+    "HOSTEL_A_AP_02",
+    "HOSTEL_B_AP_01",
+    "HOSTEL_B_AP_02",
+    "HOSTEL_CORE_SW_01",
+    "SW_CAMPUS_1",
+    "SW_CAMPUS_2",
+    "SW_CAMPUS_3",
+    "SW_CAMPUS_4"
+  ],
+  "symptomatic_devices": [
+    "HOSTEL_A_AP_01",
+    "HOSTEL_A_AP_02",
+    "HOSTEL_B_AP_01",
+    "HOSTEL_B_AP_02",
+    "SW_CAMPUS_1",
+    "SW_CAMPUS_2",
+    "SW_CAMPUS_3",
+    "SW_CAMPUS_4"
+  ],
+  "secondary_root_causes": [],
+  "mutations": [
+    "rename_fields",
+    "swap_units",
+    "downgrade_schema"
+  ]
+}

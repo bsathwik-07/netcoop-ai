@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netcoop-ai"
+version = "0.1.0"
+description = "Interoperable multi-agent network fault diagnosis (IIT Bhubaneswar Agentic AI Grand Finale)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "pydantic>=2.6",
+    "pyyaml>=6.0",
+    "typer>=0.12",
+    "rich>=13.7",
+    "networkx>=3.2",
+    "rapidfuzz>=3.6",
+    "jsonschema>=4.21",
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "matplotlib>=3.8",
+    "streamlit>=1.33",
+    "plotly>=5.20",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "httpx>=0.27",
+    "mcp>=1.2",
+    "anthropic>=0.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4", "mypy>=1.10", "types-PyYAML"]
+
+[project.scripts]
+netcoop = "netcoop.cli:app"
+
+# Agents discovered at runtime. The services agent is registered ONLY here (not imported by
+# core code), proving new agents plug in without orchestrator changes.
+[project.entry-points."netcoop.agents"]
+services_agent = "netcoop.agents.services:ServicesAgent"
+
+[tool.setuptools.packages.find]
+include = ["netcoop*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+check_untyped_defs = true
+plugins = ["pydantic.mypy"]

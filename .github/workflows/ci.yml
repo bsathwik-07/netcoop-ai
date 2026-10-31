@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+      - name: Lint
+        run: |
+          python -m ruff check netcoop tests scripts dashboard examples
+          python -m mypy netcoop
+      - name: Generated docs are up to date
+        run: |
+          python -m netcoop.protocol.schema_export
+          python -m netcoop.protocol.protocol_doc
+          git diff --exit-code -- PROTOCOL.md schemas/
+      - name: Tests
+        run: python -m pytest -q
+      - name: Run all scenarios
+        run: netcoop run-all --out ci-reports
+      - name: Scripted demo
+        run: netcoop demo

@@ -1,0 +1,71 @@
+# Evidence weights per (hypothesis, metric). See README#confidence for the full method.
+#
+# For one device d, with severity s_m in [0,1] and quality factor q_m for each observed metric m:
+#   raw(h, d) = sum_m q_m * ( abnormal[h][m] * s_m  +  healthy[h][m] * (1 - s_m) )
+#   S(h, d)   = raw(h, d) / Z(h),   Z(h) = sum of positive abnormal weights + sum of healthy weights
+# So S(h, d) is the share of the hypothesis' evidence profile that the data satisfies; missing
+# metrics contribute nothing. Negative abnormal weights are evidence AGAINST the hypothesis.
+# `device_status` and `shared_upstream_symptoms` are derived signals (status: up=0, degraded=0.5, down=1).
+# The incident-level score is S(h) = max over devices; the argmax device is the candidate root device.
+# `normal` is scored separately (scoring.yaml): S(normal) = 1 - worst severity observed.
+
+hypotheses:
+  link_congestion:
+    abnormal: {link_utilization_pct: 1.0, queue_drops: 1.0, latency_ms: 0.6, packet_loss_pct: 0.4, jitter_ms: 0.3, interface_errors: -0.8}
+    healthy: {interface_errors: 0.4, cpu_utilization_pct: 0.2}
+  weak_wifi:
+    abnormal: {wifi_rssi_dbm: 1.0, wifi_snr_db: 0.8, retransmission_pct: 0.8, packet_loss_pct: 0.4, jitter_ms: 0.3, latency_ms: 0.2}
+    healthy: {link_utilization_pct: 0.3, interface_errors: 0.3}
+  interface_fault:
+    abnormal: {interface_errors: 1.0, interface_flaps: 0.8, packet_loss_pct: 0.6, latency_ms: 0.1, cpu_utilization_pct: -0.3}
+    healthy: {link_utilization_pct: 0.3, cpu_utilization_pct: 0.2}
+  hardware_failure:
+    abnormal: {interface_errors: 1.0, device_status: 0.8, packet_loss_pct: 0.8, cpu_utilization_pct: 0.6, uptime_reset: 0.6, interface_flaps: 0.4, latency_ms: 0.2, queue_drops: 0.2}
+    healthy: {}
+  device_overload:
+    abnormal: {cpu_utilization_pct: 1.0, memory_utilization_pct: 0.7, latency_ms: 0.4, queue_drops: 0.3, jitter_ms: 0.2, interface_errors: -0.5}
+    healthy: {interface_errors: 0.4, link_utilization_pct: 0.3}
+  dns_failure:
+    abnormal: {dns_success_pct: 1.0, dns_latency_ms: 0.6}
+    healthy: {latency_ms: 0.5, packet_loss_pct: 0.4, dhcp_success_pct: 0.2}
+  dhcp_failure:
+    abnormal: {dhcp_success_pct: 1.0, apipa_clients: 0.8, dhcp_pool_utilization_pct: 0.6, dhcp_ack_ms: 0.4}
+    healthy: {dns_success_pct: 0.2, latency_ms: 0.3}
+  upstream_issue:
+    abnormal: {latency_ms: 0.8, jitter_ms: 0.6, packet_loss_pct: 0.4, shared_upstream_symptoms: 1.0}
+    healthy: {link_utilization_pct: 0.4, queue_drops: 0.4, interface_errors: 0.3, cpu_utilization_pct: 0.2}
+
+# Discriminating-evidence rules, applied by the correlator after the challenge round has
+# confirmed their premises with the owning agents. Conditions per metric on the candidate device:
+#   abnormal = observed and severity > 0;  critical = severity >= 1;  healthy = observed and severity == 0
+# Effects are added to the normalized scores S(h).
+rules:
+  - id: interface_errors_beat_congestion
+    when: {interface_errors: critical, packet_loss_pct: abnormal}
+    effect: {link_congestion: -0.25, device_overload: -0.15, interface_fault: 0.10, hardware_failure: 0.10}
+    explanation: >-
+      Interface/CRC errors are produced by the physical layer, not by load. Congestion and CPU
+      overload drop packets in queues but do not corrupt frames, so errors plus loss point to
+      an interface or hardware fault even when utilization is also high.
+  - id: whole_device_failure
+    when: {interface_errors: critical, cpu_utilization_pct: critical, device_status: critical}
+    effect: {hardware_failure: 0.10, interface_fault: -0.05}
+    explanation: >-
+      Errors together with a pegged CPU and a down/critical status implicate the whole device,
+      not a single port or cable.
+  - id: dns_with_healthy_path
+    when: {dns_success_pct: abnormal, latency_ms: healthy}
+    effect: {dns_failure: 0.15, upstream_issue: -0.20, link_congestion: -0.20}
+    explanation: "Name resolution fails while ICMP to the core is healthy, so the IP path is not the cause."
+  - id: dhcp_with_healthy_path
+    when: {dhcp_success_pct: abnormal, latency_ms: healthy}
+    effect: {dhcp_failure: 0.15, upstream_issue: -0.20, link_congestion: -0.20}
+    explanation: "Lease failures while the wired path is healthy point to the DHCP service."
+  - id: wifi_only_degradation
+    when: {wifi_rssi_dbm: abnormal, interface_errors: healthy}
+    effect: {weak_wifi: 0.10, interface_fault: -0.15}
+    explanation: "Loss limited to clients with poor RSSI while wired interfaces are clean points to RF, not cabling."
+  - id: load_without_errors
+    when: {link_utilization_pct: critical, interface_errors: healthy}
+    effect: {link_congestion: 0.10, interface_fault: -0.15, hardware_failure: -0.15}
+    explanation: "Saturated link with clean interfaces: drops are queue overflow, not a physical fault."

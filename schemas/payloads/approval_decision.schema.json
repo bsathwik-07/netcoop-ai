@@ -1,0 +1,46 @@
+{
+  "properties": {
+    "incident_id": {
+      "title": "Incident Id",
+      "type": "string"
+    },
+    "action_id": {
+      "title": "Action Id",
+      "type": "string"
+    },
+    "approved": {
+      "title": "Approved",
+      "type": "boolean"
+    },
+    "decided_by": {
+      "default": "human_operator",
+      "title": "Decided By",
+      "type": "string"
+    },
+    "reason": {
+      "default": "",
+      "title": "Reason",
+      "type": "string"
+    },
+    "simulated_result": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Simulated Result"
+    }
+  },
+  "required": [
+    "incident_id",
+    "action_id",
+    "approved"
+  ],
+  "title": "APPROVAL_DECISION payload (approval_decision/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "acked_msg_id": {
+      "title": "Acked Msg Id",
+      "type": "string"
+    },
+    "note": {
+      "default": "",
+      "title": "Note",
+      "type": "string"
+    }
+  },
+  "required": [
+    "acked_msg_id"
+  ],
+  "title": "ACK payload (ack/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

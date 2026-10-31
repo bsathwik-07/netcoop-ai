@@ -1,0 +1,18 @@
+# Orchestration and ingestion timing.
+agent_timeout_s: 3.0        # how long the correlator waits for each FINDING
+query_timeout_s: 2.0        # how long it waits for each RESPONSE in a challenge round
+max_challenge_rounds: 2
+message_ttl_s: 300
+
+ingestion:
+  # Staleness is judged against the newest timestamp in the batch ("batch"), so files produced
+  # hours ago by the organizer generator are not all flagged stale. "now" compares to wall clock.
+  stale_reference: batch
+  # One hour: a 30-sample, 1-minute series is not stale, a sample 3 hours older than the rest is.
+  stale_window_s: 3600
+  future_tolerance_s: 300   # timestamps this far beyond the reference are flagged as future
+  fuzzy_match_score: 88     # rapidfuzz WRatio cut-off for unknown field names
+  max_input_bytes: 20000000
+  # Data coverage is computed over the metrics present anywhere in the batch, so a normal
+  # organizer record (which never has interface_errors) is not penalized for it.
+  critical_fields: [device_id]

@@ -1,0 +1,118 @@
+{
+  "$defs": {
+    "Hypothesis": {
+      "enum": [
+        "normal",
+        "link_congestion",
+        "weak_wifi",
+        "interface_fault",
+        "hardware_failure",
+        "device_overload",
+        "dns_failure",
+        "dhcp_failure",
+        "upstream_issue"
+      ],
+      "title": "Hypothesis",
+      "type": "string"
+    },
+    "RecommendedAction": {
+      "properties": {
+        "action_id": {
+          "title": "Action Id",
+          "type": "string"
+        },
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "hypothesis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Hypothesis"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "priority": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Priority",
+          "type": "integer"
+        },
+        "risk": {
+          "default": "low",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Risk",
+          "type": "string"
+        },
+        "safe_to_simulate": {
+          "default": true,
+          "title": "Safe To Simulate",
+          "type": "boolean"
+        },
+        "requires_approval": {
+          "default": true,
+          "title": "Requires Approval",
+          "type": "boolean"
+        },
+        "target_device": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Device"
+        },
+        "simulated_result": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Simulated Result"
+        }
+      },
+      "required": [
+        "action_id",
+        "action"
+      ],
+      "title": "RecommendedAction",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "incident_id": {
+      "title": "Incident Id",
+      "type": "string"
+    },
+    "actions": {
+      "items": {
+        "$ref": "#/$defs/RecommendedAction"
+      },
+      "title": "Actions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "incident_id",
+    "actions"
+  ],
+  "title": "REMEDIATION_PROPOSAL payload (remediation_proposal/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

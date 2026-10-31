@@ -1,0 +1,50 @@
+{
+  "truncated.json": [
+    "E_SCHEMA_INVALID"
+  ],
+  "wrong_types.json": [
+    "E_SCHEMA_INVALID"
+  ],
+  "negative_values.json": [
+    "E_OUT_OF_RANGE"
+  ],
+  "percent_over_100.json": [
+    "E_OUT_OF_RANGE"
+  ],
+  "nan_values.json": [
+    "E_SCHEMA_INVALID"
+  ],
+  "empty.json": [
+    "E_SCHEMA_INVALID"
+  ],
+  "whitespace.json": [
+    "E_SCHEMA_INVALID"
+  ],
+  "unknown_device.json": [
+    "E_UNKNOWN_DEVICE"
+  ],
+  "future_timestamp.json": [
+    "E_STALE_DATA"
+  ],
+  "duplicate_record.json": [
+    "E_SCHEMA_INVALID"
+  ],
+  "missing_device_id.json": [
+    "E_MISSING_REQUIRED"
+  ],
+  "bad_timestamp.json": [
+    "E_SCHEMA_INVALID"
+  ],
+  "not_telemetry.json": [
+    "E_MISSING_REQUIRED"
+  ],
+  "unsupported_schema.json": [
+    "E_UNSUPPORTED_VERSION"
+  ],
+  "binary_garbage.json": [
+    "E_SCHEMA_INVALID"
+  ],
+  "malformed.csv": [
+    "E_SCHEMA_INVALID"
+  ]
+}

@@ -1,0 +1,90 @@
+# Metric thresholds. Severity is piecewise-linear: 0 at/better than `warn`, 1 at/worse than `crit`.
+# `direction: below` means smaller values are worse (RSSI, SNR, success rates).
+# Every entry cites where the number comes from. "empirical" = chosen from the organizer's
+# generator ranges and our own scenario generator, so that the normal ranges stay at severity 0.
+metrics:
+  latency_ms:
+    warn: 50
+    crit: 150
+    source: >-
+      ITU-T G.114: 150 ms one-way delay is the upper bound for good interactive quality. We apply it,
+      conservatively, as the critical bound for RTT to the campus core. warn=50 is empirical
+      (healthy campus RTT is 5-20 ms in the organizer generator).
+  jitter_ms:
+    warn: 20
+    crit: 50
+    source: "ITU-T Y.1541 QoS classes 0/1: IP delay variation (IPDV) upper bound 50 ms. warn empirical."
+  packet_loss_pct:
+    warn: 0.1
+    crit: 1.0
+    source: >-
+      ITU-T Y.1541 classes 0-4: IP packet loss ratio upper bound 1e-3 (0.1 %). crit=1 % is where
+      interactive voice/video becomes unusable (common VoIP design guidance).
+  link_utilization_pct:
+    warn: 70
+    crit: 90
+    source: "Capacity-planning practice: queueing delay grows sharply above ~70-80 % utilization. empirical."
+  retransmission_pct:
+    warn: 10
+    crit: 25
+    source: "Enterprise Wi-Fi design guidance: retry rates above ~10 % degrade, above ~25 % severe."
+  wifi_rssi_dbm:
+    warn: -67
+    crit: -75
+    direction: below
+    source: "Enterprise Wi-Fi design guidance: -67 dBm minimum for voice-grade coverage; -75 dBm poor."
+  wifi_snr_db:
+    warn: 25
+    crit: 15
+    direction: below
+    source: "Enterprise Wi-Fi design guidance: 25 dB SNR for voice-grade coverage; below 15 dB poor."
+  cpu_utilization_pct:
+    warn: 75
+    crit: 90
+    source: "Vendor practice: sustained switch CPU above ~75 % indicates control-plane stress. empirical."
+  memory_utilization_pct:
+    warn: 80
+    crit: 95
+    source: "Vendor practice; empirical."
+  queue_drops:
+    warn: 100
+    crit: 1000
+    source: "Per 1-minute sample. empirical (organizer latency_spike 0-50, hardware_failure 5000-15000)."
+  interface_errors:
+    warn: 10
+    crit: 100
+    source: "Per sample. Any sustained CRC/input errors indicate a physical-layer problem. empirical."
+  interface_flaps:
+    warn: 1
+    crit: 3
+    source: "Link up/down transitions per sample; a stable link never flaps. empirical."
+  dns_success_pct:
+    warn: 99
+    crit: 90
+    direction: below
+    source: "Service-level practice: resolvers should answer > 99 % of probes. empirical."
+  dns_latency_ms:
+    warn: 100
+    crit: 500
+    source: "empirical; typical stub resolver retry timers start at 1-5 s, so 500 ms is already severe."
+  dhcp_success_pct:
+    warn: 98
+    crit: 90
+    direction: below
+    source: "Service-level practice. empirical."
+  dhcp_ack_ms:
+    warn: 1000
+    crit: 4000
+    source: "RFC 2131 sec. 4.1: clients first retransmit DHCPDISCOVER after ~4 s."
+  dhcp_pool_utilization_pct:
+    warn: 80
+    crit: 95
+    source: "Common IPAM practice: alert at 80 % pool use."
+  apipa_clients:
+    warn: 1
+    crit: 5
+    source: "RFC 3927: clients self-assign 169.254/16 when DHCP fails; any such client is a symptom."
+  shared_upstream_symptoms:
+    warn: 0.3
+    crit: 0.8
+    source: "Derived by connectivity_agent: share of sibling devices under the same upstream that are degraded."

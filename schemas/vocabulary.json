@@ -1,0 +1,213 @@
+{
+  "protocol": "netcoop/2.0",
+  "message_types": [
+    "TASK_ASSIGNMENT",
+    "TELEMETRY_RAW",
+    "TELEMETRY_NORMALIZED",
+    "FINDING",
+    "QUERY",
+    "RESPONSE",
+    "DIAGNOSIS",
+    "REPORT",
+    "ERROR",
+    "ACK",
+    "HEARTBEAT",
+    "CAPABILITY_ANNOUNCE",
+    "REMEDIATION_PROPOSAL",
+    "APPROVAL_REQUEST",
+    "APPROVAL_DECISION"
+  ],
+  "hypotheses": {
+    "normal": "Network operating within expected ranges",
+    "link_congestion": "Link congestion causing egress queue drops and added latency",
+    "weak_wifi": "Weak Wi-Fi signal causing retransmissions and loss for wireless clients",
+    "interface_fault": "Ethernet interface/cabling fault causing errors and packet loss",
+    "hardware_failure": "Device hardware failure (interface errors, pegged CPU, severe loss)",
+    "device_overload": "Device CPU/memory overload delaying forwarding and control plane",
+    "dns_failure": "DNS service failure while the IP path is healthy",
+    "dhcp_failure": "DHCP service failure preventing clients from obtaining addresses",
+    "upstream_issue": "Problem upstream of the observed device (WAN/ISP/core path)"
+  },
+  "error_codes": {
+    "E_SCHEMA_INVALID": "Message or record does not match its JSON Schema (bad type, bad JSON, truncated).",
+    "E_UNIT_UNKNOWN": "A unit was given that cannot be converted to the canonical unit.",
+    "E_FIELD_UNMAPPED": "A field could not be mapped to the canonical vocabulary; it is kept under `unmapped`.",
+    "E_MISSING_REQUIRED": "A required field (e.g. device_id) is absent; the record is rejected.",
+    "E_OUT_OF_RANGE": "A value is physically impossible (e.g. percent > 100, negative latency).",
+    "E_STALE_DATA": "A record is older than the staleness window relative to the batch.",
+    "E_AGENT_TIMEOUT": "An agent did not answer a task or query before its deadline.",
+    "E_UNSUPPORTED_VERSION": "The message uses a protocol major version this receiver cannot migrate.",
+    "E_UNKNOWN_DEVICE": "The device_id is not present in the topology.",
+    "E_INTERNAL": "An agent raised an unexpected exception; it was contained and reported."
+  },
+  "metrics": {
+    "latency_ms": {
+      "unit": "ms",
+      "ucum": "ms",
+      "domain": "performance",
+      "description": "Round-trip latency (ICMP) to the gateway/core",
+      "min": 0,
+      "max": null
+    },
+    "jitter_ms": {
+      "unit": "ms",
+      "ucum": "ms",
+      "domain": "performance",
+      "description": "Variation in round-trip latency",
+      "min": 0,
+      "max": null
+    },
+    "packet_loss_pct": {
+      "unit": "%",
+      "ucum": "%",
+      "domain": "performance",
+      "description": "Share of probe packets lost",
+      "min": 0,
+      "max": 100
+    },
+    "throughput_mbps": {
+      "unit": "Mbps",
+      "ucum": "Mbit/s",
+      "domain": "performance",
+      "description": "Measured goodput on the uplink",
+      "min": 0,
+      "max": null
+    },
+    "bandwidth_mbps": {
+      "unit": "Mbps",
+      "ucum": "Mbit/s",
+      "domain": "performance",
+      "description": "Provisioned link capacity",
+      "min": 0,
+      "max": null
+    },
+    "link_utilization_pct": {
+      "unit": "%",
+      "ucum": "%",
+      "domain": "performance",
+      "description": "Uplink utilization relative to capacity",
+      "min": 0,
+      "max": 100
+    },
+    "retransmission_pct": {
+      "unit": "%",
+      "ucum": "%",
+      "domain": "wireless",
+      "description": "Share of frames retransmitted (Wi-Fi/TCP)",
+      "min": 0,
+      "max": 100
+    },
+    "wifi_rssi_dbm": {
+      "unit": "dBm",
+      "ucum": "dB[mW]",
+      "domain": "wireless",
+      "description": "Received signal strength at the client/AP",
+      "min": -120,
+      "max": 0
+    },
+    "wifi_snr_db": {
+      "unit": "dB",
+      "ucum": "dB",
+      "domain": "wireless",
+      "description": "Signal-to-noise ratio",
+      "min": -10,
+      "max": 90
+    },
+    "cpu_utilization_pct": {
+      "unit": "%",
+      "ucum": "%",
+      "domain": "infrastructure",
+      "description": "Device CPU utilization",
+      "min": 0,
+      "max": 100
+    },
+    "memory_utilization_pct": {
+      "unit": "%",
+      "ucum": "%",
+      "domain": "infrastructure",
+      "description": "Device memory utilization",
+      "min": 0,
+      "max": 100
+    },
+    "queue_drops": {
+      "unit": "count",
+      "ucum": "{count}",
+      "domain": "infrastructure",
+      "description": "Egress queue drops in the sample interval",
+      "min": 0,
+      "max": null
+    },
+    "interface_errors": {
+      "unit": "count",
+      "ucum": "{count}",
+      "domain": "infrastructure",
+      "description": "Interface input/CRC errors in the sample interval",
+      "min": 0,
+      "max": null
+    },
+    "interface_flaps": {
+      "unit": "count",
+      "ucum": "{count}",
+      "domain": "infrastructure",
+      "description": "Link up/down transitions in the sample interval",
+      "min": 0,
+      "max": null
+    },
+    "uptime_s": {
+      "unit": "s",
+      "ucum": "s",
+      "domain": "infrastructure",
+      "description": "Device uptime (a drop indicates a reboot)",
+      "min": 0,
+      "max": null
+    },
+    "dns_success_pct": {
+      "unit": "%",
+      "ucum": "%",
+      "domain": "service",
+      "description": "Share of DNS probe queries resolved",
+      "min": 0,
+      "max": 100
+    },
+    "dns_latency_ms": {
+      "unit": "ms",
+      "ucum": "ms",
+      "domain": "service",
+      "description": "DNS resolution time",
+      "min": 0,
+      "max": null
+    },
+    "dhcp_success_pct": {
+      "unit": "%",
+      "ucum": "%",
+      "domain": "service",
+      "description": "Share of DHCP lease attempts that succeeded",
+      "min": 0,
+      "max": 100
+    },
+    "dhcp_ack_ms": {
+      "unit": "ms",
+      "ucum": "ms",
+      "domain": "service",
+      "description": "Time from DHCPDISCOVER to DHCPACK",
+      "min": 0,
+      "max": null
+    },
+    "dhcp_pool_utilization_pct": {
+      "unit": "%",
+      "ucum": "%",
+      "domain": "service",
+      "description": "Share of the DHCP pool leased",
+      "min": 0,
+      "max": 100
+    },
+    "apipa_clients": {
+      "unit": "count",
+      "ucum": "{count}",
+      "domain": "service",
+      "description": "Clients holding a 169.254/16 self-assigned address",
+      "min": 0,
+      "max": null
+    }
+  }
+}

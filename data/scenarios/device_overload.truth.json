@@ -1,0 +1,18 @@
+{
+  "scenario": "device_overload",
+  "seed": 42,
+  "description": "CPU and memory pegged on one switch; control-plane drops and added latency.",
+  "expected_status": "diagnosed",
+  "root_cause": "device_overload",
+  "acceptable_root_causes": [
+    "device_overload"
+  ],
+  "abstain_ok": false,
+  "root_device": "SW_CAMPUS_7",
+  "affected_devices": [
+    "SW_CAMPUS_7"
+  ],
+  "symptomatic_devices": [],
+  "secondary_root_causes": [],
+  "mutations": []
+}

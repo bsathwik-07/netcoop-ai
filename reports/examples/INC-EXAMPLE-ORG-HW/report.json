@@ -1,0 +1,235 @@
+{
+  "incident_id": "INC-EXAMPLE-ORG-HW",
+  "status": "diagnosed",
+  "suspected_root_cause": "Likely device hardware failure (interface errors, pegged CPU, severe loss) at SW_CAMPUS_4",
+  "root_cause_code": "hardware_failure",
+  "confidence": 0.6763,
+  "confidence_category": "medium",
+  "affected_devices": [
+    "SW_CAMPUS_4"
+  ],
+  "root_device": "SW_CAMPUS_4",
+  "symptomatic_devices": [],
+  "affected_segments": [
+    "hostel_zone"
+  ],
+  "supporting_evidence": [
+    {
+      "metric": "interface_errors",
+      "value": 179.0,
+      "unit": "count",
+      "device_id": "SW_CAMPUS_4",
+      "threshold": 100.0,
+      "severity": 1.0,
+      "direction": "above",
+      "interpretation": "Interface/CRC errors detected (179 count vs critical threshold 100)",
+      "quality": "ok",
+      "source_agent": "infrastructure_agent",
+      "timestamp": "2026-10-31T11:50:30.931887Z",
+      "z_score": null,
+      "basis": "threshold"
+    },
+    {
+      "metric": "device_status",
+      "value": 1.0,
+      "unit": null,
+      "device_id": "SW_CAMPUS_4",
+      "threshold": null,
+      "severity": 1.0,
+      "direction": "above",
+      "interpretation": "Device reports degraded/critical status: down/critical",
+      "quality": "ok",
+      "source_agent": "infrastructure_agent",
+      "timestamp": "2026-10-31T11:50:30.931887Z",
+      "z_score": null,
+      "basis": "threshold"
+    },
+    {
+      "metric": "packet_loss_pct",
+      "value": 19.55,
+      "unit": "%",
+      "device_id": "SW_CAMPUS_4",
+      "threshold": 1.0,
+      "severity": 1.0,
+      "direction": "above",
+      "interpretation": "Packet loss above acceptable level (19.55 % vs critical threshold 1)",
+      "quality": "ok",
+      "source_agent": "performance_agent",
+      "timestamp": "2026-10-31T11:50:30.931887Z",
+      "z_score": null,
+      "basis": "threshold"
+    },
+    {
+      "metric": "cpu_utilization_pct",
+      "value": 99.9,
+      "unit": "%",
+      "device_id": "SW_CAMPUS_4",
+      "threshold": 90.0,
+      "severity": 1.0,
+      "direction": "above",
+      "interpretation": "High device CPU utilization (99.9 % vs critical threshold 90)",
+      "quality": "ok",
+      "source_agent": "infrastructure_agent",
+      "timestamp": "2026-10-31T11:50:30.931887Z",
+      "z_score": null,
+      "basis": "threshold"
+    },
+    {
+      "metric": "queue_drops",
+      "value": 12845.0,
+      "unit": "count",
+      "device_id": "SW_CAMPUS_4",
+      "threshold": 1000.0,
+      "severity": 1.0,
+      "direction": "above",
+      "interpretation": "Elevated egress queue drops (12845 count vs critical threshold 1000)",
+      "quality": "ok",
+      "source_agent": "infrastructure_agent",
+      "timestamp": "2026-10-31T11:50:30.931887Z",
+      "z_score": null,
+      "basis": "threshold"
+    },
+    {
+      "metric": "latency_ms",
+      "value": 860.61,
+      "unit": "ms",
+      "device_id": "SW_CAMPUS_4",
+      "threshold": 150.0,
+      "severity": 1.0,
+      "direction": "above",
+      "interpretation": "Elevated network latency (861 ms vs critical threshold 150)",
+      "quality": "ok",
+      "source_agent": "performance_agent",
+      "timestamp": "2026-10-31T11:50:30.931887Z",
+      "z_score": null,
+      "basis": "threshold"
+    }
+  ],
+  "contradicting_evidence": [],
+  "alternative_causes": [
+    {
+      "cause": "interface_fault",
+      "description": "Ethernet interface/cabling fault causing errors and packet loss",
+      "probability": 0.0094,
+      "why_less_likely": "score 0.52 vs 0.98 for hardware_failure; contradicted by whole_device_failure fired on SW_CAMPUS_4; key signals not observed: interface_flaps"
+    },
+    {
+      "cause": "link_congestion",
+      "description": "Link congestion causing egress queue drops and added latency",
+      "probability": 0.0012,
+      "why_less_likely": "score 0.31 vs 0.98 for hardware_failure; contradicted by interface_errors_beat_congestion fired on SW_CAMPUS_4"
+    }
+  ],
+  "recommended_actions": [
+    {
+      "action_id": "hardware_failure.failover",
+      "action": "Fail traffic over from SW_CAMPUS_4 to its redundant peer",
+      "hypothesis": "hardware_failure",
+      "priority": 1,
+      "risk": "medium",
+      "safe_to_simulate": true,
+      "requires_approval": true,
+      "target_device": "SW_CAMPUS_4",
+      "simulated_result": null
+    },
+    {
+      "action_id": "hardware_failure.hardware_diag",
+      "action": "Run vendor hardware diagnostics on SW_CAMPUS_4 and inspect logs for ASIC/line-card faults",
+      "hypothesis": "hardware_failure",
+      "priority": 2,
+      "risk": "low",
+      "safe_to_simulate": false,
+      "requires_approval": true,
+      "target_device": "SW_CAMPUS_4",
+      "simulated_result": null
+    },
+    {
+      "action_id": "hardware_failure.rma",
+      "action": "Open an RMA / schedule replacement of SW_CAMPUS_4",
+      "hypothesis": "hardware_failure",
+      "priority": 3,
+      "risk": "low",
+      "safe_to_simulate": false,
+      "requires_approval": true,
+      "target_device": "SW_CAMPUS_4",
+      "simulated_result": null
+    }
+  ],
+  "evidence_sources": [
+    "connectivity_agent",
+    "infrastructure_agent",
+    "performance_agent"
+  ],
+  "agent_findings_summary": [
+    {
+      "agent": "connectivity_agent",
+      "top_hypothesis": null,
+      "score": 0.0,
+      "evidence_count": 0,
+      "responded": true
+    },
+    {
+      "agent": "infrastructure_agent",
+      "top_hypothesis": "hardware_failure",
+      "score": 0.7222,
+      "evidence_count": 4,
+      "responded": true
+    },
+    {
+      "agent": "performance_agent",
+      "top_hypothesis": "link_congestion",
+      "score": 0.8696,
+      "evidence_count": 3,
+      "responded": true
+    }
+  ],
+  "conflict_resolution": {
+    "conflict_detected": true,
+    "reasons": [
+      "agents disagree on the root cause (infrastructure_agent: hardware_failure, performance_agent: link_congestion)",
+      "top hypotheses too close: hardware_failure 0.78 vs link_congestion 0.56 (margin 0.22 < 0.25)",
+      "[round log] rule interface_errors_beat_congestion fired on SW_CAMPUS_4: link_congestion -0.25, device_overload -0.15, interface_fault +0.10, hardware_failure +0.10",
+      "[round log] rule whole_device_failure fired on SW_CAMPUS_4: hardware_failure +0.10, interface_fault -0.05"
+    ],
+    "rounds": 1,
+    "queries": [
+      "infrastructure_agent: Is interface_errors on SW_CAMPUS_4 critical? (premise of rule interface_errors_beat_congestion)",
+      "performance_agent: Is packet_loss_pct on SW_CAMPUS_4 abnormal? (premise of rule interface_errors_beat_congestion)",
+      "infrastructure_agent: Is cpu_utilization_pct on SW_CAMPUS_4 critical? (premise of rule whole_device_failure)",
+      "infrastructure_agent: Is device_status on SW_CAMPUS_4 critical? (premise of rule whole_device_failure)",
+      "performance_agent: Is link_utilization_pct on SW_CAMPUS_4 critical? (premise of rule load_without_errors)",
+      "infrastructure_agent: Is interface_errors on SW_CAMPUS_4 healthy? (premise of rule load_without_errors)"
+    ],
+    "resolution": "resolved in favour of hardware_failure after 1 challenge round(s); discriminating rules applied: interface_errors_beat_congestion, whole_device_failure"
+  },
+  "data_quality": {
+    "coverage": 1.0,
+    "records_in": 1,
+    "conversions": 1,
+    "rejected_records": 0,
+    "unmapped_fields": [],
+    "warnings": []
+  },
+  "confidence_breakdown": {
+    "p_top": 0.9876,
+    "p_second": 0.0094,
+    "margin": 0.9782,
+    "data_coverage": 0.7826,
+    "agreement_factor": 0.875,
+    "combiner": "weighted_softmax",
+    "unknown_mass": null,
+    "method": "confidence = p_top * data_coverage * agreement_factor (see README#confidence)"
+  },
+  "secondary_incidents": [],
+  "next_data_to_collect": [
+    "interface_flaps on SW_CAMPUS_4 (would confirm or rule out interface_fault)"
+  ],
+  "limitations": [
+    "no neighbouring devices reported data: cannot tell whether the fault is local or upstream",
+    "Root cause requires further verification"
+  ],
+  "narrative": "Likely device hardware failure (interface errors, pegged CPU, severe loss) at SW_CAMPUS_4. Key evidence: Interface/CRC errors detected (179 count vs critical threshold 100) on SW_CAMPUS_4; Device reports degraded/critical status: down/critical on SW_CAMPUS_4; Packet loss above acceptable level (19.55 % vs critical threshold 1) on SW_CAMPUS_4. The agents initially disagreed; resolved in favour of hardware_failure after 1 challenge round(s); discriminating rules applied: interface_errors_beat_congestion, whole_device_failure. Main alternative: interface_fault (P=0.01) - score 0.52 vs 0.98 for hardware_failure; contradicted by whole_device_failure fired on SW_CAMPUS_4; key signals not observed: interface_flaps. Confidence 0.68 (medium) = P(top) 0.99 x coverage 0.78 x agreement 0.88. To resolve the remaining uncertainty, collect: interface_flaps on SW_CAMPUS_4 (would confirm or rule out interface_fault).",
+  "protocol_version": "netcoop/2.0",
+  "generated_at": "2026-10-31T11:50:31.032329Z",
+  "message_log": "reports\\examples\\INC-EXAMPLE-ORG-HW\\messages.jsonl"
+}

@@ -1,0 +1,120 @@
+# hypothesis -> ranked corrective actions. `simulate` names the effect the remediation
+# simulator applies (SIMULATION ONLY - nothing here ever touches a real device).
+# risk: low | medium | high. Every action requires human approval before simulation.
+
+link_congestion:
+  - id: inspect_utilization
+    action: Inspect upstream and egress link utilization on {device}
+    risk: low
+    simulate: none
+  - id: review_qos
+    action: Review queue configuration and traffic distribution (QoS policy) on {device}
+    risk: low
+    simulate: none
+  - id: reroute_traffic
+    action: Shift part of the traffic from {device} to a redundant uplink / apply rate limiting
+    risk: medium
+    simulate: reduce_utilization
+  - id: upgrade_uplink
+    action: Plan an uplink capacity upgrade for {device} if utilization stays above 70 %
+    risk: low
+    simulate: none
+
+weak_wifi:
+  - id: survey_rf
+    action: Run an RF survey around {device}; check channel overlap and interference
+    risk: low
+    simulate: none
+  - id: adjust_ap_power
+    action: Increase transmit power / change channel on {device}
+    risk: medium
+    simulate: improve_rssi
+  - id: add_ap
+    action: Add an access point to cover the weak-signal area served by {device}
+    risk: low
+    simulate: none
+
+interface_fault:
+  - id: check_cabling
+    action: Check cabling, transceiver/SFP and port counters on {device}
+    risk: low
+    simulate: none
+  - id: bounce_port
+    action: Bounce (shut/no shut) the affected port on {device}
+    risk: medium
+    simulate: clear_interface_errors
+  - id: move_port
+    action: Move the link to a spare port or replace the cable/SFP on {device}
+    risk: medium
+    simulate: clear_interface_errors
+
+hardware_failure:
+  - id: failover
+    action: Fail traffic over from {device} to its redundant peer
+    risk: medium
+    simulate: failover_device
+  - id: hardware_diag
+    action: Run vendor hardware diagnostics on {device} and inspect logs for ASIC/line-card faults
+    risk: low
+    simulate: none
+  - id: rma
+    action: Open an RMA / schedule replacement of {device}
+    risk: low
+    simulate: none
+
+device_overload:
+  - id: find_cpu_process
+    action: Identify the process or control-plane traffic consuming CPU on {device}
+    risk: low
+    simulate: none
+  - id: apply_copp
+    action: Apply control-plane policing (CoPP) / rate-limit punted traffic on {device}
+    risk: medium
+    simulate: reduce_cpu
+  - id: rebalance_load
+    action: Move services or clients away from {device}
+    risk: medium
+    simulate: reduce_cpu
+
+dns_failure:
+  - id: check_resolver
+    action: Check DNS server health, logs and upstream forwarders ({device})
+    risk: low
+    simulate: none
+  - id: dns_failover
+    action: Fail clients over to the secondary resolver
+    risk: medium
+    simulate: restore_dns
+
+dhcp_failure:
+  - id: check_dhcp_pool
+    action: Check DHCP scope utilization and server/relay (ip helper) configuration ({device})
+    risk: low
+    simulate: none
+  - id: extend_pool
+    action: Extend the DHCP pool or shorten lease time
+    risk: medium
+    simulate: restore_dhcp
+
+upstream_issue:
+  - id: check_upstream
+    action: Check the upstream path from {device} to the campus core / ISP (traceroute, core counters)
+    risk: low
+    simulate: none
+  - id: collect_path_data
+    action: Collect telemetry from neighbouring devices sharing the upstream of {device}
+    risk: low
+    simulate: none
+
+normal: []
+
+# Shown when the system abstains (insufficient_evidence): actions that gather the missing data.
+insufficient_evidence:
+  - id: collect_more_data
+    action: Collect the additional telemetry listed in next_data_to_collect before acting
+    risk: low
+    simulate: none
+  - id: monitor
+    action: Keep {device} under observation and re-run the diagnosis on the next telemetry window
+    risk: low
+    simulate: none

@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "incident_id": {
+      "title": "Incident Id",
+      "type": "string"
+    },
+    "action_id": {
+      "title": "Action Id",
+      "type": "string"
+    },
+    "action": {
+      "title": "Action",
+      "type": "string"
+    },
+    "risk": {
+      "default": "low",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "title": "Risk",
+      "type": "string"
+    },
+    "requested_from": {
+      "default": "human_operator",
+      "title": "Requested From",
+      "type": "string"
+    }
+  },
+  "required": [
+    "incident_id",
+    "action_id",
+    "action"
+  ],
+  "title": "APPROVAL_REQUEST payload (approval_request/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "agent": {
+      "title": "Agent",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "state": {
+      "default": "ready",
+      "enum": [
+        "starting",
+        "ready",
+        "busy",
+        "stopping"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "uptime_s": {
+      "default": 0.0,
+      "title": "Uptime S",
+      "type": "number"
+    }
+  },
+  "required": [
+    "agent",
+    "version"
+  ],
+  "title": "HEARTBEAT payload (heartbeat/1.0)",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

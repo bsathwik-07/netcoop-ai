@@ -1,0 +1,19 @@
+{
+  "scenario": "latency_spike",
+  "seed": 42,
+  "description": "Exact organizer latency_spike pattern on one switch: high latency and jitter, moderate utilization, few drops. No single clear cause; honest uncertainty expected.",
+  "expected_status": "insufficient_evidence",
+  "root_cause": null,
+  "acceptable_root_causes": [
+    "link_congestion",
+    "upstream_issue"
+  ],
+  "abstain_ok": true,
+  "root_device": "SW_CAMPUS_9",
+  "affected_devices": [
+    "SW_CAMPUS_9"
+  ],
+  "symptomatic_devices": [],
+  "secondary_root_causes": [],
+  "mutations": []
+}

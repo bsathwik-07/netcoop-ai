@@ -1,0 +1,691 @@
+{
+  "$defs": {
+    "AgentFindingSummary": {
+      "properties": {
+        "agent": {
+          "title": "Agent",
+          "type": "string"
+        },
+        "top_hypothesis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Hypothesis"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "score": {
+          "default": 0.0,
+          "title": "Score",
+          "type": "number"
+        },
+        "evidence_count": {
+          "default": 0,
+          "title": "Evidence Count",
+          "type": "integer"
+        },
+        "responded": {
+          "default": true,
+          "title": "Responded",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "agent"
+      ],
+      "title": "AgentFindingSummary",
+      "type": "object"
+    },
+    "AlternativeCause": {
+      "properties": {
+        "cause": {
+          "$ref": "#/$defs/Hypothesis"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "probability": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Probability",
+          "type": "number"
+        },
+        "why_less_likely": {
+          "default": "",
+          "title": "Why Less Likely",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cause",
+        "probability"
+      ],
+      "title": "AlternativeCause",
+      "type": "object"
+    },
+    "ConfidenceBreakdown": {
+      "properties": {
+        "p_top": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "P Top",
+          "type": "number"
+        },
+        "p_second": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "P Second",
+          "type": "number"
+        },
+        "margin": {
+          "default": 0.0,
+          "title": "Margin",
+          "type": "number"
+        },
+        "data_coverage": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Data Coverage",
+          "type": "number"
+        },
+        "agreement_factor": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Agreement Factor",
+          "type": "number"
+        },
+        "combiner": {
+          "default": "weighted_softmax",
+          "title": "Combiner",
+          "type": "string"
+        },
+        "unknown_mass": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Dempster-Shafer combiner only",
+          "title": "Unknown Mass"
+        },
+        "method": {
+          "default": "confidence = p_top * data_coverage * agreement_factor (see README#confidence)",
+          "title": "Method",
+          "type": "string"
+        }
+      },
+      "title": "ConfidenceBreakdown",
+      "type": "object"
+    },
+    "ConfidenceCategory": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "title": "ConfidenceCategory",
+      "type": "string"
+    },
+    "ConflictResolution": {
+      "properties": {
+        "conflict_detected": {
+          "default": false,
+          "title": "Conflict Detected",
+          "type": "boolean"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "rounds": {
+          "default": 0,
+          "title": "Rounds",
+          "type": "integer"
+        },
+        "queries": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Queries",
+          "type": "array"
+        },
+        "resolution": {
+          "default": "",
+          "title": "Resolution",
+          "type": "string"
+        }
+      },
+      "title": "ConflictResolution",
+      "type": "object"
+    },
+    "DataQuality": {
+      "properties": {
+        "coverage": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Coverage",
+          "type": "number"
+        },
+        "records_in": {
+          "default": 0,
+          "title": "Records In",
+          "type": "integer"
+        },
+        "conversions": {
+          "default": 0,
+          "title": "Conversions",
+          "type": "integer"
+        },
+        "rejected_records": {
+          "default": 0,
+          "title": "Rejected Records",
+          "type": "integer"
+        },
+        "unmapped_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unmapped Fields",
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "title": "DataQuality",
+      "type": "object"
+    },
+    "DiagnosisStatus": {
+      "enum": [
+        "diagnosed",
+        "insufficient_evidence",
+        "normal",
+        "failed"
+      ],
+      "title": "DiagnosisStatus",
+      "type": "string"
+    },
+    "Direction": {
+      "enum": [
+        "above",
+        "below"
+      ],
+      "title": "Direction",
+      "type": "string"
+    },
+    "EvidenceItem": {
+      "properties": {
+        "metric": {
+          "description": "Canonical metric name, or a derived signal such as 'topology'",
+          "title": "Metric",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "device_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Device Id"
+        },
+        "threshold": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Threshold the value was compared against (same unit)",
+          "title": "Threshold"
+        },
+        "severity": {
+          "default": 0.0,
+          "description": "0 = at/below warn, 1 = at/beyond crit (piecewise linear)",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Severity",
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/$defs/Direction",
+          "default": "above"
+        },
+        "interpretation": {
+          "title": "Interpretation",
+          "type": "string"
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality",
+          "default": "ok"
+        },
+        "source_agent": {
+          "default": "",
+          "title": "Source Agent",
+          "type": "string"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestamp"
+        },
+        "z_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Robust deviation from the device's own baseline (series only)",
+          "title": "Z Score"
+        },
+        "basis": {
+          "default": "threshold",
+          "description": "'baseline' = below the fixed threshold but abnormal versus the device's history",
+          "enum": [
+            "threshold",
+            "baseline"
+          ],
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "metric",
+        "interpretation"
+      ],
+      "title": "EvidenceItem",
+      "type": "object"
+    },
+    "Hypothesis": {
+      "enum": [
+        "normal",
+        "link_congestion",
+        "weak_wifi",
+        "interface_fault",
+        "hardware_failure",
+        "device_overload",
+        "dns_failure",
+        "dhcp_failure",
+        "upstream_issue"
+      ],
+      "title": "Hypothesis",
+      "type": "string"
+    },
+    "Quality": {
+      "enum": [
+        "ok",
+        "converted",
+        "imputed",
+        "missing",
+        "stale",
+        "out_of_range",
+        "rejected"
+      ],
+      "title": "Quality",
+      "type": "string"
+    },
+    "RecommendedAction": {
+      "properties": {
+        "action_id": {
+          "title": "Action Id",
+          "type": "string"
+        },
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "hypothesis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Hypothesis"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "priority": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Priority",
+          "type": "integer"
+        },
+        "risk": {
+          "default": "low",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Risk",
+          "type": "string"
+        },
+        "safe_to_simulate": {
+          "default": true,
+          "title": "Safe To Simulate",
+          "type": "boolean"
+        },
+        "requires_approval": {
+          "default": true,
+          "title": "Requires Approval",
+          "type": "boolean"
+        },
+        "target_device": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Device"
+        },
+        "simulated_result": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Simulated Result"
+        }
+      },
+      "required": [
+        "action_id",
+        "action"
+      ],
+      "title": "RecommendedAction",
+      "type": "object"
+    },
+    "SecondaryIncident": {
+      "properties": {
+        "root_cause_code": {
+          "$ref": "#/$defs/Hypothesis"
+        },
+        "devices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Devices",
+          "type": "array"
+        },
+        "probability": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Probability",
+          "type": "number"
+        },
+        "explanation": {
+          "default": "",
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "root_cause_code"
+      ],
+      "title": "SecondaryIncident",
+      "type": "object"
+    },
+    "Unit": {
+      "enum": [
+        "ms",
+        "%",
+        "count",
+        "dBm",
+        "dB",
+        "Mbps",
+        "s"
+      ],
+      "title": "Unit",
+      "type": "string"
+    }
+  },
+  "description": "Final report. A strict superset of the organizer's example (same field names).",
+  "properties": {
+    "incident_id": {
+      "title": "Incident Id",
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/DiagnosisStatus"
+    },
+    "suspected_root_cause": {
+      "title": "Suspected Root Cause",
+      "type": "string"
+    },
+    "root_cause_code": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Hypothesis"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "confidence": {
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "confidence_category": {
+      "$ref": "#/$defs/ConfidenceCategory"
+    },
+    "affected_devices": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Affected Devices",
+      "type": "array"
+    },
+    "root_device": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Root Device"
+    },
+    "symptomatic_devices": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Symptomatic Devices",
+      "type": "array"
+    },
+    "affected_segments": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Affected Segments",
+      "type": "array"
+    },
+    "supporting_evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceItem"
+      },
+      "title": "Supporting Evidence",
+      "type": "array"
+    },
+    "contradicting_evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceItem"
+      },
+      "title": "Contradicting Evidence",
+      "type": "array"
+    },
+    "alternative_causes": {
+      "items": {
+        "$ref": "#/$defs/AlternativeCause"
+      },
+      "title": "Alternative Causes",
+      "type": "array"
+    },
+    "recommended_actions": {
+      "items": {
+        "$ref": "#/$defs/RecommendedAction"
+      },
+      "title": "Recommended Actions",
+      "type": "array"
+    },
+    "evidence_sources": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Sources",
+      "type": "array"
+    },
+    "agent_findings_summary": {
+      "items": {
+        "$ref": "#/$defs/AgentFindingSummary"
+      },
+      "title": "Agent Findings Summary",
+      "type": "array"
+    },
+    "conflict_resolution": {
+      "$ref": "#/$defs/ConflictResolution"
+    },
+    "data_quality": {
+      "$ref": "#/$defs/DataQuality"
+    },
+    "confidence_breakdown": {
+      "$ref": "#/$defs/ConfidenceBreakdown"
+    },
+    "secondary_incidents": {
+      "items": {
+        "$ref": "#/$defs/SecondaryIncident"
+      },
+      "title": "Secondary Incidents",
+      "type": "array"
+    },
+    "next_data_to_collect": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Next Data To Collect",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "narrative": {
+      "default": "",
+      "title": "Narrative",
+      "type": "string"
+    },
+    "protocol_version": {
+      "default": "netcoop/2.0",
+      "title": "Protocol Version",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "message_log": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Message Log"
+    }
+  },
+  "required": [
+    "incident_id",
+    "status",
+    "suspected_root_cause",
+    "confidence",
+    "confidence_category"
+  ],
+  "title": "NetCoop diagnostic report",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

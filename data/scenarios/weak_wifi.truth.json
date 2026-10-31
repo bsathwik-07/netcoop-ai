@@ -1,0 +1,18 @@
+{
+  "scenario": "weak_wifi",
+  "seed": 42,
+  "description": "Clients of one hostel AP see poor RSSI/SNR, many retransmissions and loss; wired path healthy.",
+  "expected_status": "diagnosed",
+  "root_cause": "weak_wifi",
+  "acceptable_root_causes": [
+    "weak_wifi"
+  ],
+  "abstain_ok": false,
+  "root_device": "HOSTEL_A_AP_02",
+  "affected_devices": [
+    "HOSTEL_A_AP_02"
+  ],
+  "symptomatic_devices": [],
+  "secondary_root_causes": [],
+  "mutations": []
+}

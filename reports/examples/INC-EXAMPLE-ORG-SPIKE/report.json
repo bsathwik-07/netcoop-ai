@@ -1,0 +1,210 @@
+{
+  "incident_id": "INC-EXAMPLE-ORG-SPIKE",
+  "status": "insufficient_evidence",
+  "suspected_root_cause": "Insufficient evidence for a definitive root cause; leading candidate: problem upstream of the observed device (WAN/ISP/core path) at SW_CAMPUS_4 (P=0.63)",
+  "root_cause_code": "upstream_issue",
+  "confidence": 0.1285,
+  "confidence_category": "low",
+  "affected_devices": [
+    "SW_CAMPUS_4"
+  ],
+  "root_device": "SW_CAMPUS_4",
+  "symptomatic_devices": [],
+  "affected_segments": [
+    "hostel_zone"
+  ],
+  "supporting_evidence": [
+    {
+      "metric": "latency_ms",
+      "value": 172.53,
+      "unit": "ms",
+      "device_id": "SW_CAMPUS_4",
+      "threshold": 150.0,
+      "severity": 1.0,
+      "direction": "above",
+      "interpretation": "Elevated network latency (173 ms vs critical threshold 150)",
+      "quality": "ok",
+      "source_agent": "performance_agent",
+      "timestamp": "2026-10-31T11:50:31.150517Z",
+      "z_score": null,
+      "basis": "threshold"
+    },
+    {
+      "metric": "packet_loss_pct",
+      "value": 0.77,
+      "unit": "%",
+      "device_id": "SW_CAMPUS_4",
+      "threshold": 0.1,
+      "severity": 0.7444,
+      "direction": "above",
+      "interpretation": "Packet loss above acceptable level (0.77 % vs warning threshold 0.1)",
+      "quality": "ok",
+      "source_agent": "performance_agent",
+      "timestamp": "2026-10-31T11:50:31.150517Z",
+      "z_score": null,
+      "basis": "threshold"
+    },
+    {
+      "metric": "jitter_ms",
+      "value": 30.99,
+      "unit": "ms",
+      "device_id": "SW_CAMPUS_4",
+      "threshold": 20.0,
+      "severity": 0.3663,
+      "direction": "above",
+      "interpretation": "High jitter (delay variation) (30.99 ms vs warning threshold 20)",
+      "quality": "ok",
+      "source_agent": "performance_agent",
+      "timestamp": "2026-10-31T11:50:31.150517Z",
+      "z_score": null,
+      "basis": "threshold"
+    }
+  ],
+  "contradicting_evidence": [],
+  "alternative_causes": [
+    {
+      "cause": "link_congestion",
+      "description": "Link congestion causing egress queue drops and added latency",
+      "probability": 0.2017,
+      "why_less_likely": "score 0.41 vs 0.53 for upstream_issue; expected signals are healthy on SW_CAMPUS_4: queue_drops"
+    },
+    {
+      "cause": "interface_fault",
+      "description": "Ethernet interface/cabling fault causing errors and packet loss",
+      "probability": 0.0714,
+      "why_less_likely": "score 0.31 vs 0.53 for upstream_issue; key signals not observed: interface_errors, interface_flaps"
+    },
+    {
+      "cause": "hardware_failure",
+      "description": "Device hardware failure (interface errors, pegged CPU, severe loss)",
+      "probability": 0.0438,
+      "why_less_likely": "score 0.26 vs 0.53 for upstream_issue; expected signals are healthy on SW_CAMPUS_4: cpu_utilization_pct; key signals not observed: interface_errors, uptime_reset"
+    },
+    {
+      "cause": "device_overload",
+      "description": "Device CPU/memory overload delaying forwarding and control plane",
+      "probability": 0.0236,
+      "why_less_likely": "score 0.20 vs 0.53 for upstream_issue; expected signals are healthy on SW_CAMPUS_4: cpu_utilization_pct; key signals not observed: memory_utilization_pct"
+    }
+  ],
+  "recommended_actions": [
+    {
+      "action_id": "gather.collect_more_data",
+      "action": "Collect the additional telemetry listed in next_data_to_collect before acting",
+      "hypothesis": null,
+      "priority": 1,
+      "risk": "low",
+      "safe_to_simulate": false,
+      "requires_approval": true,
+      "target_device": "SW_CAMPUS_4",
+      "simulated_result": null
+    },
+    {
+      "action_id": "gather.monitor",
+      "action": "Keep SW_CAMPUS_4 under observation and re-run the diagnosis on the next telemetry window",
+      "hypothesis": null,
+      "priority": 2,
+      "risk": "low",
+      "safe_to_simulate": false,
+      "requires_approval": true,
+      "target_device": "SW_CAMPUS_4",
+      "simulated_result": null
+    },
+    {
+      "action_id": "upstream_issue.check_upstream",
+      "action": "Check the upstream path from SW_CAMPUS_4 to the campus core / ISP (traceroute, core counters)",
+      "hypothesis": "upstream_issue",
+      "priority": 3,
+      "risk": "low",
+      "safe_to_simulate": false,
+      "requires_approval": true,
+      "target_device": "SW_CAMPUS_4",
+      "simulated_result": null
+    },
+    {
+      "action_id": "link_congestion.inspect_utilization",
+      "action": "Inspect upstream and egress link utilization on SW_CAMPUS_4",
+      "hypothesis": "link_congestion",
+      "priority": 4,
+      "risk": "low",
+      "safe_to_simulate": false,
+      "requires_approval": true,
+      "target_device": "SW_CAMPUS_4",
+      "simulated_result": null
+    }
+  ],
+  "evidence_sources": [
+    "connectivity_agent",
+    "infrastructure_agent",
+    "performance_agent"
+  ],
+  "agent_findings_summary": [
+    {
+      "agent": "connectivity_agent",
+      "top_hypothesis": null,
+      "score": 0.0,
+      "evidence_count": 0,
+      "responded": true
+    },
+    {
+      "agent": "infrastructure_agent",
+      "top_hypothesis": "normal",
+      "score": 0.0,
+      "evidence_count": 3,
+      "responded": true
+    },
+    {
+      "agent": "performance_agent",
+      "top_hypothesis": "upstream_issue",
+      "score": 0.7077,
+      "evidence_count": 4,
+      "responded": true
+    }
+  ],
+  "conflict_resolution": {
+    "conflict_detected": true,
+    "reasons": [
+      "top hypotheses too close: upstream_issue 0.53 vs link_congestion 0.41 (margin 0.11 < 0.25)",
+      "[round log] 'Is the fault localized above or below SW_CAMPUS_4?' could not be answered: no neighbour data around SW_CAMPUS_4: cannot tell local from upstream"
+    ],
+    "rounds": 1,
+    "queries": [
+      "connectivity_agent: Is the fault localized above or below SW_CAMPUS_4?"
+    ],
+    "resolution": "left unresolved; leading candidate upstream_issue after 1 challenge round(s)"
+  },
+  "data_quality": {
+    "coverage": 1.0,
+    "records_in": 1,
+    "conversions": 1,
+    "rejected_records": 0,
+    "unmapped_fields": [],
+    "warnings": []
+  },
+  "confidence_breakdown": {
+    "p_top": 0.6275,
+    "p_second": 0.2017,
+    "margin": 0.4258,
+    "data_coverage": 0.6829,
+    "agreement_factor": 1.0,
+    "combiner": "weighted_softmax",
+    "unknown_mass": null,
+    "method": "confidence = p_top * data_coverage * agreement_factor (see README#confidence)"
+  },
+  "secondary_incidents": [],
+  "next_data_to_collect": [
+    "telemetry from devices sharing the upstream of SW_CAMPUS_4, to tell a local fault from an upstream one",
+    "telemetry from devices sharing the upstream of SW_CAMPUS_4 (confirms/rules out upstream_issue)",
+    "interface_errors on SW_CAMPUS_4 (would confirm or rule out interface_fault)",
+    "interface_flaps on SW_CAMPUS_4 (would confirm or rule out interface_fault)"
+  ],
+  "limitations": [
+    "no neighbouring devices reported data: cannot tell whether the fault is local or upstream",
+    "abstained: confidence 0.43 < decide_threshold 0.55",
+    "abstained: 'upstream_issue' cannot be confirmed yet: shared_upstream_symptoms"
+  ],
+  "narrative": "Insufficient evidence for a definitive root cause; leading candidate: problem upstream of the observed device (WAN/ISP/core path) at SW_CAMPUS_4 (P=0.63). Key evidence: Elevated network latency (173 ms vs critical threshold 150) on SW_CAMPUS_4; Packet loss above acceptable level (0.77 % vs warning threshold 0.1) on SW_CAMPUS_4; High jitter (delay variation) (30.99 ms vs warning threshold 20) on SW_CAMPUS_4. The agents initially disagreed; left unresolved; leading candidate upstream_issue after 1 challenge round(s). Main alternative: link_congestion (P=0.20) - score 0.41 vs 0.53 for upstream_issue; expected signals are healthy on SW_CAMPUS_4: queue_drops. Confidence 0.13 (low) = P(top) 0.63 x coverage 0.68 x agreement 1.00. To resolve the remaining uncertainty, collect: telemetry from devices sharing the upstream of SW_CAMPUS_4, to tell a local fault from an upstream one; telemetry from devices sharing the upstream of SW_CAMPUS_4 (confirms/rules out upstream_issue); interface_errors on SW_CAMPUS_4 (would confirm or rule out interface_fault).",
+  "protocol_version": "netcoop/2.0",
+  "generated_at": "2026-10-31T11:50:31.231967Z",
+  "message_log": "reports\\examples\\INC-EXAMPLE-ORG-SPIKE\\messages.jsonl"
+}

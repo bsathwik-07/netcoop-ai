@@ -1,0 +1,8 @@
+{
+  "scenario": "batch_normal",
+  "expected_status": "normal",
+  "acceptable_root_causes": [
+    "normal"
+  ],
+  "abstain_ok": false
+}

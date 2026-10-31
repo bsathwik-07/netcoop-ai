@@ -1,0 +1,3442 @@
+{
+  "$defs": {
+    "Ack": {
+      "properties": {
+        "acked_msg_id": {
+          "title": "Acked Msg Id",
+          "type": "string"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "acked_msg_id"
+      ],
+      "title": "Ack",
+      "type": "object"
+    },
+    "AckMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "ACK",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Ack"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "AckMessage",
+      "type": "object"
+    },
+    "AgentFindingSummary": {
+      "properties": {
+        "agent": {
+          "title": "Agent",
+          "type": "string"
+        },
+        "top_hypothesis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Hypothesis"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "score": {
+          "default": 0.0,
+          "title": "Score",
+          "type": "number"
+        },
+        "evidence_count": {
+          "default": 0,
+          "title": "Evidence Count",
+          "type": "integer"
+        },
+        "responded": {
+          "default": true,
+          "title": "Responded",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "agent"
+      ],
+      "title": "AgentFindingSummary",
+      "type": "object"
+    },
+    "AlternativeCause": {
+      "properties": {
+        "cause": {
+          "$ref": "#/$defs/Hypothesis"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "probability": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Probability",
+          "type": "number"
+        },
+        "why_less_likely": {
+          "default": "",
+          "title": "Why Less Likely",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cause",
+        "probability"
+      ],
+      "title": "AlternativeCause",
+      "type": "object"
+    },
+    "ApprovalDecision": {
+      "properties": {
+        "incident_id": {
+          "title": "Incident Id",
+          "type": "string"
+        },
+        "action_id": {
+          "title": "Action Id",
+          "type": "string"
+        },
+        "approved": {
+          "title": "Approved",
+          "type": "boolean"
+        },
+        "decided_by": {
+          "default": "human_operator",
+          "title": "Decided By",
+          "type": "string"
+        },
+        "reason": {
+          "default": "",
+          "title": "Reason",
+          "type": "string"
+        },
+        "simulated_result": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Simulated Result"
+        }
+      },
+      "required": [
+        "incident_id",
+        "action_id",
+        "approved"
+      ],
+      "title": "ApprovalDecision",
+      "type": "object"
+    },
+    "ApprovalDecisionMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "APPROVAL_DECISION",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/ApprovalDecision"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "ApprovalDecisionMessage",
+      "type": "object"
+    },
+    "ApprovalRequest": {
+      "properties": {
+        "incident_id": {
+          "title": "Incident Id",
+          "type": "string"
+        },
+        "action_id": {
+          "title": "Action Id",
+          "type": "string"
+        },
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "risk": {
+          "default": "low",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Risk",
+          "type": "string"
+        },
+        "requested_from": {
+          "default": "human_operator",
+          "title": "Requested From",
+          "type": "string"
+        }
+      },
+      "required": [
+        "incident_id",
+        "action_id",
+        "action"
+      ],
+      "title": "ApprovalRequest",
+      "type": "object"
+    },
+    "ApprovalRequestMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "APPROVAL_REQUEST",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/ApprovalRequest"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "ApprovalRequestMessage",
+      "type": "object"
+    },
+    "CapabilityAnnounce": {
+      "properties": {
+        "agent": {
+          "title": "Agent",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "supported_protocols": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Supported Protocols",
+          "type": "array"
+        },
+        "consumes": {
+          "items": {
+            "$ref": "#/$defs/MessageType"
+          },
+          "title": "Consumes",
+          "type": "array"
+        },
+        "produces": {
+          "items": {
+            "$ref": "#/$defs/MessageType"
+          },
+          "title": "Produces",
+          "type": "array"
+        },
+        "inputs": {
+          "description": "Canonical metrics it needs in TASK_ASSIGNMENTs",
+          "items": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "array"
+        },
+        "metrics": {
+          "description": "Metrics/signals it judges and answers QUERYs on",
+          "items": {
+            "type": "string"
+          },
+          "title": "Metrics",
+          "type": "array"
+        },
+        "hypotheses": {
+          "description": "Hypotheses it can score",
+          "items": {
+            "$ref": "#/$defs/Hypothesis"
+          },
+          "title": "Hypotheses",
+          "type": "array"
+        },
+        "query_predicates": {
+          "description": "QUERY types it answers",
+          "items": {
+            "$ref": "#/$defs/QueryPredicate"
+          },
+          "title": "Query Predicates",
+          "type": "array"
+        },
+        "skills": {
+          "items": {
+            "$ref": "#/$defs/Skill"
+          },
+          "title": "Skills",
+          "type": "array"
+        }
+      },
+      "required": [
+        "agent",
+        "version"
+      ],
+      "title": "CapabilityAnnounce",
+      "type": "object"
+    },
+    "CapabilityAnnounceMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "CAPABILITY_ANNOUNCE",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/CapabilityAnnounce"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "CapabilityAnnounceMessage",
+      "type": "object"
+    },
+    "Claim": {
+      "description": "A machine-checkable assertion, used by the correlator to detect contradictions.",
+      "properties": {
+        "subject": {
+          "description": "Usually a device_id",
+          "title": "Subject",
+          "type": "string"
+        },
+        "predicate": {
+          "description": "e.g. 'interface_errors_above_threshold'",
+          "title": "Predicate",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "boolean"
+        },
+        "source_agent": {
+          "default": "",
+          "title": "Source Agent",
+          "type": "string"
+        }
+      },
+      "required": [
+        "subject",
+        "predicate",
+        "value"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "ConfidenceBreakdown": {
+      "properties": {
+        "p_top": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "P Top",
+          "type": "number"
+        },
+        "p_second": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "P Second",
+          "type": "number"
+        },
+        "margin": {
+          "default": 0.0,
+          "title": "Margin",
+          "type": "number"
+        },
+        "data_coverage": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Data Coverage",
+          "type": "number"
+        },
+        "agreement_factor": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Agreement Factor",
+          "type": "number"
+        },
+        "combiner": {
+          "default": "weighted_softmax",
+          "title": "Combiner",
+          "type": "string"
+        },
+        "unknown_mass": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Dempster-Shafer combiner only",
+          "title": "Unknown Mass"
+        },
+        "method": {
+          "default": "confidence = p_top * data_coverage * agreement_factor (see README#confidence)",
+          "title": "Method",
+          "type": "string"
+        }
+      },
+      "title": "ConfidenceBreakdown",
+      "type": "object"
+    },
+    "ConfidenceCategory": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "title": "ConfidenceCategory",
+      "type": "string"
+    },
+    "ConflictResolution": {
+      "properties": {
+        "conflict_detected": {
+          "default": false,
+          "title": "Conflict Detected",
+          "type": "boolean"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "rounds": {
+          "default": 0,
+          "title": "Rounds",
+          "type": "integer"
+        },
+        "queries": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Queries",
+          "type": "array"
+        },
+        "resolution": {
+          "default": "",
+          "title": "Resolution",
+          "type": "string"
+        }
+      },
+      "title": "ConflictResolution",
+      "type": "object"
+    },
+    "ConversionNote": {
+      "properties": {
+        "record_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Record Index"
+        },
+        "device_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Device Id"
+        },
+        "original_field": {
+          "title": "Original Field",
+          "type": "string"
+        },
+        "canonical_field": {
+          "title": "Canonical Field",
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/$defs/MappingMethod"
+        },
+        "from_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "From Value"
+        },
+        "to_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "To Value"
+        },
+        "from_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "From Unit"
+        },
+        "to_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "To Unit"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "count": {
+          "default": 1,
+          "description": "Identical conversions are aggregated; this is how many",
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "original_field",
+        "canonical_field",
+        "method"
+      ],
+      "title": "ConversionNote",
+      "type": "object"
+    },
+    "DataQuality": {
+      "properties": {
+        "coverage": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Coverage",
+          "type": "number"
+        },
+        "records_in": {
+          "default": 0,
+          "title": "Records In",
+          "type": "integer"
+        },
+        "conversions": {
+          "default": 0,
+          "title": "Conversions",
+          "type": "integer"
+        },
+        "rejected_records": {
+          "default": 0,
+          "title": "Rejected Records",
+          "type": "integer"
+        },
+        "unmapped_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unmapped Fields",
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "title": "DataQuality",
+      "type": "object"
+    },
+    "DeviceStatus": {
+      "enum": [
+        "up",
+        "degraded",
+        "down",
+        "unknown"
+      ],
+      "title": "DeviceStatus",
+      "type": "string"
+    },
+    "Diagnosis": {
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/DiagnosisStatus"
+        },
+        "root_cause_code": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Hypothesis"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "confidence": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "confidence_category": {
+          "$ref": "#/$defs/ConfidenceCategory",
+          "default": "low"
+        },
+        "probabilities": {
+          "additionalProperties": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "title": "Probabilities",
+          "type": "object"
+        },
+        "root_device": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Root Device"
+        },
+        "affected_devices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Devices",
+          "type": "array"
+        },
+        "symptomatic_devices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Symptomatic Devices",
+          "type": "array"
+        },
+        "affected_segments": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Segments",
+          "type": "array"
+        },
+        "supporting_evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceItem"
+          },
+          "title": "Supporting Evidence",
+          "type": "array"
+        },
+        "contradicting_evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceItem"
+          },
+          "title": "Contradicting Evidence",
+          "type": "array"
+        },
+        "alternative_causes": {
+          "items": {
+            "$ref": "#/$defs/AlternativeCause"
+          },
+          "title": "Alternative Causes",
+          "type": "array"
+        },
+        "agent_findings_summary": {
+          "items": {
+            "$ref": "#/$defs/AgentFindingSummary"
+          },
+          "title": "Agent Findings Summary",
+          "type": "array"
+        },
+        "conflict_resolution": {
+          "$ref": "#/$defs/ConflictResolution"
+        },
+        "data_quality": {
+          "$ref": "#/$defs/DataQuality"
+        },
+        "confidence_breakdown": {
+          "$ref": "#/$defs/ConfidenceBreakdown"
+        },
+        "secondary_incidents": {
+          "items": {
+            "$ref": "#/$defs/SecondaryIncident"
+          },
+          "title": "Secondary Incidents",
+          "type": "array"
+        },
+        "next_data_to_collect": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Next Data To Collect",
+          "type": "array"
+        },
+        "evidence_sources": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Sources",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "Diagnosis",
+      "type": "object"
+    },
+    "DiagnosisMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "DIAGNOSIS",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Diagnosis"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "DiagnosisMessage",
+      "type": "object"
+    },
+    "DiagnosisStatus": {
+      "enum": [
+        "diagnosed",
+        "insufficient_evidence",
+        "normal",
+        "failed"
+      ],
+      "title": "DiagnosisStatus",
+      "type": "string"
+    },
+    "DiagnosticReport": {
+      "description": "Final report. A strict superset of the organizer's example (same field names).",
+      "properties": {
+        "incident_id": {
+          "title": "Incident Id",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/DiagnosisStatus"
+        },
+        "suspected_root_cause": {
+          "title": "Suspected Root Cause",
+          "type": "string"
+        },
+        "root_cause_code": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Hypothesis"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "confidence": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "confidence_category": {
+          "$ref": "#/$defs/ConfidenceCategory"
+        },
+        "affected_devices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Devices",
+          "type": "array"
+        },
+        "root_device": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Root Device"
+        },
+        "symptomatic_devices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Symptomatic Devices",
+          "type": "array"
+        },
+        "affected_segments": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Segments",
+          "type": "array"
+        },
+        "supporting_evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceItem"
+          },
+          "title": "Supporting Evidence",
+          "type": "array"
+        },
+        "contradicting_evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceItem"
+          },
+          "title": "Contradicting Evidence",
+          "type": "array"
+        },
+        "alternative_causes": {
+          "items": {
+            "$ref": "#/$defs/AlternativeCause"
+          },
+          "title": "Alternative Causes",
+          "type": "array"
+        },
+        "recommended_actions": {
+          "items": {
+            "$ref": "#/$defs/RecommendedAction"
+          },
+          "title": "Recommended Actions",
+          "type": "array"
+        },
+        "evidence_sources": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Sources",
+          "type": "array"
+        },
+        "agent_findings_summary": {
+          "items": {
+            "$ref": "#/$defs/AgentFindingSummary"
+          },
+          "title": "Agent Findings Summary",
+          "type": "array"
+        },
+        "conflict_resolution": {
+          "$ref": "#/$defs/ConflictResolution"
+        },
+        "data_quality": {
+          "$ref": "#/$defs/DataQuality"
+        },
+        "confidence_breakdown": {
+          "$ref": "#/$defs/ConfidenceBreakdown"
+        },
+        "secondary_incidents": {
+          "items": {
+            "$ref": "#/$defs/SecondaryIncident"
+          },
+          "title": "Secondary Incidents",
+          "type": "array"
+        },
+        "next_data_to_collect": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Next Data To Collect",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "narrative": {
+          "default": "",
+          "title": "Narrative",
+          "type": "string"
+        },
+        "protocol_version": {
+          "default": "netcoop/2.0",
+          "title": "Protocol Version",
+          "type": "string"
+        },
+        "generated_at": {
+          "format": "date-time",
+          "title": "Generated At",
+          "type": "string"
+        },
+        "message_log": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message Log"
+        }
+      },
+      "required": [
+        "incident_id",
+        "status",
+        "suspected_root_cause",
+        "confidence",
+        "confidence_category"
+      ],
+      "title": "DiagnosticReport",
+      "type": "object"
+    },
+    "Direction": {
+      "enum": [
+        "above",
+        "below"
+      ],
+      "title": "Direction",
+      "type": "string"
+    },
+    "ErrorCode": {
+      "enum": [
+        "E_SCHEMA_INVALID",
+        "E_UNIT_UNKNOWN",
+        "E_FIELD_UNMAPPED",
+        "E_MISSING_REQUIRED",
+        "E_OUT_OF_RANGE",
+        "E_STALE_DATA",
+        "E_AGENT_TIMEOUT",
+        "E_UNSUPPORTED_VERSION",
+        "E_UNKNOWN_DEVICE",
+        "E_INTERNAL"
+      ],
+      "title": "ErrorCode",
+      "type": "string"
+    },
+    "ErrorMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "ERROR",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/ErrorPayload"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "ErrorMessage",
+      "type": "object"
+    },
+    "ErrorPayload": {
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/ErrorCode"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "detail": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Detail",
+          "type": "object"
+        },
+        "offending_msg_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Offending Msg Id"
+        },
+        "recoverable": {
+          "default": true,
+          "title": "Recoverable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "ErrorPayload",
+      "type": "object"
+    },
+    "EvidenceItem": {
+      "properties": {
+        "metric": {
+          "description": "Canonical metric name, or a derived signal such as 'topology'",
+          "title": "Metric",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "device_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Device Id"
+        },
+        "threshold": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Threshold the value was compared against (same unit)",
+          "title": "Threshold"
+        },
+        "severity": {
+          "default": 0.0,
+          "description": "0 = at/below warn, 1 = at/beyond crit (piecewise linear)",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Severity",
+          "type": "number"
+        },
+        "direction": {
+          "$ref": "#/$defs/Direction",
+          "default": "above"
+        },
+        "interpretation": {
+          "title": "Interpretation",
+          "type": "string"
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality",
+          "default": "ok"
+        },
+        "source_agent": {
+          "default": "",
+          "title": "Source Agent",
+          "type": "string"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestamp"
+        },
+        "z_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Robust deviation from the device's own baseline (series only)",
+          "title": "Z Score"
+        },
+        "basis": {
+          "default": "threshold",
+          "description": "'baseline' = below the fixed threshold but abnormal versus the device's history",
+          "enum": [
+            "threshold",
+            "baseline"
+          ],
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "metric",
+        "interpretation"
+      ],
+      "title": "EvidenceItem",
+      "type": "object"
+    },
+    "Finding": {
+      "properties": {
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        },
+        "agent": {
+          "title": "Agent",
+          "type": "string"
+        },
+        "agent_version": {
+          "default": "1.0.0",
+          "title": "Agent Version",
+          "type": "string"
+        },
+        "hypothesis_scores": {
+          "items": {
+            "$ref": "#/$defs/HypothesisScore"
+          },
+          "title": "Hypothesis Scores",
+          "type": "array"
+        },
+        "top_hypothesis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Hypothesis"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceItem"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "devices_flagged": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Devices Flagged",
+          "type": "array"
+        },
+        "metrics_analyzed": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Metrics Analyzed",
+          "type": "array"
+        },
+        "metrics_missing": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Metrics Missing",
+          "type": "array"
+        },
+        "data_coverage": {
+          "default": 1.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Data Coverage",
+          "type": "number"
+        },
+        "claims": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Claims",
+          "type": "array"
+        },
+        "localization": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Localization"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "task_id",
+        "agent"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "FindingMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "FINDING",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Finding"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "FindingMessage",
+      "type": "object"
+    },
+    "Heartbeat": {
+      "properties": {
+        "agent": {
+          "title": "Agent",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "state": {
+          "default": "ready",
+          "enum": [
+            "starting",
+            "ready",
+            "busy",
+            "stopping"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "uptime_s": {
+          "default": 0.0,
+          "title": "Uptime S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "agent",
+        "version"
+      ],
+      "title": "Heartbeat",
+      "type": "object"
+    },
+    "HeartbeatMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "HEARTBEAT",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Heartbeat"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "HeartbeatMessage",
+      "type": "object"
+    },
+    "Hypothesis": {
+      "enum": [
+        "normal",
+        "link_congestion",
+        "weak_wifi",
+        "interface_fault",
+        "hardware_failure",
+        "device_overload",
+        "dns_failure",
+        "dhcp_failure",
+        "upstream_issue"
+      ],
+      "title": "Hypothesis",
+      "type": "string"
+    },
+    "HypothesisScore": {
+      "description": "One agent's contribution to one hypothesis on one device.\n\n`raw` is this agent's share of raw(h, d) (README#confidence); the correlator sums the\nraw contributions of all agents and normalizes by Z(h). `score` is the agent's own\nnormalized view (raw divided by the part of Z(h) the agent can observe).",
+      "properties": {
+        "hypothesis": {
+          "$ref": "#/$defs/Hypothesis"
+        },
+        "device_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Device the score refers to; null = incident-wide",
+          "title": "Device Id"
+        },
+        "raw": {
+          "default": 0.0,
+          "description": "Unnormalized weighted evidence sum from this agent",
+          "title": "Raw",
+          "type": "number"
+        },
+        "score": {
+          "default": 0.0,
+          "description": "Agent-local normalized score",
+          "title": "Score",
+          "type": "number"
+        },
+        "rationale": {
+          "default": "",
+          "title": "Rationale",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hypothesis"
+      ],
+      "title": "HypothesisScore",
+      "type": "object"
+    },
+    "IngestionReport": {
+      "properties": {
+        "records_in": {
+          "default": 0,
+          "title": "Records In",
+          "type": "integer"
+        },
+        "records_accepted": {
+          "default": 0,
+          "title": "Records Accepted",
+          "type": "integer"
+        },
+        "records_rejected": {
+          "default": 0,
+          "title": "Records Rejected",
+          "type": "integer"
+        },
+        "formats_detected": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Formats Detected",
+          "type": "array"
+        },
+        "schema_versions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Schema Versions",
+          "type": "array"
+        },
+        "conversions": {
+          "items": {
+            "$ref": "#/$defs/ConversionNote"
+          },
+          "title": "Conversions",
+          "type": "array"
+        },
+        "rejections": {
+          "items": {
+            "$ref": "#/$defs/RejectionNote"
+          },
+          "title": "Rejections",
+          "type": "array"
+        },
+        "unmapped_fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unmapped Fields",
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "quality_counts": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Quality Counts",
+          "type": "object"
+        },
+        "data_coverage": {
+          "default": 0.0,
+          "description": "Share of usable metric values among those expected",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Data Coverage",
+          "type": "number"
+        },
+        "fatal": {
+          "default": false,
+          "description": "True if no usable record survived ingestion",
+          "title": "Fatal",
+          "type": "boolean"
+        }
+      },
+      "title": "IngestionReport",
+      "type": "object"
+    },
+    "Localization": {
+      "properties": {
+        "root_device": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Root Device"
+        },
+        "symptomatic_devices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Symptomatic Devices",
+          "type": "array"
+        },
+        "affected_devices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Devices",
+          "type": "array"
+        },
+        "affected_segments": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Affected Segments",
+          "type": "array"
+        },
+        "partitioned_devices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Partitioned Devices",
+          "type": "array"
+        },
+        "method": {
+          "default": "",
+          "title": "Method",
+          "type": "string"
+        }
+      },
+      "title": "Localization",
+      "type": "object"
+    },
+    "MappingMethod": {
+      "enum": [
+        "direct",
+        "alias",
+        "fuzzy",
+        "llm_suggested",
+        "unit_conversion",
+        "heuristic",
+        "migration",
+        "imputed"
+      ],
+      "title": "MappingMethod",
+      "type": "string"
+    },
+    "MessageType": {
+      "enum": [
+        "TASK_ASSIGNMENT",
+        "TELEMETRY_RAW",
+        "TELEMETRY_NORMALIZED",
+        "FINDING",
+        "QUERY",
+        "RESPONSE",
+        "DIAGNOSIS",
+        "REPORT",
+        "ERROR",
+        "ACK",
+        "HEARTBEAT",
+        "CAPABILITY_ANNOUNCE",
+        "REMEDIATION_PROPOSAL",
+        "APPROVAL_REQUEST",
+        "APPROVAL_DECISION"
+      ],
+      "title": "MessageType",
+      "type": "string"
+    },
+    "MetricValue": {
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Canonical value; null when missing or rejected",
+          "title": "Value"
+        },
+        "unit": {
+          "$ref": "#/$defs/Unit",
+          "description": "Canonical unit (see vocabulary)"
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality",
+          "default": "ok"
+        },
+        "provenance": {
+          "items": {
+            "$ref": "#/$defs/Provenance"
+          },
+          "title": "Provenance",
+          "type": "array"
+        }
+      },
+      "required": [
+        "unit"
+      ],
+      "title": "MetricValue",
+      "type": "object"
+    },
+    "Provenance": {
+      "properties": {
+        "original_field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Field name as it appeared in the input",
+          "title": "Original Field"
+        },
+        "original_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Value as it appeared in the input",
+          "title": "Original Value"
+        },
+        "original_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Unit of the original value, if known",
+          "title": "Original Unit"
+        },
+        "method": {
+          "$ref": "#/$defs/MappingMethod",
+          "default": "direct",
+          "description": "How the canonical value was obtained"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Quality": {
+      "enum": [
+        "ok",
+        "converted",
+        "imputed",
+        "missing",
+        "stale",
+        "out_of_range",
+        "rejected"
+      ],
+      "title": "Quality",
+      "type": "string"
+    },
+    "Query": {
+      "properties": {
+        "query_id": {
+          "title": "Query Id",
+          "type": "string"
+        },
+        "round": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Round",
+          "type": "integer"
+        },
+        "question": {
+          "description": "Human-readable form of the question",
+          "title": "Question",
+          "type": "string"
+        },
+        "predicate": {
+          "$ref": "#/$defs/QueryPredicate"
+        },
+        "params": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Params",
+          "type": "object"
+        },
+        "hypotheses_at_stake": {
+          "items": {
+            "$ref": "#/$defs/Hypothesis"
+          },
+          "title": "Hypotheses At Stake",
+          "type": "array"
+        }
+      },
+      "required": [
+        "query_id",
+        "question",
+        "predicate"
+      ],
+      "title": "Query",
+      "type": "object"
+    },
+    "QueryMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "QUERY",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Query"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "QueryMessage",
+      "type": "object"
+    },
+    "QueryPredicate": {
+      "enum": [
+        "metric_above_threshold",
+        "fault_localization",
+        "service_health",
+        "path_healthy",
+        "device_status"
+      ],
+      "title": "QueryPredicate",
+      "type": "string"
+    },
+    "RecommendedAction": {
+      "properties": {
+        "action_id": {
+          "title": "Action Id",
+          "type": "string"
+        },
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "hypothesis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Hypothesis"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "priority": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Priority",
+          "type": "integer"
+        },
+        "risk": {
+          "default": "low",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Risk",
+          "type": "string"
+        },
+        "safe_to_simulate": {
+          "default": true,
+          "title": "Safe To Simulate",
+          "type": "boolean"
+        },
+        "requires_approval": {
+          "default": true,
+          "title": "Requires Approval",
+          "type": "boolean"
+        },
+        "target_device": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Device"
+        },
+        "simulated_result": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Simulated Result"
+        }
+      },
+      "required": [
+        "action_id",
+        "action"
+      ],
+      "title": "RecommendedAction",
+      "type": "object"
+    },
+    "RejectionNote": {
+      "properties": {
+        "record_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Record Index"
+        },
+        "device_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Device Id"
+        },
+        "field": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Field"
+        },
+        "code": {
+          "$ref": "#/$defs/ErrorCode"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "record_rejected": {
+          "default": false,
+          "description": "True if the whole record was dropped",
+          "title": "Record Rejected",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "reason"
+      ],
+      "title": "RejectionNote",
+      "type": "object"
+    },
+    "RemediationProposal": {
+      "properties": {
+        "incident_id": {
+          "title": "Incident Id",
+          "type": "string"
+        },
+        "actions": {
+          "items": {
+            "$ref": "#/$defs/RecommendedAction"
+          },
+          "title": "Actions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "incident_id",
+        "actions"
+      ],
+      "title": "RemediationProposal",
+      "type": "object"
+    },
+    "RemediationProposalMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "REMEDIATION_PROPOSAL",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/RemediationProposal"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "RemediationProposalMessage",
+      "type": "object"
+    },
+    "Report": {
+      "properties": {
+        "report": {
+          "$ref": "#/$defs/DiagnosticReport"
+        },
+        "json_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Json Path"
+        },
+        "markdown_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Markdown Path"
+        }
+      },
+      "required": [
+        "report"
+      ],
+      "title": "Report",
+      "type": "object"
+    },
+    "ReportMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "REPORT",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Report"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "ReportMessage",
+      "type": "object"
+    },
+    "Response": {
+      "properties": {
+        "query_id": {
+          "title": "Query Id",
+          "type": "string"
+        },
+        "answer": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "null = cannot tell from available data",
+          "title": "Answer"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Unit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "explanation": {
+          "default": "",
+          "title": "Explanation",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceItem"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "supports": {
+          "items": {
+            "$ref": "#/$defs/Hypothesis"
+          },
+          "title": "Supports",
+          "type": "array"
+        },
+        "refutes": {
+          "items": {
+            "$ref": "#/$defs/Hypothesis"
+          },
+          "title": "Refutes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "query_id"
+      ],
+      "title": "Response",
+      "type": "object"
+    },
+    "ResponseMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "RESPONSE",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/Response"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "ResponseMessage",
+      "type": "object"
+    },
+    "SecondaryIncident": {
+      "properties": {
+        "root_cause_code": {
+          "$ref": "#/$defs/Hypothesis"
+        },
+        "devices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Devices",
+          "type": "array"
+        },
+        "probability": {
+          "default": 0.0,
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Probability",
+          "type": "number"
+        },
+        "explanation": {
+          "default": "",
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "root_cause_code"
+      ],
+      "title": "SecondaryIncident",
+      "type": "object"
+    },
+    "Skill": {
+      "description": "A2A-style skill description, so each agent can be published as an Agent Card.",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Skill",
+      "type": "object"
+    },
+    "TaskAssignment": {
+      "properties": {
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        },
+        "kind": {
+          "default": "analyze_telemetry",
+          "enum": [
+            "analyze_telemetry",
+            "resume_incident"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "deadline_s": {
+          "description": "Seconds the agent has to reply with a FINDING",
+          "title": "Deadline S",
+          "type": "number"
+        },
+        "records": {
+          "description": "Only the metrics this agent declared it consumes",
+          "items": {
+            "$ref": "#/$defs/TelemetryRecord"
+          },
+          "title": "Records",
+          "type": "array"
+        },
+        "metrics_of_interest": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Metrics Of Interest",
+          "type": "array"
+        },
+        "context": {
+          "additionalProperties": true,
+          "title": "Context",
+          "type": "object"
+        }
+      },
+      "required": [
+        "task_id",
+        "deadline_s",
+        "records"
+      ],
+      "title": "TaskAssignment",
+      "type": "object"
+    },
+    "TaskAssignmentMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "TASK_ASSIGNMENT",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/TaskAssignment"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "TaskAssignmentMessage",
+      "type": "object"
+    },
+    "TelemetryNormalized": {
+      "properties": {
+        "records": {
+          "items": {
+            "$ref": "#/$defs/TelemetryRecord"
+          },
+          "title": "Records",
+          "type": "array"
+        },
+        "report": {
+          "$ref": "#/$defs/IngestionReport"
+        }
+      },
+      "required": [
+        "records",
+        "report"
+      ],
+      "title": "TelemetryNormalized",
+      "type": "object"
+    },
+    "TelemetryNormalizedMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "TELEMETRY_NORMALIZED",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/TelemetryNormalized"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "TelemetryNormalizedMessage",
+      "type": "object"
+    },
+    "TelemetryRaw": {
+      "properties": {
+        "source": {
+          "default": "inline",
+          "description": "File name, 'inline' or 'gateway'",
+          "title": "Source",
+          "type": "string"
+        },
+        "content_type": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "json",
+            "jsonl",
+            "csv"
+          ],
+          "title": "Content Type",
+          "type": "string"
+        },
+        "content": {
+          "description": "Raw text exactly as received",
+          "title": "Content",
+          "type": "string"
+        }
+      },
+      "required": [
+        "content"
+      ],
+      "title": "TelemetryRaw",
+      "type": "object"
+    },
+    "TelemetryRawMessage": {
+      "properties": {
+        "protocol": {
+          "default": "netcoop/2.0",
+          "description": "family/major.minor",
+          "pattern": "^netcoop/\\d+\\.\\d+$",
+          "title": "Protocol",
+          "type": "string"
+        },
+        "msg_id": {
+          "description": "UUID4, unique per message",
+          "title": "Msg Id",
+          "type": "string"
+        },
+        "correlation_id": {
+          "description": "Incident id; ties all messages of one incident together",
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "causation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "msg_id of the message that caused this one",
+          "title": "Causation Id"
+        },
+        "from_agent": {
+          "title": "From Agent",
+          "type": "string"
+        },
+        "to_agent": {
+          "default": "broadcast",
+          "description": "Agent name, or 'broadcast'",
+          "title": "To Agent",
+          "type": "string"
+        },
+        "type": {
+          "const": "TELEMETRY_RAW",
+          "title": "Type",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "ISO-8601 UTC",
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "ttl_s": {
+          "default": 300,
+          "description": "Seconds after `timestamp` the message stays deliverable",
+          "minimum": 1,
+          "title": "Ttl S",
+          "type": "integer"
+        },
+        "payload_schema": {
+          "description": "Payload schema name/version, e.g. 'finding/1.0'",
+          "title": "Payload Schema",
+          "type": "string"
+        },
+        "payload": {
+          "$ref": "#/$defs/TelemetryRaw"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "from_agent",
+        "type",
+        "payload_schema",
+        "payload"
+      ],
+      "title": "TelemetryRawMessage",
+      "type": "object"
+    },
+    "TelemetryRecord": {
+      "properties": {
+        "device_id": {
+          "title": "Device Id",
+          "type": "string"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/DeviceStatus",
+          "default": "unknown"
+        },
+        "status_original": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Status string as supplied (e.g. 'Critical')",
+          "title": "Status Original"
+        },
+        "metrics": {
+          "additionalProperties": {
+            "$ref": "#/$defs/MetricValue"
+          },
+          "description": "Keyed by canonical metric name",
+          "title": "Metrics",
+          "type": "object"
+        },
+        "unmapped": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "description": "Fields we could not map",
+          "title": "Unmapped",
+          "type": "object"
+        },
+        "source_format": {
+          "default": "canonical_v2",
+          "description": "organizer_v1 | canonical_v2 | legacy_v1_1 | csv",
+          "title": "Source Format",
+          "type": "string"
+        },
+        "record_quality": {
+          "$ref": "#/$defs/Quality",
+          "default": "ok"
+        }
+      },
+      "required": [
+        "device_id",
+        "timestamp"
+      ],
+      "title": "TelemetryRecord",
+      "type": "object"
+    },
+    "Unit": {
+      "enum": [
+        "ms",
+        "%",
+        "count",
+        "dBm",
+        "dB",
+        "Mbps",
+        "s"
+      ],
+      "title": "Unit",
+      "type": "string"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "ACK": "#/$defs/AckMessage",
+      "APPROVAL_DECISION": "#/$defs/ApprovalDecisionMessage",
+      "APPROVAL_REQUEST": "#/$defs/ApprovalRequestMessage",
+      "CAPABILITY_ANNOUNCE": "#/$defs/CapabilityAnnounceMessage",
+      "DIAGNOSIS": "#/$defs/DiagnosisMessage",
+      "ERROR": "#/$defs/ErrorMessage",
+      "FINDING": "#/$defs/FindingMessage",
+      "HEARTBEAT": "#/$defs/HeartbeatMessage",
+      "QUERY": "#/$defs/QueryMessage",
+      "REMEDIATION_PROPOSAL": "#/$defs/RemediationProposalMessage",
+      "REPORT": "#/$defs/ReportMessage",
+      "RESPONSE": "#/$defs/ResponseMessage",
+      "TASK_ASSIGNMENT": "#/$defs/TaskAssignmentMessage",
+      "TELEMETRY_NORMALIZED": "#/$defs/TelemetryNormalizedMessage",
+      "TELEMETRY_RAW": "#/$defs/TelemetryRawMessage"
+    },
+    "propertyName": "type"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/TaskAssignmentMessage"
+    },
+    {
+      "$ref": "#/$defs/TelemetryRawMessage"
+    },
+    {
+      "$ref": "#/$defs/TelemetryNormalizedMessage"
+    },
+    {
+      "$ref": "#/$defs/FindingMessage"
+    },
+    {
+      "$ref": "#/$defs/QueryMessage"
+    },
+    {
+      "$ref": "#/$defs/ResponseMessage"
+    },
+    {
+      "$ref": "#/$defs/DiagnosisMessage"
+    },
+    {
+      "$ref": "#/$defs/ReportMessage"
+    },
+    {
+      "$ref": "#/$defs/ErrorMessage"
+    },
+    {
+      "$ref": "#/$defs/AckMessage"
+    },
+    {
+      "$ref": "#/$defs/HeartbeatMessage"
+    },
+    {
+      "$ref": "#/$defs/CapabilityAnnounceMessage"
+    },
+    {
+      "$ref": "#/$defs/RemediationProposalMessage"
+    },
+    {
+      "$ref": "#/$defs/ApprovalRequestMessage"
+    },
+    {
+      "$ref": "#/$defs/ApprovalDecisionMessage"
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NetCoop message (netcoop/2.0)"
+}

@@ -1,0 +1,961 @@
+group,kind,name,seed,chaos,status,top,confidence,category,outcome,reason,high_confidence_wrong,top_correct,calibration_eligible,expected_label,predicted_label,conflict
+normal,scenario,normal,0,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,1,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,2,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,3,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,4,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,5,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,6,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,7,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,8,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,9,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,10,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,11,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,12,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,13,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,14,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,15,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,16,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,17,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,18,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,19,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,20,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,21,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,22,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,23,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,24,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,25,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,26,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,27,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,28,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,29,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,30,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,31,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,32,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,33,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,34,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,35,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,36,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,37,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,38,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,39,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,40,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,41,,insufficient_evidence,normal,0.2982,low,abstain,abstained on healthy data (not allowed),0,1,1,normal,abstain,0
+normal,scenario,normal,42,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,43,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,44,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,45,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,46,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,47,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,48,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+normal,scenario,normal,49,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+link_congestion,scenario,link_congestion,0,,diagnosed,link_congestion,0.9965,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,1,,diagnosed,link_congestion,0.9955,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,2,,diagnosed,link_congestion,0.9919,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,0
+link_congestion,scenario,link_congestion,3,,diagnosed,link_congestion,0.997,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,4,,diagnosed,link_congestion,0.9956,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,5,,diagnosed,link_congestion,0.9966,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,6,,diagnosed,link_congestion,0.9962,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,7,,diagnosed,link_congestion,0.9942,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,8,,diagnosed,link_congestion,0.9971,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,9,,diagnosed,link_congestion,0.9957,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,10,,diagnosed,link_congestion,0.9895,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,0
+link_congestion,scenario,link_congestion,11,,diagnosed,link_congestion,0.997,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,12,,diagnosed,link_congestion,0.9963,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,13,,diagnosed,link_congestion,0.9965,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,14,,diagnosed,link_congestion,0.9968,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,15,,diagnosed,link_congestion,0.9966,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,16,,diagnosed,link_congestion,0.9952,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,17,,diagnosed,link_congestion,0.9968,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,18,,diagnosed,link_congestion,0.9962,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,19,,diagnosed,link_congestion,0.9962,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,20,,diagnosed,link_congestion,0.995,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,21,,diagnosed,link_congestion,0.9944,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,22,,diagnosed,link_congestion,0.9967,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,23,,diagnosed,link_congestion,0.9968,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,24,,diagnosed,link_congestion,0.9956,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,25,,diagnosed,link_congestion,0.9967,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,26,,diagnosed,link_congestion,0.9957,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,27,,diagnosed,link_congestion,0.9965,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,28,,diagnosed,link_congestion,0.9949,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,29,,diagnosed,link_congestion,0.9965,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,30,,diagnosed,link_congestion,0.9971,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,31,,diagnosed,link_congestion,0.9951,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,32,,diagnosed,link_congestion,0.9955,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,33,,diagnosed,link_congestion,0.9965,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,34,,diagnosed,link_congestion,0.9966,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,35,,diagnosed,link_congestion,0.9946,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,36,,diagnosed,link_congestion,0.9964,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,37,,diagnosed,link_congestion,0.9942,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,38,,diagnosed,link_congestion,0.9956,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,39,,diagnosed,link_congestion,0.9911,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,40,,diagnosed,link_congestion,0.9907,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,0
+link_congestion,scenario,link_congestion,41,,diagnosed,link_congestion,0.9971,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,42,,diagnosed,link_congestion,0.997,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,43,,diagnosed,link_congestion,0.9962,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,44,,diagnosed,link_congestion,0.9947,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,45,,diagnosed,link_congestion,0.9959,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,46,,diagnosed,link_congestion,0.9954,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,47,,diagnosed,link_congestion,0.9964,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,48,,diagnosed,link_congestion,0.9964,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+link_congestion,scenario,link_congestion,49,,diagnosed,link_congestion,0.995,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+weak_wifi,scenario,weak_wifi,0,,diagnosed,weak_wifi,0.993,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,1,,diagnosed,weak_wifi,0.9896,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,2,,diagnosed,weak_wifi,0.9895,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,3,,diagnosed,weak_wifi,0.9936,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,4,,diagnosed,weak_wifi,0.9937,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,5,,diagnosed,weak_wifi,0.993,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,6,,diagnosed,weak_wifi,0.9915,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,7,,diagnosed,weak_wifi,0.9892,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,8,,diagnosed,weak_wifi,0.9919,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,9,,diagnosed,weak_wifi,0.9903,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,10,,diagnosed,weak_wifi,0.9932,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,11,,diagnosed,weak_wifi,0.9929,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,12,,diagnosed,weak_wifi,0.9901,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,13,,diagnosed,weak_wifi,0.9933,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,14,,diagnosed,weak_wifi,0.9923,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,15,,diagnosed,weak_wifi,0.9936,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,16,,diagnosed,weak_wifi,0.9905,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,17,,diagnosed,weak_wifi,0.9937,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,18,,diagnosed,weak_wifi,0.9898,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,19,,diagnosed,weak_wifi,0.9903,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,20,,diagnosed,weak_wifi,0.9928,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,21,,diagnosed,weak_wifi,0.9931,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,22,,diagnosed,weak_wifi,0.9918,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,23,,diagnosed,weak_wifi,0.9889,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,24,,diagnosed,weak_wifi,0.9913,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,25,,diagnosed,weak_wifi,0.9932,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,26,,diagnosed,weak_wifi,0.9932,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,27,,diagnosed,weak_wifi,0.991,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,28,,diagnosed,weak_wifi,0.9938,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,29,,diagnosed,weak_wifi,0.9898,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,30,,diagnosed,weak_wifi,0.9904,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,31,,diagnosed,weak_wifi,0.9927,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,32,,diagnosed,weak_wifi,0.9911,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,33,,diagnosed,weak_wifi,0.9935,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,34,,diagnosed,weak_wifi,0.9928,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,35,,diagnosed,weak_wifi,0.9909,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,36,,diagnosed,weak_wifi,0.989,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,37,,diagnosed,weak_wifi,0.9932,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,38,,diagnosed,weak_wifi,0.9924,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,39,,diagnosed,weak_wifi,0.9911,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,40,,diagnosed,weak_wifi,0.9917,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,41,,diagnosed,weak_wifi,0.9905,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,42,,diagnosed,weak_wifi,0.993,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,43,,diagnosed,weak_wifi,0.9915,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,44,,diagnosed,weak_wifi,0.9926,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,45,,diagnosed,weak_wifi,0.9925,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,46,,diagnosed,weak_wifi,0.9914,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,47,,diagnosed,weak_wifi,0.9929,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,48,,diagnosed,weak_wifi,0.989,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+weak_wifi,scenario,weak_wifi,49,,diagnosed,weak_wifi,0.9926,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+interface_fault,scenario,interface_fault,0,,diagnosed,interface_fault,0.9522,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,1,,diagnosed,interface_fault,0.9532,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,2,,diagnosed,interface_fault,0.9504,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,3,,diagnosed,interface_fault,0.9504,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,4,,diagnosed,interface_fault,0.9504,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,5,,diagnosed,interface_fault,0.9808,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,6,,diagnosed,interface_fault,0.9812,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,7,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,8,,diagnosed,interface_fault,0.9504,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,9,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,10,,diagnosed,interface_fault,0.9542,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,11,,diagnosed,interface_fault,0.9807,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,12,,diagnosed,interface_fault,0.98,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,13,,diagnosed,interface_fault,0.98,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,14,,diagnosed,interface_fault,0.98,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,15,,diagnosed,interface_fault,0.9542,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,16,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,17,,diagnosed,interface_fault,0.9806,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,18,,diagnosed,interface_fault,0.98,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,19,,diagnosed,interface_fault,0.98,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,20,,diagnosed,interface_fault,0.9504,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,21,,diagnosed,interface_fault,0.954,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,22,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,23,,diagnosed,interface_fault,0.98,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,24,,diagnosed,interface_fault,0.9803,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,25,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,26,,diagnosed,interface_fault,0.9805,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,27,,diagnosed,interface_fault,0.9808,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,28,,diagnosed,interface_fault,0.9809,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,29,,diagnosed,interface_fault,0.9804,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,30,,diagnosed,interface_fault,0.9806,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,31,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,32,,diagnosed,interface_fault,0.9541,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,33,,diagnosed,interface_fault,0.98,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,34,,diagnosed,interface_fault,0.9803,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,35,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,36,,diagnosed,interface_fault,0.9807,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,37,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,38,,diagnosed,interface_fault,0.98,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,39,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,40,,diagnosed,interface_fault,0.9812,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,41,,diagnosed,interface_fault,0.98,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+interface_fault,scenario,interface_fault,42,,diagnosed,interface_fault,0.981,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,43,,diagnosed,interface_fault,0.981,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,44,,diagnosed,interface_fault,0.9533,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,45,,diagnosed,interface_fault,0.9806,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,46,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,47,,diagnosed,interface_fault,0.981,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,48,,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+interface_fault,scenario,interface_fault,49,,diagnosed,interface_fault,0.98,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+dns_failure,scenario,dns_failure,0,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,1,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,2,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,3,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,4,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,5,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,6,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,7,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,8,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,9,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,10,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,11,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,12,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,13,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,14,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,15,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,16,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,17,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,18,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,19,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,20,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,21,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,22,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,23,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,24,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,25,,diagnosed,dns_failure,0.9253,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,26,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,27,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,28,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,29,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,30,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,31,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,32,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,33,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,34,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,35,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,36,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,37,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,38,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,39,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,40,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,41,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,42,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,43,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,44,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,45,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,46,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,47,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,48,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dns_failure,scenario,dns_failure,49,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+dhcp_failure,scenario,dhcp_failure,0,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,1,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,2,,diagnosed,dhcp_failure,0.9389,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,3,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,4,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,5,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,6,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,7,,diagnosed,dhcp_failure,0.9391,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,8,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,9,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,10,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,11,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,12,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,13,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,14,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,15,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,16,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,17,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,18,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,19,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,20,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,21,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,22,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,23,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,24,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,25,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,26,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,27,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,28,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,29,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,30,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,31,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,32,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,33,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,34,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,35,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,36,,diagnosed,dhcp_failure,0.9389,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,37,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,38,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,39,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,40,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,41,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,42,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,43,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,44,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,45,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,46,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,47,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,48,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+dhcp_failure,scenario,dhcp_failure,49,,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+device_overload,scenario,device_overload,0,,diagnosed,device_overload,0.9757,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,1,,diagnosed,device_overload,0.9669,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,2,,diagnosed,device_overload,0.971,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,3,,diagnosed,device_overload,0.976,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,4,,diagnosed,device_overload,0.9874,high,correct,device_overload,0,1,1,device_overload,device_overload,1
+device_overload,scenario,device_overload,5,,diagnosed,device_overload,0.9627,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,6,,diagnosed,device_overload,0.9804,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,7,,diagnosed,device_overload,0.9653,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,8,,diagnosed,device_overload,0.9787,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,9,,diagnosed,device_overload,0.9552,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,10,,diagnosed,device_overload,0.9824,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,11,,diagnosed,device_overload,0.9784,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,12,,diagnosed,device_overload,0.9807,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,13,,diagnosed,device_overload,0.9841,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,14,,diagnosed,device_overload,0.9841,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,15,,diagnosed,device_overload,0.9805,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,16,,diagnosed,device_overload,0.9793,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,17,,diagnosed,device_overload,0.9788,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,18,,diagnosed,device_overload,0.9674,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,19,,diagnosed,device_overload,0.9759,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,20,,diagnosed,device_overload,0.9867,high,correct,device_overload,0,1,1,device_overload,device_overload,1
+device_overload,scenario,device_overload,21,,diagnosed,device_overload,0.9745,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,22,,diagnosed,device_overload,0.9767,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,23,,diagnosed,device_overload,0.9584,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,24,,diagnosed,device_overload,0.9689,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,25,,diagnosed,device_overload,0.9815,high,correct,device_overload,0,1,1,device_overload,device_overload,1
+device_overload,scenario,device_overload,26,,diagnosed,device_overload,0.9756,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,27,,diagnosed,device_overload,0.971,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,28,,diagnosed,device_overload,0.9694,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,29,,diagnosed,device_overload,0.9742,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,30,,diagnosed,device_overload,0.9796,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,31,,diagnosed,device_overload,0.9764,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,32,,diagnosed,device_overload,0.9796,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,33,,diagnosed,device_overload,0.9791,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,34,,diagnosed,device_overload,0.9823,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,35,,diagnosed,device_overload,0.9663,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,36,,diagnosed,device_overload,0.9718,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,37,,diagnosed,device_overload,0.9698,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,38,,diagnosed,device_overload,0.9829,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,39,,diagnosed,device_overload,0.9792,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,40,,diagnosed,device_overload,0.9494,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,41,,diagnosed,device_overload,0.9745,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,42,,diagnosed,device_overload,0.9754,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,43,,diagnosed,device_overload,0.9733,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,44,,diagnosed,device_overload,0.9649,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,45,,diagnosed,device_overload,0.9827,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,46,,diagnosed,device_overload,0.9774,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,47,,diagnosed,device_overload,0.9708,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,48,,diagnosed,device_overload,0.9733,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+device_overload,scenario,device_overload,49,,diagnosed,device_overload,0.978,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+hardware_failure,scenario,hardware_failure,0,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,1,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,2,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,3,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,4,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,5,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,6,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,7,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,8,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,9,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,10,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,11,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,12,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,13,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,14,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,15,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,16,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,17,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,18,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,19,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,20,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,21,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,22,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,23,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,24,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,25,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,26,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,27,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,28,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,29,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,30,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,31,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,32,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,33,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,34,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,35,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,36,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,37,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,38,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,39,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,40,,diagnosed,hardware_failure,0.6762,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,41,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,42,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,43,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,44,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,45,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,46,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,47,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,48,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+hardware_failure,scenario,hardware_failure,49,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+latency_spike,scenario,latency_spike,0,,insufficient_evidence,link_congestion,0.311,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,1,,insufficient_evidence,upstream_issue,0.3931,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,2,,insufficient_evidence,upstream_issue,0.2339,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,3,,insufficient_evidence,upstream_issue,0.3953,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,4,,insufficient_evidence,upstream_issue,0.2503,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,5,,insufficient_evidence,upstream_issue,0.2335,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,6,,insufficient_evidence,upstream_issue,0.2074,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,7,,insufficient_evidence,upstream_issue,0.2036,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,8,,insufficient_evidence,upstream_issue,0.1938,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,9,,insufficient_evidence,upstream_issue,0.3979,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,10,,insufficient_evidence,upstream_issue,0.365,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,11,,diagnosed,link_congestion,0.5771,medium,correct,acceptable diagnosis link_congestion with medium confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,link_congestion,1
+latency_spike,scenario,latency_spike,12,,insufficient_evidence,link_congestion,0.5286,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,13,,insufficient_evidence,upstream_issue,0.3953,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,14,,insufficient_evidence,link_congestion,0.3119,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,15,,insufficient_evidence,upstream_issue,0.388,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,16,,insufficient_evidence,upstream_issue,0.1751,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,17,,insufficient_evidence,upstream_issue,0.3898,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,18,,insufficient_evidence,upstream_issue,0.3817,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,19,,insufficient_evidence,upstream_issue,0.2286,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,20,,insufficient_evidence,upstream_issue,0.3953,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,21,,insufficient_evidence,upstream_issue,0.1827,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,22,,insufficient_evidence,upstream_issue,0.3962,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,23,,insufficient_evidence,upstream_issue,0.1889,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,24,,insufficient_evidence,link_congestion,0.2741,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,25,,insufficient_evidence,upstream_issue,0.4017,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,26,,diagnosed,link_congestion,0.5564,medium,correct,acceptable diagnosis link_congestion with medium confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,link_congestion,1
+latency_spike,scenario,latency_spike,27,,insufficient_evidence,upstream_issue,0.171,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,28,,insufficient_evidence,upstream_issue,0.2188,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,29,,insufficient_evidence,upstream_issue,0.1651,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,30,,insufficient_evidence,upstream_issue,0.4029,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,31,,insufficient_evidence,upstream_issue,0.231,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,32,,insufficient_evidence,upstream_issue,0.2081,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,33,,insufficient_evidence,upstream_issue,0.2261,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,34,,insufficient_evidence,upstream_issue,0.3961,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,35,,insufficient_evidence,upstream_issue,0.2055,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,36,,insufficient_evidence,upstream_issue,0.3945,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,37,,insufficient_evidence,upstream_issue,0.389,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,38,,insufficient_evidence,upstream_issue,0.3919,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,39,,insufficient_evidence,upstream_issue,0.1817,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,40,,insufficient_evidence,upstream_issue,0.2337,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,41,,insufficient_evidence,link_congestion,0.2349,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,42,,insufficient_evidence,upstream_issue,0.199,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,43,,insufficient_evidence,upstream_issue,0.2236,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,44,,insufficient_evidence,upstream_issue,0.2034,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,45,,insufficient_evidence,upstream_issue,0.3988,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,46,,insufficient_evidence,upstream_issue,0.4001,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+latency_spike,scenario,latency_spike,47,,insufficient_evidence,upstream_issue,0.1902,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,48,,insufficient_evidence,upstream_issue,0.1971,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+latency_spike,scenario,latency_spike,49,,insufficient_evidence,upstream_issue,0.2012,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+interoperability_failure,scenario,interoperability_failure,0,,diagnosed,link_congestion,0.8811,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,1,,diagnosed,link_congestion,0.8802,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,2,,diagnosed,link_congestion,0.8808,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,3,,diagnosed,link_congestion,0.8806,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,4,,diagnosed,link_congestion,0.8809,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,5,,diagnosed,link_congestion,0.8805,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,6,,diagnosed,link_congestion,0.8789,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,7,,diagnosed,link_congestion,0.8792,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,8,,diagnosed,link_congestion,0.8819,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,9,,diagnosed,link_congestion,0.8818,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,10,,diagnosed,link_congestion,0.8813,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,11,,diagnosed,link_congestion,0.8798,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,12,,diagnosed,link_congestion,0.8818,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,13,,diagnosed,link_congestion,0.8795,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,14,,diagnosed,link_congestion,0.8796,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,15,,diagnosed,link_congestion,0.8813,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,16,,diagnosed,link_congestion,0.8791,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,17,,diagnosed,link_congestion,0.8802,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,18,,diagnosed,link_congestion,0.8755,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,19,,diagnosed,link_congestion,0.8796,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,20,,diagnosed,link_congestion,0.8808,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,21,,diagnosed,link_congestion,0.8799,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,22,,diagnosed,link_congestion,0.8788,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,23,,diagnosed,link_congestion,0.8788,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,24,,diagnosed,link_congestion,0.8731,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,0
+interoperability_failure,scenario,interoperability_failure,25,,diagnosed,link_congestion,0.8806,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,26,,diagnosed,link_congestion,0.8792,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,27,,diagnosed,link_congestion,0.8813,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,28,,diagnosed,link_congestion,0.8792,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,29,,diagnosed,link_congestion,0.8802,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,30,,diagnosed,link_congestion,0.8816,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,31,,diagnosed,link_congestion,0.8768,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,32,,diagnosed,link_congestion,0.8791,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,33,,diagnosed,link_congestion,0.873,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,34,,diagnosed,link_congestion,0.8799,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,35,,diagnosed,link_congestion,0.8795,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,36,,diagnosed,link_congestion,0.88,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,37,,diagnosed,link_congestion,0.8741,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,0
+interoperability_failure,scenario,interoperability_failure,38,,diagnosed,link_congestion,0.8803,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,39,,diagnosed,link_congestion,0.8815,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,40,,diagnosed,link_congestion,0.8812,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,41,,diagnosed,link_congestion,0.8804,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,42,,diagnosed,link_congestion,0.8798,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,43,,diagnosed,link_congestion,0.882,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,44,,diagnosed,link_congestion,0.88,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,45,,diagnosed,link_congestion,0.881,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,46,,diagnosed,link_congestion,0.8785,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,47,,diagnosed,link_congestion,0.8799,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,48,,diagnosed,link_congestion,0.8799,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+interoperability_failure,scenario,interoperability_failure,49,,diagnosed,link_congestion,0.8794,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+multi_fault,scenario,multi_fault,0,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,1,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,2,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,3,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,4,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,5,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,6,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,7,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,8,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,9,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,10,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,11,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,12,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,13,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,14,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,15,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,16,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,17,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,18,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,19,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,20,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,21,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,22,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,23,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,24,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,25,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,26,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,27,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,28,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,29,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,30,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,31,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,32,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,33,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,34,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,35,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,36,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,37,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,38,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,39,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,40,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,41,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,42,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,43,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,44,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,45,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,46,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,47,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,48,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+multi_fault,scenario,multi_fault,49,,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+subtle_degradation,scenario,subtle_degradation,0,,insufficient_evidence,normal,0.2343,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,1,,insufficient_evidence,normal,0.2233,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,2,,insufficient_evidence,normal,0.2606,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,3,,insufficient_evidence,normal,0.2461,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,4,,insufficient_evidence,normal,0.2233,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,5,,insufficient_evidence,normal,0.241,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,6,,insufficient_evidence,normal,0.2453,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,7,,insufficient_evidence,normal,0.2288,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,8,,insufficient_evidence,normal,0.2341,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,9,,insufficient_evidence,normal,0.2349,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,10,,insufficient_evidence,normal,0.2233,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,11,,insufficient_evidence,normal,0.2344,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,12,,insufficient_evidence,normal,0.2443,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,13,,insufficient_evidence,normal,0.2314,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,14,,insufficient_evidence,normal,0.2559,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,15,,insufficient_evidence,normal,0.2233,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,16,,insufficient_evidence,normal,0.2559,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,17,,insufficient_evidence,normal,0.2467,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,18,,insufficient_evidence,normal,0.2352,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,19,,insufficient_evidence,normal,0.2399,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,20,,insufficient_evidence,normal,0.2559,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,21,,insufficient_evidence,normal,0.2559,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,22,,insufficient_evidence,normal,0.2424,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,23,,insufficient_evidence,normal,0.287,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,24,,insufficient_evidence,normal,0.2559,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,25,,insufficient_evidence,normal,0.2326,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,26,,insufficient_evidence,normal,0.2552,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,27,,insufficient_evidence,normal,0.2559,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,28,,insufficient_evidence,normal,0.2233,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,29,,insufficient_evidence,normal,0.2319,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,30,,insufficient_evidence,normal,0.2405,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,31,,insufficient_evidence,normal,0.2393,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,32,,insufficient_evidence,normal,0.2233,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,33,,insufficient_evidence,normal,0.2775,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,34,,insufficient_evidence,normal,0.2292,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,35,,insufficient_evidence,normal,0.2364,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,36,,insufficient_evidence,normal,0.2677,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,37,,insufficient_evidence,normal,0.2439,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,38,,insufficient_evidence,normal,0.2559,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,39,,insufficient_evidence,normal,0.2342,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,40,,insufficient_evidence,normal,0.2275,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,41,,insufficient_evidence,normal,0.2559,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,42,,insufficient_evidence,normal,0.2233,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,43,,insufficient_evidence,normal,0.2411,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,44,,insufficient_evidence,normal,0.2233,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,45,,insufficient_evidence,normal,0.2355,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,46,,insufficient_evidence,normal,0.2559,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,47,,insufficient_evidence,normal,0.2332,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,48,,insufficient_evidence,normal,0.2281,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+subtle_degradation,scenario,subtle_degradation,49,,insufficient_evidence,normal,0.2336,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+insufficient_data,scenario,insufficient_data,0,,insufficient_evidence,upstream_issue,0.0243,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,1,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,2,,insufficient_evidence,upstream_issue,0.028,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,3,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,4,,insufficient_evidence,upstream_issue,0.028,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,5,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,6,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,7,,insufficient_evidence,upstream_issue,0.0273,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,8,,insufficient_evidence,upstream_issue,0.0278,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,9,,insufficient_evidence,upstream_issue,0.0244,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,10,,insufficient_evidence,upstream_issue,0.0267,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,11,,insufficient_evidence,upstream_issue,0.028,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,12,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,13,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,14,,insufficient_evidence,upstream_issue,0.028,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,15,,insufficient_evidence,upstream_issue,0.026,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,16,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,17,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,18,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,19,,insufficient_evidence,upstream_issue,0.0205,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,20,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,21,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,22,,insufficient_evidence,upstream_issue,0.0269,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,23,,insufficient_evidence,upstream_issue,0.0281,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,24,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,25,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,26,,insufficient_evidence,upstream_issue,0.028,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,27,,insufficient_evidence,upstream_issue,0.0278,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,28,,insufficient_evidence,upstream_issue,0.0281,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,29,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,30,,insufficient_evidence,upstream_issue,0.0281,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,31,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,32,,insufficient_evidence,upstream_issue,0.0281,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,33,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,34,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,35,,insufficient_evidence,upstream_issue,0.0281,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,36,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,37,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,38,,insufficient_evidence,upstream_issue,0.028,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,39,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,40,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,41,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,42,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,43,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,44,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,45,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,46,,insufficient_evidence,upstream_issue,0.027,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,47,,insufficient_evidence,upstream_issue,0.0281,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,48,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+insufficient_data,scenario,insufficient_data,49,,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+chaos:normal,chaos,normal,0,rename_fields,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+chaos:normal,chaos,normal,1,swap_units,normal,normal,0.9099,high,correct,normal recognised,0,1,1,normal,normal,0
+chaos:normal,chaos,normal,2,drop_metrics,normal,normal,0.7015,medium,correct,normal recognised,0,1,1,normal,normal,0
+chaos:normal,chaos,normal,3,inject_nan,normal,normal,0.9057,high,correct,normal recognised,0,1,1,normal,normal,0
+chaos:normal,chaos,normal,4,downgrade_schema,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+chaos:normal,chaos,normal,5,shuffle_timestamps,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+chaos:normal,chaos,normal,6,add_noise,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+chaos:normal,chaos,normal,7,duplicate_records,normal,normal,0.8146,high,correct,normal recognised,0,1,1,normal,normal,0
+chaos:normal,chaos,normal,8,stale_timestamps,normal,normal,0.802,high,correct,normal recognised,0,1,1,normal,normal,0
+chaos:normal,chaos,normal,9,flatten_or_nest,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+chaos:link_congestion,chaos,link_congestion,0,rename_fields,diagnosed,link_congestion,0.9965,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:link_congestion,chaos,link_congestion,1,swap_units,diagnosed,link_congestion,0.8802,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:link_congestion,chaos,link_congestion,2,drop_metrics,diagnosed,link_congestion,0.9955,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:link_congestion,chaos,link_congestion,3,inject_nan,diagnosed,link_congestion,0.9971,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:link_congestion,chaos,link_congestion,4,downgrade_schema,diagnosed,link_congestion,0.9956,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:link_congestion,chaos,link_congestion,5,shuffle_timestamps,diagnosed,link_congestion,0.9966,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:link_congestion,chaos,link_congestion,6,add_noise,diagnosed,link_congestion,0.996,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:link_congestion,chaos,link_congestion,7,duplicate_records,diagnosed,link_congestion,0.9942,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:link_congestion,chaos,link_congestion,8,stale_timestamps,diagnosed,link_congestion,0.9969,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:link_congestion,chaos,link_congestion,9,flatten_or_nest,diagnosed,link_congestion,0.9957,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:weak_wifi,chaos,weak_wifi,0,rename_fields,diagnosed,weak_wifi,0.993,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+chaos:weak_wifi,chaos,weak_wifi,1,swap_units,diagnosed,weak_wifi,0.8945,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+chaos:weak_wifi,chaos,weak_wifi,2,drop_metrics,diagnosed,weak_wifi,0.9929,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+chaos:weak_wifi,chaos,weak_wifi,3,inject_nan,diagnosed,weak_wifi,0.9936,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+chaos:weak_wifi,chaos,weak_wifi,4,downgrade_schema,diagnosed,weak_wifi,0.9937,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+chaos:weak_wifi,chaos,weak_wifi,5,shuffle_timestamps,diagnosed,weak_wifi,0.993,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+chaos:weak_wifi,chaos,weak_wifi,6,add_noise,diagnosed,weak_wifi,0.9913,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+chaos:weak_wifi,chaos,weak_wifi,7,duplicate_records,diagnosed,weak_wifi,0.9892,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+chaos:weak_wifi,chaos,weak_wifi,8,stale_timestamps,diagnosed,weak_wifi,0.9932,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+chaos:weak_wifi,chaos,weak_wifi,9,flatten_or_nest,diagnosed,weak_wifi,0.9903,high,correct,weak_wifi,0,1,1,weak_wifi,weak_wifi,0
+chaos:interface_fault,chaos,interface_fault,0,rename_fields,diagnosed,interface_fault,0.9522,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+chaos:interface_fault,chaos,interface_fault,1,swap_units,diagnosed,interface_fault,0.8586,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+chaos:interface_fault,chaos,interface_fault,2,drop_metrics,diagnosed,interface_fault,0.9504,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+chaos:interface_fault,chaos,interface_fault,3,inject_nan,diagnosed,interface_fault,0.9509,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+chaos:interface_fault,chaos,interface_fault,4,downgrade_schema,diagnosed,interface_fault,0.9504,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,1
+chaos:interface_fault,chaos,interface_fault,5,shuffle_timestamps,diagnosed,interface_fault,0.9808,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+chaos:interface_fault,chaos,interface_fault,6,add_noise,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+chaos:interface_fault,chaos,interface_fault,7,duplicate_records,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+chaos:interface_fault,chaos,interface_fault,8,stale_timestamps,diagnosed,interface_fault,0.9542,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+chaos:interface_fault,chaos,interface_fault,9,flatten_or_nest,diagnosed,interface_fault,0.9813,high,correct,interface_fault,0,1,1,interface_fault,interface_fault,0
+chaos:dns_failure,chaos,dns_failure,0,rename_fields,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+chaos:dns_failure,chaos,dns_failure,1,swap_units,diagnosed,dns_failure,0.8142,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+chaos:dns_failure,chaos,dns_failure,2,drop_metrics,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+chaos:dns_failure,chaos,dns_failure,3,inject_nan,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+chaos:dns_failure,chaos,dns_failure,4,downgrade_schema,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+chaos:dns_failure,chaos,dns_failure,5,shuffle_timestamps,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+chaos:dns_failure,chaos,dns_failure,6,add_noise,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+chaos:dns_failure,chaos,dns_failure,7,duplicate_records,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+chaos:dns_failure,chaos,dns_failure,8,stale_timestamps,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+chaos:dns_failure,chaos,dns_failure,9,flatten_or_nest,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,dns_failure,dns_failure,0
+chaos:dhcp_failure,chaos,dhcp_failure,0,rename_fields,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+chaos:dhcp_failure,chaos,dhcp_failure,1,swap_units,diagnosed,dhcp_failure,0.9209,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+chaos:dhcp_failure,chaos,dhcp_failure,2,drop_metrics,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+chaos:dhcp_failure,chaos,dhcp_failure,3,inject_nan,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+chaos:dhcp_failure,chaos,dhcp_failure,4,downgrade_schema,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+chaos:dhcp_failure,chaos,dhcp_failure,5,shuffle_timestamps,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+chaos:dhcp_failure,chaos,dhcp_failure,6,add_noise,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+chaos:dhcp_failure,chaos,dhcp_failure,7,duplicate_records,diagnosed,dhcp_failure,0.9391,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+chaos:dhcp_failure,chaos,dhcp_failure,8,stale_timestamps,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+chaos:dhcp_failure,chaos,dhcp_failure,9,flatten_or_nest,diagnosed,dhcp_failure,0.9392,high,correct,dhcp_failure,0,1,1,dhcp_failure,dhcp_failure,0
+chaos:device_overload,chaos,device_overload,0,rename_fields,diagnosed,device_overload,0.9757,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+chaos:device_overload,chaos,device_overload,1,swap_units,diagnosed,device_overload,0.8425,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+chaos:device_overload,chaos,device_overload,2,drop_metrics,diagnosed,device_overload,0.9721,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+chaos:device_overload,chaos,device_overload,3,inject_nan,diagnosed,device_overload,0.976,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+chaos:device_overload,chaos,device_overload,4,downgrade_schema,diagnosed,device_overload,0.9874,high,correct,device_overload,0,1,1,device_overload,device_overload,1
+chaos:device_overload,chaos,device_overload,5,shuffle_timestamps,diagnosed,device_overload,0.9627,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+chaos:device_overload,chaos,device_overload,6,add_noise,diagnosed,device_overload,0.982,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+chaos:device_overload,chaos,device_overload,7,duplicate_records,diagnosed,device_overload,0.9653,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+chaos:device_overload,chaos,device_overload,8,stale_timestamps,diagnosed,device_overload,0.9838,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+chaos:device_overload,chaos,device_overload,9,flatten_or_nest,diagnosed,device_overload,0.9552,high,correct,device_overload,0,1,1,device_overload,device_overload,0
+chaos:hardware_failure,chaos,hardware_failure,0,rename_fields,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+chaos:hardware_failure,chaos,hardware_failure,1,swap_units,diagnosed,hardware_failure,0.6131,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+chaos:hardware_failure,chaos,hardware_failure,2,drop_metrics,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+chaos:hardware_failure,chaos,hardware_failure,3,inject_nan,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+chaos:hardware_failure,chaos,hardware_failure,4,downgrade_schema,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+chaos:hardware_failure,chaos,hardware_failure,5,shuffle_timestamps,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+chaos:hardware_failure,chaos,hardware_failure,6,add_noise,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+chaos:hardware_failure,chaos,hardware_failure,7,duplicate_records,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+chaos:hardware_failure,chaos,hardware_failure,8,stale_timestamps,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+chaos:hardware_failure,chaos,hardware_failure,9,flatten_or_nest,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+chaos:latency_spike,chaos,latency_spike,0,rename_fields,insufficient_evidence,link_congestion,0.311,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+chaos:latency_spike,chaos,latency_spike,1,swap_units,insufficient_evidence,upstream_issue,0.337,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+chaos:latency_spike,chaos,latency_spike,2,drop_metrics,insufficient_evidence,upstream_issue,0.2214,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+chaos:latency_spike,chaos,latency_spike,3,inject_nan,insufficient_evidence,upstream_issue,0.3953,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+chaos:latency_spike,chaos,latency_spike,4,downgrade_schema,insufficient_evidence,upstream_issue,0.2503,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+chaos:latency_spike,chaos,latency_spike,5,shuffle_timestamps,insufficient_evidence,upstream_issue,0.2335,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+chaos:latency_spike,chaos,latency_spike,6,add_noise,insufficient_evidence,upstream_issue,0.3891,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+chaos:latency_spike,chaos,latency_spike,7,duplicate_records,insufficient_evidence,upstream_issue,0.2036,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+chaos:latency_spike,chaos,latency_spike,8,stale_timestamps,insufficient_evidence,upstream_issue,0.1938,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+chaos:latency_spike,chaos,latency_spike,9,flatten_or_nest,insufficient_evidence,upstream_issue,0.3979,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+chaos:interoperability_failure,chaos,interoperability_failure,0,rename_fields,diagnosed,link_congestion,0.8811,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:interoperability_failure,chaos,interoperability_failure,1,swap_units,insufficient_evidence,upstream_issue,0.359,low,abstain,abstained (allowed),0,0,1,link_congestion,abstain,1
+chaos:interoperability_failure,chaos,interoperability_failure,2,drop_metrics,diagnosed,link_congestion,0.8734,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:interoperability_failure,chaos,interoperability_failure,3,inject_nan,diagnosed,link_congestion,0.8811,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:interoperability_failure,chaos,interoperability_failure,4,downgrade_schema,diagnosed,link_congestion,0.8809,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:interoperability_failure,chaos,interoperability_failure,5,shuffle_timestamps,diagnosed,link_congestion,0.8805,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:interoperability_failure,chaos,interoperability_failure,6,add_noise,diagnosed,link_congestion,0.8785,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:interoperability_failure,chaos,interoperability_failure,7,duplicate_records,diagnosed,link_congestion,0.8792,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:interoperability_failure,chaos,interoperability_failure,8,stale_timestamps,diagnosed,link_congestion,0.8819,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:interoperability_failure,chaos,interoperability_failure,9,flatten_or_nest,diagnosed,link_congestion,0.8818,high,correct,link_congestion,0,1,1,link_congestion,link_congestion,1
+chaos:multi_fault,chaos,multi_fault,0,rename_fields,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+chaos:multi_fault,chaos,multi_fault,1,swap_units,diagnosed,dns_failure,0.8142,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+chaos:multi_fault,chaos,multi_fault,2,drop_metrics,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+chaos:multi_fault,chaos,multi_fault,3,inject_nan,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+chaos:multi_fault,chaos,multi_fault,4,downgrade_schema,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+chaos:multi_fault,chaos,multi_fault,5,shuffle_timestamps,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+chaos:multi_fault,chaos,multi_fault,6,add_noise,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+chaos:multi_fault,chaos,multi_fault,7,duplicate_records,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+chaos:multi_fault,chaos,multi_fault,8,stale_timestamps,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+chaos:multi_fault,chaos,multi_fault,9,flatten_or_nest,diagnosed,dns_failure,0.9257,high,correct,dns_failure,0,1,1,multi_fault: link_congestion | dns_failure,dns_failure,1
+chaos:subtle_degradation,chaos,subtle_degradation,0,rename_fields,insufficient_evidence,normal,0.2343,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+chaos:subtle_degradation,chaos,subtle_degradation,1,swap_units,insufficient_evidence,normal,0.2209,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+chaos:subtle_degradation,chaos,subtle_degradation,2,drop_metrics,normal,normal,0.7015,medium,wrong,claimed normal normal without sufficient evidence,0,0,1,insufficient_evidence,normal,0
+chaos:subtle_degradation,chaos,subtle_degradation,3,inject_nan,insufficient_evidence,normal,0.2129,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+chaos:subtle_degradation,chaos,subtle_degradation,4,downgrade_schema,insufficient_evidence,normal,0.2233,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+chaos:subtle_degradation,chaos,subtle_degradation,5,shuffle_timestamps,insufficient_evidence,normal,0.241,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+chaos:subtle_degradation,chaos,subtle_degradation,6,add_noise,insufficient_evidence,normal,0.2467,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+chaos:subtle_degradation,chaos,subtle_degradation,7,duplicate_records,insufficient_evidence,normal,0.1865,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+chaos:subtle_degradation,chaos,subtle_degradation,8,stale_timestamps,normal,normal,0.802,high,wrong,claimed normal normal without sufficient evidence,0,0,1,insufficient_evidence,normal,0
+chaos:subtle_degradation,chaos,subtle_degradation,9,flatten_or_nest,insufficient_evidence,normal,0.2349,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,0
+chaos:insufficient_data,chaos,insufficient_data,0,rename_fields,insufficient_evidence,upstream_issue,0.0243,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+chaos:insufficient_data,chaos,insufficient_data,1,swap_units,insufficient_evidence,upstream_issue,0.0192,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+chaos:insufficient_data,chaos,insufficient_data,2,drop_metrics,insufficient_evidence,upstream_issue,0.028,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+chaos:insufficient_data,chaos,insufficient_data,3,inject_nan,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+chaos:insufficient_data,chaos,insufficient_data,4,downgrade_schema,insufficient_evidence,upstream_issue,0.028,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+chaos:insufficient_data,chaos,insufficient_data,5,shuffle_timestamps,insufficient_evidence,upstream_issue,0.0282,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+chaos:insufficient_data,chaos,insufficient_data,6,add_noise,insufficient_evidence,upstream_issue,0.0252,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+chaos:insufficient_data,chaos,insufficient_data,7,duplicate_records,insufficient_evidence,upstream_issue,0.0273,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+chaos:insufficient_data,chaos,insufficient_data,8,stale_timestamps,insufficient_evidence,upstream_issue,0.0269,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+chaos:insufficient_data,chaos,insufficient_data,9,flatten_or_nest,insufficient_evidence,upstream_issue,0.0244,low,correct,honest abstention,0,0,1,insufficient_evidence,abstain,1
+organizer:normal,organizer,normal,0,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,1,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,2,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,3,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,4,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,5,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,6,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,7,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,8,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,9,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,10,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,11,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,12,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,13,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,14,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,15,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,16,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,17,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,18,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,19,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,20,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,21,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,22,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,23,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,24,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,25,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,26,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,27,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,28,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,29,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,30,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,31,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,32,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,33,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,34,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,35,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,36,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,37,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,38,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,39,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,40,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,41,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,42,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,43,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,44,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,45,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,46,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,47,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,48,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:normal,organizer,normal,49,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer:latency_spike,organizer,latency_spike,0,,insufficient_evidence,upstream_issue,0.1772,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,1,,insufficient_evidence,upstream_issue,0.1457,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,2,,insufficient_evidence,upstream_issue,0.1781,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,3,,insufficient_evidence,upstream_issue,0.1747,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,4,,insufficient_evidence,upstream_issue,0.1285,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,5,,insufficient_evidence,upstream_issue,0.1747,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,6,,insufficient_evidence,upstream_issue,0.1741,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,7,,insufficient_evidence,upstream_issue,0.1639,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,8,,insufficient_evidence,upstream_issue,0.166,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,9,,insufficient_evidence,upstream_issue,0.1757,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,10,,insufficient_evidence,upstream_issue,0.1742,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,11,,insufficient_evidence,upstream_issue,0.1343,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,12,,insufficient_evidence,upstream_issue,0.1712,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,13,,insufficient_evidence,upstream_issue,0.1257,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,14,,insufficient_evidence,upstream_issue,0.1496,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,15,,insufficient_evidence,upstream_issue,0.1299,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,16,,insufficient_evidence,upstream_issue,0.1781,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,17,,insufficient_evidence,upstream_issue,0.1775,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,18,,insufficient_evidence,upstream_issue,0.1759,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,19,,insufficient_evidence,upstream_issue,0.1705,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,20,,insufficient_evidence,upstream_issue,0.1606,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,21,,insufficient_evidence,upstream_issue,0.1772,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,22,,insufficient_evidence,upstream_issue,0.1646,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,23,,insufficient_evidence,upstream_issue,0.1754,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,24,,insufficient_evidence,upstream_issue,0.1747,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,25,,insufficient_evidence,upstream_issue,0.134,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,26,,insufficient_evidence,upstream_issue,0.1747,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,27,,insufficient_evidence,upstream_issue,0.0,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,28,,insufficient_evidence,upstream_issue,0.1674,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,29,,insufficient_evidence,upstream_issue,0.1641,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,30,,insufficient_evidence,upstream_issue,0.163,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,31,,insufficient_evidence,upstream_issue,0.1507,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,32,,insufficient_evidence,upstream_issue,0.1516,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,33,,insufficient_evidence,upstream_issue,0.1747,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,34,,insufficient_evidence,upstream_issue,0.1776,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,35,,insufficient_evidence,upstream_issue,0.1776,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,36,,insufficient_evidence,upstream_issue,0.1688,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,37,,insufficient_evidence,upstream_issue,0.1621,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,38,,insufficient_evidence,upstream_issue,0.1541,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,39,,insufficient_evidence,upstream_issue,0.158,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,40,,insufficient_evidence,upstream_issue,0.172,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,41,,insufficient_evidence,upstream_issue,0.0,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,42,,insufficient_evidence,upstream_issue,0.1781,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,43,,insufficient_evidence,upstream_issue,0.1473,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,44,,insufficient_evidence,upstream_issue,0.1519,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,45,,insufficient_evidence,upstream_issue,0.1778,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,0
+organizer:latency_spike,organizer,latency_spike,46,,insufficient_evidence,upstream_issue,0.1644,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,47,,insufficient_evidence,upstream_issue,0.1671,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,48,,insufficient_evidence,upstream_issue,0.168,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:latency_spike,organizer,latency_spike,49,,insufficient_evidence,upstream_issue,0.1242,low,correct,honest abstention,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,abstain,1
+organizer:hardware_failure,organizer,hardware_failure,0,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,1,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,2,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,3,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,4,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,5,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,6,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,7,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,8,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,9,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,10,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,11,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,12,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,13,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,14,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,15,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,16,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,17,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,18,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,19,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,20,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,21,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,22,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,23,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,24,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,25,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,26,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,27,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,28,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,29,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,30,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,31,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,32,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,33,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,34,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,35,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,36,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,37,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,38,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,39,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,40,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,41,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,42,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,43,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,44,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,45,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,46,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,47,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,48,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer:hardware_failure,organizer,hardware_failure,49,,diagnosed,hardware_failure,0.6763,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer_batch:normal,organizer_batch,normal,0,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer_batch:normal,organizer_batch,normal,1,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer_batch:normal,organizer_batch,normal,2,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer_batch:normal,organizer_batch,normal,3,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer_batch:normal,organizer_batch,normal,4,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer_batch:normal,organizer_batch,normal,5,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer_batch:normal,organizer_batch,normal,6,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer_batch:normal,organizer_batch,normal,7,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer_batch:normal,organizer_batch,normal,8,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer_batch:normal,organizer_batch,normal,9,,normal,normal,0.9996,high,correct,normal recognised,0,1,1,normal,normal,0
+organizer_batch:latency_spike,organizer_batch,latency_spike,0,,diagnosed,upstream_issue,0.9075,high,correct,acceptable diagnosis upstream_issue with high confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,upstream_issue,0
+organizer_batch:latency_spike,organizer_batch,latency_spike,1,,diagnosed,upstream_issue,0.8831,high,correct,acceptable diagnosis upstream_issue with high confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,upstream_issue,0
+organizer_batch:latency_spike,organizer_batch,latency_spike,2,,diagnosed,upstream_issue,0.9131,high,correct,acceptable diagnosis upstream_issue with high confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,upstream_issue,0
+organizer_batch:latency_spike,organizer_batch,latency_spike,3,,diagnosed,upstream_issue,0.9111,high,correct,acceptable diagnosis upstream_issue with high confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,upstream_issue,0
+organizer_batch:latency_spike,organizer_batch,latency_spike,4,,diagnosed,upstream_issue,0.9094,high,correct,acceptable diagnosis upstream_issue with high confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,upstream_issue,0
+organizer_batch:latency_spike,organizer_batch,latency_spike,5,,diagnosed,upstream_issue,0.8972,high,correct,acceptable diagnosis upstream_issue with high confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,upstream_issue,0
+organizer_batch:latency_spike,organizer_batch,latency_spike,6,,diagnosed,upstream_issue,0.8968,high,correct,acceptable diagnosis upstream_issue with high confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,upstream_issue,0
+organizer_batch:latency_spike,organizer_batch,latency_spike,7,,diagnosed,upstream_issue,0.9057,high,correct,acceptable diagnosis upstream_issue with high confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,upstream_issue,0
+organizer_batch:latency_spike,organizer_batch,latency_spike,8,,diagnosed,upstream_issue,0.9061,high,correct,acceptable diagnosis upstream_issue with high confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,upstream_issue,0
+organizer_batch:latency_spike,organizer_batch,latency_spike,9,,diagnosed,upstream_issue,0.9131,high,correct,acceptable diagnosis upstream_issue with high confidence,0,1,0,ambiguous: abstain | link_congestion | upstream_issue,upstream_issue,0
+organizer_batch:hardware_failure,organizer_batch,hardware_failure,0,,diagnosed,hardware_failure,0.6593,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer_batch:hardware_failure,organizer_batch,hardware_failure,1,,diagnosed,hardware_failure,0.6593,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer_batch:hardware_failure,organizer_batch,hardware_failure,2,,diagnosed,hardware_failure,0.6593,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer_batch:hardware_failure,organizer_batch,hardware_failure,3,,diagnosed,hardware_failure,0.6593,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer_batch:hardware_failure,organizer_batch,hardware_failure,4,,diagnosed,hardware_failure,0.6593,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer_batch:hardware_failure,organizer_batch,hardware_failure,5,,diagnosed,hardware_failure,0.6593,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer_batch:hardware_failure,organizer_batch,hardware_failure,6,,diagnosed,hardware_failure,0.6593,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer_batch:hardware_failure,organizer_batch,hardware_failure,7,,diagnosed,hardware_failure,0.6593,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer_batch:hardware_failure,organizer_batch,hardware_failure,8,,diagnosed,hardware_failure,0.6593,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1
+organizer_batch:hardware_failure,organizer_batch,hardware_failure,9,,diagnosed,hardware_failure,0.6593,medium,correct,hardware_failure,0,1,1,hardware_failure,hardware_failure,1

@@ -1,0 +1,18 @@
+{
+  "scenario": "dns_failure",
+  "seed": 42,
+  "description": "Resolver failing: DNS probes time out while ICMP latency stays healthy everywhere.",
+  "expected_status": "diagnosed",
+  "root_cause": "dns_failure",
+  "acceptable_root_causes": [
+    "dns_failure"
+  ],
+  "abstain_ok": false,
+  "root_device": "DNS_SRV_01",
+  "affected_devices": [
+    "DNS_SRV_01"
+  ],
+  "symptomatic_devices": [],
+  "secondary_root_causes": [],
+  "mutations": []
+}
