@@ -1,4 +1,4 @@
-"""Phase 2: topology, organizer generator copy, scenario generator, fixtures."""
+"""Data: topology, organizer generator copy, scenario generator, fixtures."""
 
 from __future__ import annotations
 

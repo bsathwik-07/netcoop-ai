@@ -1,7 +1,7 @@
 """Chaos harness as tests: every scenario x every single mutation, key pairs, and malformed files.
 
-Targets (master prompt section 6): correct or abstaining on 100 % of single mutations, never a
-wrong high-confidence answer, never a crash, and every mutation explained in data_quality.
+Targets: correct or abstaining on every single mutation, never a wrong high-confidence answer,
+never a crash, and every mutation explained in data_quality.
 """
 
 from __future__ import annotations

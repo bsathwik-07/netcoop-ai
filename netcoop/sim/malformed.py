@@ -84,6 +84,4 @@ def write_fixtures(out_dir: Path) -> list[Path]:
         else:
             path.write_text(content, encoding="utf-8")
         paths.append(path)
-    manifest = {name: [c.value for c in codes] for name, codes in EXPECTED.items()}
-    (out_dir / "expected.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     return paths

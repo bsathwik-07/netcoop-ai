@@ -284,24 +284,48 @@ def run_all(
 
 @app.command()
 def chaos(
-    scenario: Annotated[str, typer.Option(help="Scenario to mutate")] = "hardware_failure",
-    seed: Annotated[int, typer.Option(help="Generator seed")] = 42,
+    scenario: Annotated[str, typer.Option(help="Scenario to mutate, or 'all'")] = "hardware_failure",
+    seed: Annotated[int, typer.Option(help="First generator seed")] = 42,
+    seeds: Annotated[int, typer.Option(help="Number of seeds per case")] = 1,
+    pairs: Annotated[bool, typer.Option("--pairs", help="Also every pair of mutations")] = False,
 ) -> None:
-    """Apply each chaos mutation on its own (plus a combined one) and show the diagnosis."""
-    t = Table("mutation", "status", "root cause", "conf", "coverage", "conversions", "rejected", "grade")
+    """Apply chaos mutations (one at a time, optionally every pair) and grade each diagnosis.
+
+    Single scenario: one row per case. `--scenario all`: only the cases that were not correct, plus totals."""
+    import itertools
+
+    names = scenario_names() if scenario == "all" else [scenario]
+    if scenario != "all" and scenario not in SCENARIOS:
+        console.print(f"[red]Unknown scenario {scenario!r}.[/] Choose from: all, {', '.join(scenario_names())}")
+        raise typer.Exit(code=2)
     combos = [[m] for m in MUTATIONS] + [["rename_fields", "swap_units", "downgrade_schema"]]
-    for combo in combos:
-        result = run_scenario(scenario, seed=seed, chaos=combo)
-        r = result.report
-        if r is None:
-            t.add_row("+".join(combo), "[red]SYSTEM FAILURE[/]", "", "", "", "", "", result.error or "")
-            continue
-        g = grade(r, result.truth or {})
-        colour = {"correct": "green", "abstain": "yellow", "wrong": "red"}[g.outcome]
-        t.add_row("+".join(combo), r.status.value, r.root_cause_code.value if r.root_cause_code else "-",
-                  f"{r.confidence:.2f}", f"{r.data_quality.coverage:.2f}", str(r.data_quality.conversions),
-                  str(r.data_quality.rejected_records), f"[{colour}]{g.outcome}[/]")
-    console.print(t)
+    if pairs:
+        combos += [list(p) for p in itertools.combinations(MUTATIONS, 2)]
+    verbose = len(names) == 1
+    t = Table("scenario", "mutation", "seed", "status", "root cause", "conf", "grade")
+    totals = {"correct": 0, "abstain": 0, "wrong": 0, "crash": 0}
+    for name in names:
+        for combo in combos:
+            for s in range(seed, seed + seeds):
+                result = run_scenario(name, seed=s, chaos=combo)
+                r = result.report
+                if r is None:
+                    totals["crash"] += 1
+                    t.add_row(name, "+".join(combo), str(s), "[red]SYSTEM FAILURE[/]", "", "", result.error or "")
+                    continue
+                g = grade(r, result.truth or {})
+                totals[g.outcome] += 1
+                if verbose or g.outcome != "correct":
+                    colour = {"correct": "green", "abstain": "yellow", "wrong": "red"}[g.outcome]
+                    t.add_row(name, "+".join(combo), str(s), r.status.value,
+                              r.root_cause_code.value if r.root_cause_code else "-", f"{r.confidence:.2f}",
+                              f"[{colour}]{g.outcome}[/] {g.reason if g.outcome != 'correct' else ''}")
+    if t.row_count:
+        console.print(t)
+    console.print(f"correct {totals['correct']}, abstained {totals['abstain']}, wrong {totals['wrong']}, "
+                  f"crashes {totals['crash']}")
+    if totals["crash"] or totals["wrong"]:
+        raise typer.Exit(code=1)
 
 
 @app.command("eval")

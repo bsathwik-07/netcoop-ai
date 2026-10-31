@@ -41,8 +41,6 @@ def main() -> None:
     for name in names:
         path = write(name, args.seed, args.duration, args.format, args.devices, args.out)
         print(f"{name:26s} -> {path}")
-        if args.all and args.format == "canonical" and name in ("hardware_failure", "latency_spike"):
-            write(name, args.seed, args.duration, "organizer", args.devices, args.out)
 
 
 if __name__ == "__main__":

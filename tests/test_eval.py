@@ -38,4 +38,4 @@ def test_small_end_to_end_eval_meets_targets(tmp_path) -> None:  # type: ignore[
     assert h["crashes"] == 0 and h["high_confidence_wrong"] == 0 and h["normal_false_alarms"] == 0
     assert h["correct_or_abstain"] >= 0.95
     names = {p.name for p in write_outputs(result, tmp_path)}
-    assert {"summary.json", "summary.md", "runs.csv", "confusion_matrix.png", "reliability.png"} <= names
+    assert {"summary.json", "confusion_matrix.png", "reliability.png"} <= names

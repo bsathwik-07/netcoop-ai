@@ -8,7 +8,6 @@ confidence) count too: a well-calibrated system is rarely right when it says 0.2
 
 from __future__ import annotations
 
-import csv
 import dataclasses
 import json
 import os
@@ -268,13 +267,6 @@ def write_outputs(result: EvalResult, out_dir: Path, tuning: list[dict[str, Any]
     path.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     written.append(path)
 
-    path = out_dir / "runs.csv"
-    with path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=list(result.rows[0]))
-        writer.writeheader()
-        writer.writerows(result.rows)
-    written.append(path)
-
     # confusion matrix
     fig, ax = plt.subplots(figsize=(3.0 + 0.85 * len(cols_l), 1.2 + 0.5 * len(rows_l)))
     grid = [[cells.get((r, c), 0) for c in cols_l] for r in rows_l]
@@ -314,36 +306,4 @@ def write_outputs(result: EvalResult, out_dir: Path, tuning: list[dict[str, Any]
     fig.savefig(path, dpi=140)
     plt.close(fig)
     written.append(path)
-
-    path = out_dir / "summary.md"
-    path.write_text(markdown_summary(headline, groups, calib, tuning), encoding="utf-8")
-    written.append(path)
     return written
-
-
-def markdown_summary(headline: dict[str, Any], groups: dict[str, dict[str, Any]], calib: dict[str, Any],
-                     tuning: list[dict[str, Any]] | None) -> str:
-    lines = ["# NetCoop AI evaluation", "",
-             f"{headline['runs']} runs in {headline['seconds']} s. "
-             f"Correct-or-abstain **{headline['correct_or_abstain']:.1%}**, accuracy {headline['accuracy']:.1%}, "
-             f"abstention rate {headline['abstention_rate']:.1%}, wrong {headline['wrong']}, "
-             f"**high-confidence wrong {headline['high_confidence_wrong']}**, normal false alarms "
-             f"{headline['normal_false_alarms']}, crashes {headline['crashes']}. "
-             f"ECE **{headline['ece']:.3f}**, Brier {headline['brier']:.3f}.", "",
-             "| group | runs | correct | abstain | wrong | correct-or-abstain | high-conf wrong | mean conf |",
-             "|---|---|---|---|---|---|---|---|"]
-    for name, g in groups.items():
-        lines.append(f"| {name} | {g['runs']} | {g['correct']} | {g['abstain']} | {g['wrong']} | "
-                     f"{g['correct_or_abstain']:.1%} | {g['high_confidence_wrong']} | {g['mean_confidence']:.2f} |")
-    lines += ["", "## Calibration bins", "",
-              f"Computed over {calib['runs']} runs with a verifiable answer; {calib['excluded_ambiguous']} runs of "
-              "scenarios whose ground truth accepts several causes without naming one (latency_spike) are excluded.",
-              "", "| confidence bin | runs | mean confidence | accuracy of top |", "|---|---|---|---|"]
-    lines += [f"| {b['bin']} | {b['n']} | {b['confidence']:.2f} | {b['accuracy']:.2f} |" for b in calib["bins"]]
-    if tuning:
-        lines += ["", "## Temperature search", "", "| T | ECE | Brier | correct-or-abstain | high-conf wrong | admissible |",
-                  "|---|---|---|---|---|---|"]
-        lines += [f"| {t['temperature']} | {t['ece']:.3f} | {t['brier']:.3f} | {t['correct_or_abstain']:.1%} | "
-                  f"{t['high_confidence_wrong']} | {t['admissible']} |" for t in tuning]
-    lines += ["", "![confusion](confusion_matrix.png) ![reliability](reliability.png)", ""]
-    return "\n".join(lines)

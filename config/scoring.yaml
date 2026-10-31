@@ -61,7 +61,7 @@ series:
   persistence_samples: 2
 
 # P(h) = softmax(S(h) / temperature) over all hypotheses including `normal`.
-# Tuned in Phase 7 by minimizing ECE (Guo et al., 2017).
+# Chosen by grid search over 0.05-0.2 to minimize ECE (Guo et al., 2017); see `netcoop eval --tune`.
 softmax_temperature: 0.1
 
 # S(normal) = 1 - worst quality-weighted severity on any device.

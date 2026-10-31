@@ -12,4 +12,4 @@ from netcoop.sim.malformed import write_fixtures  # noqa: E402
 
 if __name__ == "__main__":
     paths = write_fixtures(data_dir() / "malformed")
-    print(f"wrote {len(paths)} malformed fixtures + expected.json")
+    print(f"wrote {len(paths)} malformed fixtures")

@@ -6,16 +6,15 @@
 
 ## 1. Overview
 
-Agents never call each other. Every interaction is a JSON **message** on the bus: an **envelope** (who, to whom,
-which conversation, which version) around a **typed payload** (one schema per message type). The in-process bus
-serialises every message to JSON and each recipient decodes and validates its own copy, which is the same path an
-external agent uses through the REST gateway. Every metric value carries an explicit **unit** from a canonical
-vocabulary, every evidence item carries its **quality** and **source agent**, and every failure is a structured
-`ERROR` with a code from the table in section 6.
+Agents never call each other. Every interaction is a JSON message on the bus: an envelope (who, to whom, which
+conversation, which version) around a typed payload (one schema per message type). The bus serializes every message
+to JSON and each recipient decodes and validates its own copy, which is the same path an external agent uses through
+the REST gateway. Every metric value carries a unit from the vocabulary in section 5, every evidence item carries its
+quality and source agent, and every failure is an `ERROR` with a code from section 6.
 
 ### Envelope fields and FIPA ACL
 
-The envelope deliberately mirrors the FIPA ACL message parameters (FIPA SC00061G):
+The envelope follows the FIPA ACL message parameters (FIPA SC00061G):
 
 | NetCoop envelope | FIPA ACL parameter | Meaning |
 |---|---|---|
@@ -540,17 +539,17 @@ sequenceDiagram
 
 ## 4. Versioning policy
 
-* **Version string** `netcoop/<major>.<minor>` in every envelope; every payload names its own `payload_schema`
-  (`<name>/<major>.<minor>`).
-* **Minor versions are fully compatible** (backward and forward, in the Confluent Schema Registry sense): a minor
-  release may only *add optional fields*. Receivers apply a **must-ignore** rule to fields they do not know, so a
-  `netcoop/2.7` message validates as `2.0` and a `2.0` message is accepted by a `2.7` agent.
-* **Major versions require a migration** in `netcoop/protocol/migrations.py`. Majors 1 and 2 are readable today:
-  1.0 -> 1.1 (epoch `ts` becomes ISO-8601, `in_reply_to` and `ttl` added) -> 2.0 (FIPA-style field names,
-  explicit `payload_schema`, typed payloads, explicit units on evidence). Any other major is answered with
-  `E_UNSUPPORTED_VERSION`; it is never dropped silently.
-* Every agent states the versions it reads in `CAPABILITY_ANNOUNCE.supported_protocols`.
-* **Telemetry input** has its own versions (organizer v1, legacy v1.0/v1.1, canonical v2); the ingestion agent
+* Every envelope carries `netcoop/<major>.<minor>`, and every payload names its own schema version in
+  `payload_schema` (`<name>/<major>.<minor>`).
+* Minor versions are compatible in both directions (backward and forward, in the schema-registry sense): a minor
+  release may only add optional fields, and receivers ignore fields they do not know. A `netcoop/2.7` message
+  validates as 2.0, and a 2.0 message is accepted by a 2.7 agent.
+* A major version needs a migration in `netcoop/protocol/migrations.py`. Majors 1 and 2 can be read today:
+  1.0 to 1.1 (epoch `ts` becomes ISO-8601, `in_reply_to` and `ttl` are added), then 1.1 to 2.0 (FIPA-style field
+  names, explicit `payload_schema`, typed payloads, units on evidence). Any other major version is answered with
+  `E_UNSUPPORTED_VERSION` rather than dropped.
+* Each agent lists the versions it reads in `CAPABILITY_ANNOUNCE.supported_protocols`.
+* Telemetry input has its own versions (organizer v1, legacy v1.0 and v1.1, canonical v2). The ingestion agent
   migrates all of them field by field and records each change in the ingestion report.
 
 ## 5. Vocabulary
