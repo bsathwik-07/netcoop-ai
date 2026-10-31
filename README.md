@@ -9,6 +9,8 @@ not support a definite answer, the system says so (`insufficient_evidence`) and 
 > connects to, logs into or sends commands to a real network device. "Remediation" edits a copy of the synthetic
 > telemetry and re-runs the diagnosis, and only after a human approves the action.
 
+**Live dashboard:** https://netcoop-ai.streamlit.app
+
 **At a glance** (from `netcoop eval --seeds 50`, 960 runs, see [Evaluation](#evaluation)): 99.8 % correct-or-abstain,
 **0 high-confidence wrong answers, 0 false alarms, 0 crashes**, calibration error (ECE) 0.094. The organizer's own
 generator output is diagnosed correctly (`hardware_failure`) or honestly abstained on (`latency_spike`) for every seed.
@@ -32,8 +34,8 @@ netcoop demo                                     # = make demo        the script
 netcoop dashboard                                # = make dashboard   http://localhost:8501
 ```
 
-No API key is needed for anything above. To share the dashboard with others, deploy it for free on Streamlit
-Community Cloud: see [docs/DEPLOY.md](docs/DEPLOY.md). Other commands:
+No API key is needed for anything above. The hosted dashboard runs on Streamlit Community Cloud (main file
+`dashboard/app.py`, Python 3.12, dependencies from `requirements.txt`). Other commands:
 
 | Command | What it does |
 |---|---|
@@ -61,7 +63,7 @@ Windows users without `make` run the `netcoop` commands directly (the Makefile o
 | Network fault diagnosis | 9 hypotheses, weighted evidence, discriminating rules, topology localization | `tests/test_scenarios.py`, `reports/eval/` |
 | Unified diagnostic report | Superset of the organizer's report format, validated against `schemas/report.schema.json` | `test_report_keeps_every_organizer_field_name` |
 | Validation and error handling | Schema adapter with 10 error codes, quality tags, chaos harness, 16 malformed fixtures | `tests/test_ingestion.py`, `tests/test_chaos.py` |
-| Reproducible testing and documentation | Seeded generators, ground-truth files, `pytest`, this README, `docs/DEMO.md` | CI workflow |
+| Reproducible testing and documentation | Seeded generators, ground-truth files, `pytest`, this README, [PROTOCOL.md](PROTOCOL.md), `netcoop demo` | CI workflow |
 
 **Optional components:** MCP server · human-in-the-loop approvals · persistent pause/resume (SQLite) · Streamlit
 dashboard · simulated remediation. All are implemented and tested, see [Optional features](#optional-features).

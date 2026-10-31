@@ -342,7 +342,7 @@ def eval_cmd(
 def demo(
     pause: Annotated[bool, typer.Option(help="Wait for Enter between steps (for recording)")] = False,
 ) -> None:
-    """Scripted demo (docs/DEMO.md): congestion, organizer HW failure, latency spike, chaos, malformed input,
+    """Scripted demo: congestion, organizer HW failure, latency spike, chaos, malformed input,
     simulated remediation, evaluation numbers. Runs end to end in well under two minutes."""
     import json
     import time
